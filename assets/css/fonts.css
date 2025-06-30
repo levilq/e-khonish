@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'GTWalsheimPro';
+    src: url('public/fonts/GTWalsheimPro/GTWalsheimPro-UltraBold.woff2') format('woff2'),
+    url('public/fonts/GTWalsheimPro/GTWalsheimPro-UltraBold.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTWalsheimPro';
+    src: url('public/fonts/GTWalsheimPro/GTWalsheimPro-Medium.woff2') format('woff2'),
+    url('public/fonts/GTWalsheimPro/GTWalsheimPro-Medium.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GTWalsheimPro';
+    src: url('public/fonts/GTWalsheimPro/GTWalsheimPro-Thin.woff2') format('woff2'),
+    url('public/fonts/GTWalsheimPro/GTWalsheimPro-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* Repeat for UltraBold, UltraLight, etc. */

@@ -30,7 +30,7 @@ const { t } = useI18n({
 </i18n>
 <template>
   <!-- Navigation Links -->
-  <nav class="hidden lg:flex gap-6 text-md text-black font-medium">
+  <nav class="hidden lg:flex gap-6 text-md text-black font-bold">
     <a href="#" class="hover:text-cyan-400 capitalize">{{t('features')}}</a>
     <a href="#" class="hover:text-cyan-400 capitalize">{{t('capabilities')}}</a>
     <a href="#" class="hover:text-cyan-400">{{t('who_is_it_for')}}?</a>

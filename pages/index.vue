@@ -5,83 +5,100 @@ definePageMeta({
 </script>
 
 <template>
-<!--  <div class="min-h-screen w-full bg-gradient-to-r from-[#FFE2B2] via-white to-[#D3E5FF]">-->
-<!--    &lt;!&ndash; Navbar &ndash;&gt;-->
-<!--    <header class="flex justify-between items-center px-6 py-4 md:px-16">-->
-<!--      <div class="flex items-center space-x-2">-->
-<!--        <img src="/images/png/logo.png" alt="eKhonish logo" class="h-9" />-->
-<!--      </div>-->
-<!--      <nav class="hidden lg:flex space-x-8 text-sm text-black font-medium">-->
-<!--        <a href="#" class="hover:text-blue-800">Особенности</a>-->
-<!--        <a href="#" class="hover:text-blue-800">Возможности</a>-->
-<!--        <a href="#" class="hover:text-blue-800">Для кого</a>-->
-<!--        <a href="#" class="hover:text-blue-800">О нас</a>-->
-<!--        <a href="#" class="hover:text-blue-800">Контакты</a>-->
-<!--      </nav>-->
-<!--      <div class="flex items-center space-x-3">-->
-<!--        <img src="/images/svg/ru.svg" alt="Русский" class="h-5 w-5" />-->
-<!--        <button class="bg-[#005B88] text-white px-5 py-2 rounded-md text-sm hover:bg-[#00466a]">Войти</button>-->
-<!--      </div>-->
-<!--    </header>-->
+  <div class="w-full px-4 py-12">
+    <div class="md:max-w-[1128px]  flex flex-col md:flex-row items-start justify-between mx-auto">
+      <!-- Right Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 grid-rows-3 gap-0 mt-8 md:mt-0 lg:order-2 mx-auto">
+        <!-- Top Row -->
+        <div class="w-[184px] h-[184px] bg-gradient-to-br from-[#FFA41B] to-[#B8E986] rounded-tr-[100px] flex items-center justify-center">
+          <img src="/images/svg/play.svg" alt="Play icon" class="w-[40px] h-[40px]" />
+        </div>
 
-<!--    &lt;!&ndash; Hero Section &ndash;&gt;-->
-<!--    <section class="flex flex-col md:flex-row items-center justify-between px-6 py-10 md:px-16 gap-12">-->
-<!--      &lt;!&ndash; Left Side &ndash;&gt;-->
-<!--      <div class="flex-1 space-y-4 text-left">-->
-<!--        <h1 class="text-4xl sm:text-5xl font-black text-[#005B88] leading-tight">-->
-<!--          E-KHONISH-->
-<!--        </h1>-->
-<!--        <div class="text-[#F7941E] text-4xl font-black flex gap-2">★ ★ ★</div>-->
-<!--        <h2 class="text-2xl font-semibold text-black leading-snug">-->
-<!--          умная цифровая платформа<br/> для школ-->
-<!--        </h2>-->
-<!--        <div>-->
-<!--          <img src="/images/svg/underline.svg" alt="underline" class="w-32 -ml-4" />-->
-<!--        </div>-->
-<!--        <p class="text-sm text-[#222] max-w-xs">-->
-<!--          Автоматизируйте управление, ускорьте процессы, вовлекайте учеников и родителей-->
-<!--        </p>-->
-<!--        <div>-->
-<!--          <button class="bg-[#0076B8] text-white px-6 py-3 rounded-full text-sm hover:bg-[#0063a0] shadow-md flex items-center gap-2">-->
-<!--            Попробовать платформу <span>→</span>-->
-<!--          </button>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--          <img src="/images/svg/green-curve.svg" alt="curve" class="w-24 mt-4" />-->
-<!--        </div>-->
-<!--      </div>-->
+        <!-- ✅ Always visible on all screens (Blue box) -->
+        <div class="w-[184px] h-[184px] bg-[#004F7C] rounded-br-[100px]"></div>
 
-<!--      &lt;!&ndash; Right Side &ndash;&gt;-->
-<!--      <div class="grid grid-cols-3 grid-rows-3 gap-2 max-w-lg w-full">-->
-<!--        <div class="bg-[#F7941E] rounded-tl-[60px] flex items-center justify-center">-->
-<!--          <img src="/images/svg/play.svg" alt="Play" class="w-6 h-6" />-->
-<!--        </div>-->
-<!--        <div class="bg-[#005B88] rounded-br-[60px]"></div>-->
-<!--        <div class="bg-[#C8F26D] rounded-tr-[60px] flex items-center justify-center text-center text-sm font-semibold text-black px-2">-->
-<!--          <div>-->
-<!--            <img src="/images/svg/flower.svg" alt="Цифровизация" class="mx-auto mb-1 w-6 h-6" />-->
-<!--            Цифровизация-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col-span-2 row-span-1 rounded-[40px] overflow-hidden">-->
-<!--          <img src="/images/png/platform-preview.png" alt="Platform preview" class="object-cover w-full h-full" />-->
-<!--        </div>-->
-<!--        <div class="bg-[#00ADEF] rounded-full flex items-center justify-center text-sm text-white px-2">-->
-<!--          <div class="text-center">-->
-<!--            <img src="/images/svg/lightbulb.svg" alt="Инновации" class="mx-auto mb-1 w-6 h-6" />-->
-<!--            Инновации-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="bg-gradient-to-r from-[#D8F26D] to-[#F7941E] rounded-bl-[60px] flex items-center justify-between text-sm text-white font-semibold px-4">-->
-<!--          Трансформация-->
-<!--          <img src="/images/svg/arrow.svg" class="w-4 h-4" />-->
-<!--        </div>-->
-<!--        <div class="rounded-full overflow-hidden">-->
-<!--          <img src="/images/png/girl.png" alt="Student" class="object-cover w-full h-full" />-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
-<!--  </div>-->
+        <!-- ❌ Hidden on mobile: Цифровизация -->
+        <div class="w-[184px] h-[184px] bg-[#B9F250] rounded-tl-[100px] flex-col items-center justify-center p-2 text-sm font-bold text-[#003049] hidden md:flex">
+          <img src="/images/svg/flower.svg" alt="Цифровизация" class="w-[70px] h-[70px] mb-2" />
+          Цифровизация
+        </div>
+
+        <!-- Middle Row -->
+        <div class="w-[368px] h-[184px] col-span-2 md:col-span-2 rounded-tl-[100px] rounded-br-[100px] overflow-hidden">
+
+          <img src="/images/png/platform-preview.png" alt="Platform" class="object-cover w-full h-full" />
+        </div>
+
+        <!-- ❌ Hidden on mobile: Инновации -->
+        <div class="w-[184px] h-[184px] bg-gradient-to-br from-[#00CFFF] to-[#006080] rounded-bl-[100px] flex-col items-center justify-center p-2 text-white text-sm font-bold hidden md:flex">
+          <img src="/images/svg/lightbulb.svg" alt="Инновации" class="w-[70px] h-[70px] mb-2" />
+          Инновации
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="w-[184px] h-[184px] bg-gradient-to-br from-[#B8E986] to-[#FFA41B] rounded-bl-[100px]"></div>
+
+        <!-- ✅ Always visible: Трансформация -->
+        <div class="w-[184px] h-[184px] bg-gradient-to-br from-[#C8F26D] to-[#FFA41B] rounded-tr-[100px] rounded-bl-[100px] relative flex items-center justify-center text-white text-sm font-bold">
+          <span class="text-center">Трансформация</span>
+          <div class="absolute bottom-5 right-5 w-10 h-10 rounded-full border border-white flex items-center justify-center">
+            <img src="/images/svg/arrow.svg" class="w-4 h-4" alt="arrow" />
+          </div>
+        </div>
+
+        <!-- ❌ Hidden on mobile: Girl image -->
+        <div class="w-[184px] h-[184px] rounded-full overflow-hidden hidden md:block">
+          <img src="/images/png/girl.png" alt="girl" class="object-cover w-full h-full" />
+        </div>
+      </div>
+
+
+
+      <!-- Left Side -->
+      <div class="w-full md:w-[50%] space-y-3 lg:order-1 mx-auto">
+        <h1 class="text-[#005B88] mx-auto text-6xl md:text-[65px] font-extrabold leading-tight font-mont text-center md:text-left" style="font-family: 'Montserrat', sans-serif;">
+          E-KHONISH
+        </h1>
+        <div class="flex">
+          <div class="flex gap-4 text-9xl text-[#FF9900] font-extrabold items-center mx-auto md:mx-0">
+            <span style="font-family: 'Montserrat', sans-serif;">*</span>
+            <span style="font-family: 'Montserrat', sans-serif;">*</span>
+            <span style="font-family: 'Montserrat', sans-serif;">*</span>
+            <p class="text-5xl text-black  font-bold -mt-10 hidden md:flex">умная</p>
+          </div>
+        </div>
+        <div class="text-[40px] font-bold text-black -mt-10 leading-snug hidden md:flex">
+          <div>
+            <p>цифровая платформа</p>
+            <p>для школ</p>
+          </div>
+
+        </div>
+        <div class="text-[40px] font-bold text-black -mt-10 leading-snug md:hidden text-center ">
+          <p>умная цифровая платформа для школ</p>
+        </div>
+
+
+        <img src="/images/svg/underline.svg" alt="underline" class="w-[300px] mx-auto md:mx-0 md:-ml-[65px]" />
+
+        <p class="text-base text-[#222] max-w-md">
+          Автоматизируйте управление, ускорьте процессы, вовлекайте учеников и родителей
+        </p>
+
+        <img src="/images/svg/green-curve.svg" alt="curve" class="relative left-[350px] bottom-10 w-[180px] mt-4 hidden md:flex" />
+
+        <button class="mx-auto md:mx-0 mt-5 md:mt-0 relative md:bottom-24 bg-[#005B88] text-white px-6 py-3 rounded-xl text-sm font-medium flex items-center gap-2 shadow-md">
+          Попробовать платформу
+          <span class="text-2xl my-auto">→</span>
+        </button>
+
+
+      </div>
+
+
+
+    </div>
+  </div>
 
 </template>
 

@@ -17,7 +17,7 @@ const { t } = useI18n({
 }
 </i18n>
 <template>
-  <header class="flex justify-between items-center px-6 md:px-16 py-4">
+  <header class="flex justify-between items-center py-4">
     <!-- Logo -->
     <div class="flex items-center gap-2">
       <img src="/images/png/logo.png" alt="eKhonish logo" class="h-10 w-auto" />

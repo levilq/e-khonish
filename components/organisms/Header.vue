@@ -26,8 +26,8 @@ const { t } = useI18n({
     <MoleculesMenuBar/>
 
     <!-- Language + Login -->
-    <div class="flex items-center gap-6">
-      <MoleculesLanguageSwitcher/>
+    <div class="hidden md:flex items-center gap-6">
+      <MoleculesLanguageSwitcher />
       <AtomsButtonsPrimary>
         {{t('login')}}
       </AtomsButtonsPrimary>

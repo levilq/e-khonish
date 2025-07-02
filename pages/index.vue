@@ -54,9 +54,6 @@ const { t } = useI18n({
           <img src="/images/png/girl.png" alt="girl" class="object-cover w-full h-full" />
         </div>
       </div>
-
-
-
       <!-- Left Side -->
       <div class="w-full md:w-[50%] space-y-3 lg:order-1 mx-auto ">
         <h1 class="text-[#005B88] mt-10 md:mt-0 mx-auto text-4xl md:text-[48px] font-extrabold leading-tight font-mont text-center md:text-left" style="font-family: 'Montserrat', sans-serif;">
@@ -97,10 +94,14 @@ const { t } = useI18n({
 
 
       </div>
-
-
-
     </div>
+
+
+
+    <!-- ШКОЛЫ CARD EXACT DESIGN -->
+    <OrganismsSquareHero/>
+
+
   </div>
 
 </template>

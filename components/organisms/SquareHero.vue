@@ -2,7 +2,7 @@
   <section class="flex flex-col  gap-y-6 relative mt-10 mx-auto -ml-4 md:-ml-0">
     <!-- Top Row -->
     <div class=" px-4 pt-12 justify-between flex">
-      <h2 class="text-2xl md:text-5xl font-bold text-[#1E1E1E] text-left mb-6">
+      <h2 class="text-center text-4xl md:text-5xl font-bold text-[#1E1E1E] md:text-left mb-6 mx-auto md:mx-0">
         Для кого наша <br/> <span class="text-[#0077A3]">платформа?</span>
       </h2>
       <img

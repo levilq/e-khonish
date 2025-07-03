@@ -102,6 +102,10 @@ const { t } = useI18n({
     <OrganismsSquareHero/>
 
 
+    <OrganismsPurposeSection class="my-5"/>
+    <OrganismsPlatformFeatures/>
+
+
   </div>
 
 </template>

@@ -82,7 +82,7 @@
     <!-- Bottom Row -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <!-- РОДИТЕЛИ CARD -->
-      <div class="relative bg-[url('/images/svg/parents-box.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6 grow  ">
+      <div class="relative bg-[url('/images/svg/parents-box.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6 hidden md:flex">
         <!-- Floating Label -->
         <div class="absolute -top-4 right-10 z-30">
           <div class="bg-white text-[#00B8E7] font-bold text-[20px] px-5 py-2 rounded-full inset-shadow-sm shadow-xl">
@@ -104,9 +104,31 @@
           </p>
         </div>
       </div>
+      <div class="relative bg-[url('/images/svg/parents-sm.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6 flex md:hidden">
+        <!-- Floating Label -->
+        <div class="absolute -top-4 right-[170px] z-30">
+          <div class="bg-white text-[#00B8E7] font-bold text-[20px] px-5 py-2 rounded-full inset-shadow-sm shadow-xl">
+            РОДИТЕЛИ
+          </div>
+        </div>
+
+        <!-- Icon -->
+        <img
+            src="/images/svg/parents-icon.svg"
+            class="absolute top-4  w-[100px] h-[100px] opacity-60"
+            alt="parents icon"
+        />
+
+        <!-- Text Content -->
+        <div class="text-white text-[15px] font-bold leading-[1.5] mt-7 max-w-[350px] absolute">
+          <p>
+            Следите за успеваемостью ребёнка, вовремя замечайте трудности и помогайте. Платформа даёт прозрачный доступ ко всему, что важно.
+          </p>
+        </div>
+      </div>
 
       <!-- ГОСУДАРСТВЕННЫЕ УЧРЕЖДЕНИЯ CARD -->
-      <div class="relative bg-[url('/images/svg/gos.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6">
+      <div class="relative bg-[url('/images/svg/gos.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6 hidden md:flex">
         <!-- Floating Label -->
         <div class="absolute bottom-1 right-3 z-30">
           <div class="bg-white text-[#A4CD39] font-bold text-[16px] px-6 py-2 rounded-full inset-shadow-sm shadow-xl">
@@ -123,6 +145,28 @@
 
         <!-- Text Content -->
         <div class="text-black text-[16px] font-bold leading-[1.5]  max-w-[504px] absolute">
+          <p>
+            Полный контроль над учебным процессом, кадрами и всей системой образования. Гибкие настройки под любые задачи.
+          </p>
+        </div>
+      </div>
+      <div class="relative bg-[url('/images/svg/gos-sm.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6 flex md:hidden">
+        <!-- Floating Label -->
+        <div class="absolute bottom-2 right-[170px] z-30">
+          <div class="bg-white text-[#A4CD39] font-bold text-[12px] px-6 py-2 rounded-full inset-shadow-sm shadow-xl">
+            ГОСУДАРСТВЕННЫЕ УЧРЕЖДЕНИЯ
+          </div>
+        </div>
+
+        <!-- Icon -->
+        <img
+            src="/images/svg/gos-icon.svg"
+            class="absolute top-4  w-[100px] h-[100px] opacity-60"
+            alt="gos icon"
+        />
+
+        <!-- Text Content -->
+        <div class="text-black text-[16px] font-bold leading-[1.5]  max-w-[350px] absolute">
           <p>
             Полный контроль над учебным процессом, кадрами и всей системой образования. Гибкие настройки под любые задачи.
           </p>

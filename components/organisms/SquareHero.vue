@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col  gap-y-6 relative mt-10">
+  <section class="flex flex-col  gap-y-6 relative mt-10 mx-auto -ml-4 md:-ml-0">
     <!-- Top Row -->
     <div class=" px-4 pt-12 justify-between flex">
       <h2 class="text-2xl md:text-5xl font-bold text-[#1E1E1E] text-left mb-6">
@@ -18,7 +18,8 @@
       <div class="relative bg-[url('/images/svg/schools.svg')] bg-no-repeat bg-contain w-[375px] h-[250px] p-6">
         <!-- Floating Label -->
         <div class="absolute -top-4 left-3 z-30">
-          <div class="bg-white text-[#FFA41B] font-bold text-[20px] px-8 py-2 rounded-full inset-shadow-sm shadow-xl">
+          <div class="bg-white text-[#FFA41B] font-bold md:*:
+          text-[20px] px-8 py-2 rounded-full inset-shadow-sm shadow-xl">
             ШКОЛЫ
           </div>
         </div>
@@ -43,7 +44,7 @@
       </div>
 
       <!-- Girl Image CARD -->
-      <div class="relative bg-[url('/images/svg/girl-box.svg')] bg-no-repeat bg-contain w-[375px] h-[250px] p-[9px] flex items-end justify-center">
+      <div class="ml-2 md:ml-0 mt-[150px] md:mt-0 relative bg-[url('/images/svg/girl-box.svg')] bg-no-repeat bg-contain w-[375px] h-[250px] p-[9px] flex items-end justify-center">
         <img
             src="/images/png/girl_book.png"
             class="w-[375px]"
@@ -52,10 +53,10 @@
       </div>
 
       <!-- УЧИТЕЛЯ CARD -->
-      <div class="relative bg-[url('/images/svg/instructors.svg')] bg-no-repeat bg-contain w-full md:w-[375px] h-[250px] p-6">
+      <div class="ml-3 md:ml-0 relative bg-[url('/images/svg/instructors.svg')] bg-no-repeat bg-contain w-full md:w-[375px] h-[250px] p-6 ">
         <!-- Floating Label -->
-        <div class="absolute -top-4 right-3 z-30">
-          <div class="bg-white text-[#085b80] font-bold text-[20px] px-9 py-2 rounded-full inset-shadow-sm shadow-xl">
+        <div class="absolute -top-3  md:-top-3 right-3 z-30">
+          <div class="bg-white text-[#085b80] font-bold text-[12px] md:text-[20px] px-10 py-3 md:px-9 md:py-2 rounded-full inset-shadow-sm shadow-xl">
             УЧИТЕЛЯ
           </div>
         </div>
@@ -104,10 +105,10 @@
           </p>
         </div>
       </div>
-      <div class="relative bg-[url('/images/svg/parents-sm.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6 flex md:hidden">
+      <div class="ml-4 -mt-6 relative bg-[url('/images/svg/parents-sm.svg')] bg-no-repeat bg-contain w-[350px] h-[156px] p-6 mx- flex md:hidden">
         <!-- Floating Label -->
-        <div class="absolute -top-4 right-[170px] z-30">
-          <div class="bg-white text-[#00B8E7] font-bold text-[20px] px-5 py-2 rounded-full inset-shadow-sm shadow-xl">
+        <div class="absolute -top-4 right-[12px] z-30">
+          <div class="bg-white text-[#00B8E7] font-bold text-[12px] px-7 py-3 rounded-full inset-shadow-sm shadow-xl">
             РОДИТЕЛИ
           </div>
         </div>
@@ -120,7 +121,7 @@
         />
 
         <!-- Text Content -->
-        <div class="text-white text-[15px] font-bold leading-[1.5] mt-7 max-w-[350px] absolute">
+        <div class="text-white text-[15px] font-bold leading-[1.5] mt-2 max-w-[300px] absolute">
           <p>
             Следите за успеваемостью ребёнка, вовремя замечайте трудности и помогайте. Платформа даёт прозрачный доступ ко всему, что важно.
           </p>
@@ -150,9 +151,9 @@
           </p>
         </div>
       </div>
-      <div class="relative bg-[url('/images/svg/gos-sm.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6 flex md:hidden">
+      <div class="ml-4 -mt-6 relative bg-[url('/images/svg/gos-sm.svg')] bg-no-repeat bg-contain w-[350px] h-[156px] p-6 flex md:hidden">
         <!-- Floating Label -->
-        <div class="absolute bottom-2 right-[170px] z-30">
+        <div class="absolute bottom-4 right-[5px] z-30">
           <div class="bg-white text-[#A4CD39] font-bold text-[12px] px-6 py-2 rounded-full inset-shadow-sm shadow-xl">
             ГОСУДАРСТВЕННЫЕ УЧРЕЖДЕНИЯ
           </div>
@@ -166,7 +167,7 @@
         />
 
         <!-- Text Content -->
-        <div class="text-black text-[16px] font-bold leading-[1.5]  max-w-[350px] absolute">
+        <div class="text-black text-[16px] font-bold leading-[1.5] -mt-3 max-w-[300px] absolute">
           <p>
             Полный контроль над учебным процессом, кадрами и всей системой образования. Гибкие настройки под любые задачи.
           </p>

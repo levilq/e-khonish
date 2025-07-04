@@ -105,6 +105,10 @@ const { t } = useI18n({
     <OrganismsPurposeSection/>
     <OrganismsPlatformFeatures/>
 
+    <OrganismsAbout/>
+
+    <OrganismsAvailabilityStats/>
+
 
   </div>
 

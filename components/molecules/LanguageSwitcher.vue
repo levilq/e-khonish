@@ -2,7 +2,7 @@
   <div class="relative inline-block ">
     <!-- Trigger button (flag + caret on right) -->
     <button @click="toggleDropdown" class="flex items-center gap-1 cursor-pointer">
-      <img :src="currentFlag" class="w-6 h-6 rounded-full" />
+      <img :src="currentFlag" class="w-6 h-6 rounded-full" alt="Flag"/>
       <svg
           v-if="!open"
           class="w-5 h-5 text-gray-500 ml-1"
@@ -31,12 +31,13 @@
           @click="switchLanguage(option.code)"
           class="flex items-center gap-2 cursor-pointer"
       >
-        <img :src="option.flag" class="w-6 h-6 rounded-full" />
+        <img :src="option.flag" class="w-6 h-6 rounded-full" alt="flag"/>
         <span class="text-sm font-semibold text-black">{{ option.label }}</span>
       </div>
     </div>
   </div>
 </template>
+
 
 <script setup lang="ts">
 const { locale, locales, setLocale } = useI18n()
@@ -62,9 +63,16 @@ const labels: Record<string, string> = {
 
 const currentFlag = computed(() => flags[locale.value])
 const localesList = locales.value as Array<{ code: string }>
-const languageOptions = localesList.map(l => ({
-  code: l.code,
-  flag: flags[l.code],
-  label: labels[l.code],
-}))
+
+// ✅ Only show other languages in dropdown
+const languageOptions = computed(() =>
+    localesList
+        .filter(l => l.code !== locale.value)
+        .map(l => ({
+          code: l.code,
+          flag: flags[l.code],
+          label: labels[l.code],
+        }))
+)
 </script>
+

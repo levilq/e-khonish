@@ -87,7 +87,7 @@ const { t } = useI18n({
 
         <img src="/images/svg/green-curve.svg" alt="curve" class="relative left-[350px] bottom-10 w-[180px] mt-4 hidden md:flex" />
 
-        <button class="mx-auto md:mx-0 mt-5 md:mt-0 relative md:bottom-36 bg-[#005B88] text-white px-6 py-3 rounded-xl text-sm font-medium flex items-center gap-2 shadow-md">
+        <button class="mx-auto md:mx-0 mt-5 md:mt-0 relative md:bottom-36 bg-[#005B88] text-white px-6 py-3 rounded-xl text-sm font-bold flex items-center gap-2 shadow-md">
           {{t('let_try')}}
           <span class="text-2xl my-auto">→</span>
         </button>

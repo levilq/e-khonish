@@ -1,5 +1,5 @@
 <template>
-  <section class="relative px-4 py-12 text-center flex flex-col items-center">
+  <section class="relative px-4 md:py-12 text-center flex flex-col items-center">
     <!-- Green Arrow -->
     <img
         src="/images/svg/arrow-green.svg"

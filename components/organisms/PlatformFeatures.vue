@@ -1,5 +1,5 @@
 <template>
-  <section class="py-12 px-4">
+  <section class="py-9 px-4">
     <div class="grid gap-6 md:grid-cols-3">
       <!-- Card 1 -->
       <div class="group rounded-xl p-6 text-center transition-all border border-transparent shadow-xl md:shadow-none md:border-none md:hover:shadow-xl md:hover:border-blue-200">

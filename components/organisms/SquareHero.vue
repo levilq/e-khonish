@@ -31,8 +31,8 @@
       </div>
 
       <!-- Girl Card -->
-      <div class="relative bg-[url('/images/svg/girl-box.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[250px] p-[9px] flex items-end justify-center mx-auto mt-[150px] md:mt-0">
-        <img src="/images/png/girl_book.png" class="w-[375px]" alt="girlBook" />
+      <div class="relative bg-[url('/images/svg/girl-box.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[250px] p-[9px] flex items-end justify-center mx-auto mt-[80px] md:mt-0">
+        <img src="/images/png/girl_book.png" class="relative bottom-6 md:bottom-3 w-[375px]" alt="girlBook" />
       </div>
 
       <!-- Teachers -->
@@ -42,7 +42,7 @@
             {{ t('teachers') }}
           </div>
         </div>
-        <img src="/images/svg/teacher-icon.svg" class="absolute top-4 right-4 w-[100px] h-[100px] opacity-60" alt="teacher icon" />
+        <img src="/images/svg/teacher-icon.svg" class="absolute top-4  w-[100px] h-[100px] opacity-60" alt="teacher icon" />
         <div class="text-white text-[14px] sm:text-[16px] font-bold leading-[1.5] mt-7 max-w-[310px] absolute">
           <p>{{ t('the_system_offers') }}</p>
           <p class="mt-2">{{ t('enhanced_tools') }}</p>
@@ -51,7 +51,7 @@
     </div>
 
     <!-- Bottom Row -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 md:gap-4 relative bottom-7 md:bottom-0">
       <!-- Parents (Desktop) -->
       <div class="relative bg-[url('/images/svg/parents-box.svg')] bg-no-repeat bg-contain w-full max-w-[552px] h-[156px] p-6 hidden md:flex mx-auto">
         <div class="absolute -top-4 right-10 z-30">
@@ -149,7 +149,7 @@ const { t } = useI18n({
     "platform": "пешбинӣ шудааст",
     "schools": "Мактабҳо",
     "functions_for_managing": "Ҳалли ягона барои идоракунии шабакаи мактабҳо — новобаста аз он ки он минтақа, вилоят ё як муассисаи алоҳидаи таълимӣ бошад.",
-    "functions_designed": "Ба ташкил ва ҳамоҳангсозии раванди таълим дар сатҳи маҳаллӣ ва давлатӣ мусоидат мекунад",
+    "functions_designed": "",
     "teachers":"Муаллимон",
     "the_system_offers": "Воситаи қулай барои банақшагирӣ, назорат ва фардикунонии таълим.",
     "enhanced_tools": "Ҳама чиз барои осон кардани кор ва беҳтар кардани ҳамкорӣ бо волидайн муҳайё шудааст.",

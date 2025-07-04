@@ -1,9 +1,10 @@
 <template>
-  <section class="flex flex-col gap-y-6 relative mt-10 mx-auto ">
+  <section class="flex flex-col gap-y-6 relative mt-10 px-4">
     <!-- Top Row -->
     <div class="pt-12 flex flex-col md:flex-row justify-between items-center">
-      <h2 class="text-center text-4xl md:text-5xl font-bold text-[#1E1E1E] md:text-left mb-6 md:mb-0">
-        {{t('for_who')}} <br /> <span class="text-[#0077A3]">{{ t('platform') }}?</span>
+      <h2 class="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E1E1E] md:text-left mb-6 md:mb-0">
+        {{ t('for_who') }} <br />
+        <span class="text-[#0077A3]">{{ t('platform') }}?</span>
       </h2>
       <img
           src="/images/svg/swirly-arrow.svg"
@@ -12,133 +13,94 @@
       />
     </div>
 
-    <!-- Cards Top Row -->
+    <!-- Top Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:mt-[170px]">
-      <!-- ШКОЛЫ CARD -->
-      <div class="relative bg-[url('/images/svg/schools.svg')] bg-no-repeat bg-contain w-[375px] h-[250px] p-6 mx-auto">
+      <!-- Schools -->
+      <div class="relative bg-[url('/images/svg/schools.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[250px] p-6 mx-auto">
         <div class="absolute -top-4 left-3 z-30">
-          <div class="bg-white uppercase text-[#FFA41B] font-bold text-[20px] px-8 py-2 rounded-full inset-shadow-sm shadow-xl">
-            {{t('schools')}}
+          <div class="bg-white uppercase text-[#FFA41B] font-bold text-[18px] sm:text-[20px] px-6 py-2 rounded-full shadow-xl">
+            {{ t('schools') }}
           </div>
+
         </div>
-        <img
-            src="/images/svg/school-icon.svg"
-            class="absolute top-4 right-4 w-[100px] h-[100px] opacity-60"
-            alt="school icon"
-        />
-        <div class="text-[#1E1E1E] text-[16px] font-bold leading-[1.5] mt-9 max-w-[300px] absolute">
-          <p>
-            {{t('functions_for_managing')}}
-          </p>
-          <p class="mt-2">
-            {{t('functions_designed')}}
-          </p>
+        <img src="/images/svg/school-icon.svg" class="absolute top-4 right-4 w-[100px] h-[100px] opacity-60" alt="school icon" />
+        <div class="text-[#1E1E1E] text-[14px] sm:text-[16px] font-bold leading-[1.5] mt-9 max-w-[300px] absolute">
+          <p>{{ t('functions_for_managing') }}</p>
+          <p class="mt-2">{{ t('functions_designed') }}</p>
         </div>
       </div>
 
-      <!-- Girl Image CARD -->
-      <div class="relative bg-[url('/images/svg/girl-box.svg')] bg-no-repeat bg-contain w-[375px] h-[250px] p-[9px] flex items-end justify-center mx-auto mt-[150px] md:mt-0">
+      <!-- Girl Card -->
+      <div class="relative bg-[url('/images/svg/girl-box.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[250px] p-[9px] flex items-end justify-center mx-auto mt-[150px] md:mt-0">
         <img src="/images/png/girl_book.png" class="w-[375px]" alt="girlBook" />
       </div>
 
-      <!-- УЧИТЕЛЯ CARD -->
-      <div class="relative bg-[url('/images/svg/instructors.svg')] bg-no-repeat bg-contain w-full md:w-[375px] h-[250px] p-6 mx-auto">
-        <div class="absolute -top-3 right-3 z-30">
-          <div class="bg-white uppercase text-[#085b80] font-bold text-[12px] md:text-[20px] px-10 py-3 md:px-9 md:py-2 rounded-full inset-shadow-sm shadow-xl">
-            {{t('teachers')}}
+      <!-- Teachers -->
+      <div class="relative bg-[url('/images/svg/instructors.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[250px] p-6 mx-auto">
+        <div class="absolute -top-4 right-3 z-30">
+          <div class="bg-white uppercase text-[#085b80] font-bold text-[14px] sm:text-[20px] px-6 sm:px-9 py-2 rounded-full shadow-xl">
+            {{ t('teachers') }}
           </div>
         </div>
-        <img
-            src="/images/svg/teacher-icon.svg"
-            class="absolute top-4  w-[100px] h-[100px] opacity-60"
-            alt="teacher icon"
-        />
-        <div class="text-white text-[16px] font-bold leading-[1.5] mt-7 max-w-[310px] absolute">
-          <p>
-            {{t('the_system_offers')}}
-          </p>
-          <p class="mt-2">
-            {{t('enhanced_tools')}}
-          </p>
+        <img src="/images/svg/teacher-icon.svg" class="absolute top-4 right-4 w-[100px] h-[100px] opacity-60" alt="teacher icon" />
+        <div class="text-white text-[14px] sm:text-[16px] font-bold leading-[1.5] mt-7 max-w-[310px] absolute">
+          <p>{{ t('the_system_offers') }}</p>
+          <p class="mt-2">{{ t('enhanced_tools') }}</p>
         </div>
       </div>
     </div>
 
     <!-- Bottom Row -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <!-- РОДИТЕЛИ DESKTOP -->
-      <div class="relative bg-[url('/images/svg/parents-box.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6 hidden md:flex mx-auto">
+      <!-- Parents (Desktop) -->
+      <div class="relative bg-[url('/images/svg/parents-box.svg')] bg-no-repeat bg-contain w-full max-w-[552px] h-[156px] p-6 hidden md:flex mx-auto">
         <div class="absolute -top-4 right-10 z-30">
-          <div class="bg-white uppercase text-[#00B8E7] font-bold text-[20px] px-5 py-2 rounded-full inset-shadow-sm shadow-xl">
-            {{t('parents')}}
+          <div class="bg-white uppercase text-[#00B8E7] font-bold text-[20px] px-5 py-2 rounded-full shadow-xl">
+            {{ t('parents') }}
           </div>
         </div>
-        <img
-            src="/images/svg/parents-icon.svg"
-            class="absolute top-4 w-[100px] h-[100px] opacity-60"
-            alt="parents icon"
-        />
-        <div class="text-white text-[16px] font-bold leading-[1.5] mt-4 max-w-[450px] absolute">
-          <p>
-            {{t('the_platform_helps')}}
-          </p>
+        <img src="/images/svg/parents-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="parents icon" />
+        <div class="text-white text-[14px] sm:text-[16px] font-bold leading-[1.5] mt-4 max-w-[450px] absolute">
+          <p>{{ t('the_platform_helps') }}</p>
         </div>
       </div>
 
-      <!-- РОДИТЕЛИ MOBILE -->
+      <!-- Parents (Mobile) -->
       <div class="relative bg-[url('/images/svg/parents-sm.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[156px] p-6 flex md:hidden mx-auto">
         <div class="absolute -top-4 right-[12px] z-30">
-          <div class="bg-white uppercase text-[#00B8E7] font-bold text-[12px] px-7 py-3 rounded-full inset-shadow-sm shadow-xl">
-            {{t('parents')}}
+          <div class="bg-white uppercase text-[#00B8E7] font-bold text-[12px] px-7 py-3 rounded-full shadow-xl">
+            {{ t('parents') }}
           </div>
         </div>
-        <img
-            src="/images/svg/parents-icon.svg"
-            class="absolute top-4 w-[100px] h-[100px] opacity-60"
-            alt="parents icon"
-        />
-        <div class="text-white text-[15px] font-bold leading-[1.5] mt-1 max-w-[300px] absolute">
-          <p>
-            {{t('the_platform_helps')}}
-          </p>
+        <img src="/images/svg/parents-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="parents icon" />
+        <div class="text-white text-[14px] font-bold leading-[1.5] mt-1 max-w-[300px] absolute">
+          <p>{{ t('the_platform_helps') }}</p>
         </div>
       </div>
 
-      <!-- ГОСУДАРСТВЕННЫЕ УЧРЕЖДЕНИЯ DESKTOP -->
-      <div class="relative bg-[url('/images/svg/gos.svg')] bg-no-repeat bg-contain w-[552px] h-[156px] p-6 hidden md:flex mx-auto">
+      <!-- Government (Desktop) -->
+      <div class="relative bg-[url('/images/svg/gos.svg')] bg-no-repeat bg-contain w-full max-w-[552px] h-[156px] p-6 hidden md:flex mx-auto">
         <div class="absolute bottom-1 right-3 z-30">
-          <div class="uppercase bg-white text-black font-bold text-[20px] px-6 py-2 rounded-full inset-shadow-sm shadow-xl">
-            {{t('government_institutions')}}
+          <div class="bg-white uppercase text-black font-bold text-[20px] px-6 py-2 rounded-full shadow-xl">
+            {{ t('government_institutions') }}
           </div>
         </div>
-        <img
-            src="/images/svg/gos-icon.svg"
-            class="absolute top-4 w-[100px] h-[100px] opacity-60"
-            alt="gos icon"
-        />
-        <div class="text-black text-[16px] font-bold leading-[1.5] max-w-[504px] absolute">
-          <p>
-              {{t('manage_teacher')}}
-          </p>
+        <img src="/images/svg/gos-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="gos icon" />
+        <div class="text-black text-[14px] sm:text-[16px] font-bold leading-[1.5] max-w-[504px] absolute">
+          <p>{{ t('manage_teacher') }}</p>
         </div>
       </div>
 
-      <!-- ГОСУДАРСТВЕННЫЕ УЧРЕЖДЕНИЯ MOBILE -->
+      <!-- Government (Mobile) -->
       <div class="relative bg-[url('/images/svg/gos-sm.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[156px] p-6 flex md:hidden mx-auto">
         <div class="absolute bottom-4 right-[5px] z-30">
-          <div class="uppercase bg-white text-black font-bold text-[12px] px-6 py-2 rounded-full inset-shadow-sm shadow-xl">
-            {{t('government_institutions')}}
+          <div class="bg-white uppercase text-black font-bold text-[12px] px-6 py-2 rounded-full shadow-xl">
+            {{ t('government_institutions') }}
           </div>
         </div>
-        <img
-            src="/images/svg/gos-icon.svg"
-            class="absolute top-4 w-[100px] h-[100px] opacity-60"
-            alt="gos icon"
-        />
-        <div class="text-black text-[16px] font-bold leading-[1.5] -mt-5 max-w-[300px] absolute">
-          <p>
-            {{t('manage_teacher')}}
-          </p>
+        <img src="/images/svg/gos-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="gos icon" />
+        <div class="text-black text-[14px] font-bold leading-[1.5] -mt-5 max-w-[300px] absolute">
+          <p>{{ t('manage_teacher') }}</p>
         </div>
       </div>
     </div>

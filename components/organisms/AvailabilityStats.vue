@@ -7,7 +7,7 @@
           <img src="/images/svg/availability.svg" alt="availability" class="w-8 h-8" />
         </div>
         <h3 class="text-2xl font-extrabold text-[#2E2E2E]">{{ t("availability") }}</h3>
-        <p class="text-gray-500 mt-2 text-sm">
+        <p class="text-gray-500 mt-2 text-sm font-bold">
           {{ t("availability_desc") }}
         </p>
       </div>
@@ -20,7 +20,7 @@
         <div class="text-4xl font-bold text-[#2E2E2E]">
           {{ animated && schoolCount < schools ? (schoolCount + '+') : schools }}
         </div>
-        <p class="text-gray-500 mt-2">{{ t("connected_schools") }}</p>
+        <p class="text-gray-500 mt-2 font-bold">{{ t("connected_schools") }}</p>
       </div>
 
       <!-- USERS BOX -->
@@ -31,7 +31,7 @@
         <div class="text-4xl font-bold text-[#2E2E2E]">
           {{ animated && userCount < users ? (userCount + '+') : users }}
         </div>
-        <p class="text-gray-500 mt-2">{{ t("registered_accounts") }}</p>
+        <p class="text-gray-500 mt-2 font-bold">{{ t("registered_accounts") }}</p>
       </div>
     </div>
   </section>
@@ -98,15 +98,15 @@ const { t } = useI18n({ useScope: 'local' })
   },
   "ru": {
     "availability": "Доступность",
-    "availability_desc": "Платформа уже доступна жителям Хатлонской области",
-    "connected_schools": "Подключенные школы",
+    "availability_desc": "Платформа уже доступна для жителей Хатлонской области",
+    "connected_schools": "Подключенных школ",
     "registered_accounts": "Зарегистрированные аккаунты"
   },
   "tj": {
-    "availability": "Дастрасӣ",
-    "availability_desc": "Платформа аллакай барои сокинони вилояти Хатлон дастрас аст",
-    "connected_schools": "Мактабҳои пайвастшуда",
-    "registered_accounts": "Ҳисобҳои ба қайд гирифташуда"
+    "availability": "Фаъол",
+    "availability_desc": "Платформа аллакай барои сокинони вилояти Хатлон фаъол аст.",
+    "connected_schools": "Мактаб ба низом пайваст шудаанд",
+    "registered_accounts": "Сахифаи шахси сабз шудаст"
   }
 }
 </i18n>

@@ -111,6 +111,8 @@ const { t } = useI18n({
 
     <OrganismsOurValues/>
 
+    <OrganismsTestimonialsSlider/>
+
 
   </div>
 

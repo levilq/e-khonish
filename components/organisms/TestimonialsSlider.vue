@@ -57,31 +57,31 @@ const testimonials = [
   {
     name: t("name_1"),
     position: t("speciality_1"),
-    avatar: "/_nuxt/images/png/karimov.png",
+    avatar: "/public/images//karimov.png",
     quote: t("testimonial_1")
   },
   {
     name: t("name_2"),
     position: t("speciality_2"),
-    avatar: "/_nuxt/images/png/sharipov.png",
+    avatar: "/public/images//sharipov.png",
     quote: t("testimonial_2")
   },
   {
     name: t("name_3"),
     position: t("speciality_3"),
-    avatar: "/_nuxt/images/png/yusupova.png",
+    avatar: "/public/images/yusupova.png",
     quote: t("testimonial_3")
   },
   {
     name: t("name_4"),
     position: t("speciality_4"),
-    avatar: "/_nuxt/images/png/yorov.png",
+    avatar: "/public/images/yorov.png",
     quote: t("testimonial_4")
   },
   {
     name: t("name_5"),
     position: t("speciality_5"),
-    avatar: "/_nuxt/images/png/mijgona.png",
+    avatar: "/public/images/mijgona.png",
     quote: t("testimonial_5")
   }
 ]

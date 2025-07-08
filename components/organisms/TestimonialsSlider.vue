@@ -57,34 +57,35 @@ const testimonials = [
   {
     name: t("name_1"),
     position: t("speciality_1"),
-    avatar: "/public/images//karimov.png",
+    avatar: new URL('@/assets/images/karimov.png', import.meta.url).href,
     quote: t("testimonial_1")
   },
   {
     name: t("name_2"),
     position: t("speciality_2"),
-    avatar: "/public/images//sharipov.png",
+    avatar: new URL('@/assets/images/sharipov.png', import.meta.url).href,
     quote: t("testimonial_2")
   },
   {
     name: t("name_3"),
     position: t("speciality_3"),
-    avatar: "/public/images/yusupova.png",
+    avatar: new URL('@/assets/images/yusupova.png', import.meta.url).href,
     quote: t("testimonial_3")
   },
   {
     name: t("name_4"),
     position: t("speciality_4"),
-    avatar: "/public/images/yorov.png",
+    avatar: new URL('@/assets/images/yorov.png', import.meta.url).href,
     quote: t("testimonial_4")
   },
   {
     name: t("name_5"),
     position: t("speciality_5"),
-    avatar: "/public/images/mijgona.png",
+    avatar: new URL('@/assets/images/mijgona.png', import.meta.url).href,
     quote: t("testimonial_5")
   }
 ]
+
 </script>
 
 <i18n lang="json">

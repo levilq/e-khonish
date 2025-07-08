@@ -12,6 +12,7 @@
       <OrganismsHeader class="mx-3 md:mx-0" />
       <slot />
     </div>
+    <OrganismsFooterSection/>
   </div>
 </template>
 

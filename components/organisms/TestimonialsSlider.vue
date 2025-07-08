@@ -6,7 +6,7 @@
           {{ t("what_schools_say") }}
           <span class="text-[#0077A3]">{{t('about_platform')}}</span>
         </h2>
-        <p class="text-left font-bold">
+        <p class="text-left font-bold pr-5 md:pr-0">
           {{t('platform_is_already')}}
         </p>
       </div>

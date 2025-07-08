@@ -1,8 +1,8 @@
 <template>
   <section class="flex py-8 px-4">
     <div class=" mx-auto justify-between space-x-3  grid grid-cols-1 md:grid-cols-2">
-      <div class="w-[350px] md:w-[500px] pb-7">
-        <h2 class="text-2xl md:text-4xl font-bold text-[#1E1E1E] mb-4 text-left">
+      <div class="w-[350px] md:w-[500px] pb-7 mx-auto">
+        <h2 class="text-2xl md:text-4xl font-bold text-[#1E1E1E] mb-4 text-left ">
           {{ t("what_schools_say") }}
           <span class="text-[#0077A3]">{{t('about_platform')}}</span>
         </h2>

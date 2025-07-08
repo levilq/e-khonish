@@ -11,8 +11,9 @@
     <div class="relative z-10 container mx-auto max-w-[1128px]">
       <OrganismsHeader class="mx-3 md:mx-0" />
       <slot />
+      <OrganismsFooterSection/>
     </div>
-    <OrganismsFooterSection/>
+
   </div>
 </template>
 

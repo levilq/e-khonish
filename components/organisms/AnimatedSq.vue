@@ -152,7 +152,7 @@ onUnmounted(() => {
           <p class="text-sm text-[#004F7C] font-semibold leading-relaxed mt-10">
               {{t('transfer_education')}}
           </p>
-          <div class="self-end w-10 h-10 rounded-full border border-white flex items-center justify-center">
+          <div class="self-end w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer" @click="toggleTransformation">
             <img src="/images/svg/arrow.svg" class="w-4 h-4" alt="arrow" />
           </div>
         </div>

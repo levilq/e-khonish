@@ -71,6 +71,8 @@ const { t } = useI18n({
 
     <OrganismsTestimonialsSlider/>
 
+    <OrganismsSupportedBy/>
+
     <OrganismsContactSection/>
 
 

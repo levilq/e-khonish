@@ -24,7 +24,7 @@ const { t } = useI18n({
     </div>
 
     <MoleculesMenuBar/>
-
+    <MoleculesNavbar class="hidden md:flex"/>
     <!-- Language + Login -->
     <div class="hidden md:flex items-center gap-6">
       <MoleculesLanguageSwitcher />

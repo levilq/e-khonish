@@ -60,7 +60,7 @@
           </div>
         </div>
         <img src="/images/svg/parents-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="parents icon" />
-        <div class="text-white text-[14px]  font-bold leading-[1.5] mt-4 max-w-[450px] absolute">
+        <div class="text-white text-[14px]  font-semibold leading-[1.5] mt-4 max-w-[450px] absolute">
           <p>{{ t('the_platform_helps') }}</p>
         </div>
       </div>
@@ -86,7 +86,7 @@
           </div>
         </div>
         <img src="/images/svg/gos-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="gos icon" />
-        <div class="text-black text-[14px]  font-bold leading-[1.5] max-w-[504px] absolute top-4">
+        <div class="text-black text-[14px]  font-bold leading-[1.5] max-w-[504px] absolute top-7">
           <p>{{ t('manage_teacher') }}</p>
         </div>
       </div>

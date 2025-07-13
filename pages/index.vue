@@ -8,52 +8,58 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <div class="w-full px-4 md:py-20">
-    <div class="md:max-w-[1128px]  flex flex-col md:flex-row items-start justify-between mx-auto">
-      <!-- Right Grid -->
-      <OrganismsAnimatedSq/>
-      <!-- Left Side -->
-      <div class="w-full md:w-[50%] space-y-3 lg:order-1 mx-auto ">
-        <h1 class="text-[#005B88] mt-10 md:mt-0 mx-auto text-4xl md:text-[48px] font-extrabold leading-tight font-mont text-center md:text-left" style="font-family: 'Montserrat', sans-serif;">
-          E-KHONISH
-        </h1>
-        <div class="flex">
-          <div class="flex gap-4 text-8xl text-[#FF9900] font-extrabold items-center mx-auto md:mx-0">
-            <span style="font-family: 'Montserrat', sans-serif;">*</span>
-            <span style="font-family: 'Montserrat', sans-serif;">*</span>
-            <span style="font-family: 'Montserrat', sans-serif;">*</span>
-            <p class="text-3xl text-black  font-bold -mt-10 hidden md:flex">{{t('smart')}}</p>
+  <div class="w-full  md:py-14">
+    <!-- Outer Wrapper: Centering the whole grid -->
+    <!-- Wrapper: Make sure it’s full width and centers its content -->
+    <div class="w-full px-4">
+      <div class="max-w-[1128px] mx-auto flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[45px] items-start">
+
+          <!-- Right Grid -->
+          <OrganismsAnimatedSq />
+
+          <!-- Left Side -->
+          <div class="w-full md:w-[552px] space-y-3 mx-auto">
+            <h1 style="font-family: 'Montserrat', sans-serif;" class="text-[#005B88] mt-10 md:mt-0 text-4xl md:text-[74px] font-extrabold leading-tight font-mont text-center md:text-left">
+              E-KHONISH
+            </h1>
+
+            <div class="flex -mt-16">
+              <div  class="flex gap-x-4 text-[170px] text-[#FF9900] font-extrabold items-center mx-auto md:mx-0">
+                <span style="font-family: 'Montserrat', sans-serif;">*</span>
+                <span style="font-family: 'Montserrat', sans-serif;">*</span>
+                <span style="font-family: 'Montserrat', sans-serif;">*</span>
+                <p class="text-[40px] text-black font-bold -mt-10 hidden md:flex">{{ t('smart') }}</p>
+              </div>
+            </div>
+
+            <div class="text-[40px] font-bold text-black -mt-28 leading-snug hidden md:flex">
+              <div>
+                <p>{{ t('digital_platform') }}</p>
+                <p>{{ t('for_school') }}</p>
+              </div>
+            </div>
+
+            <div class="text-[40px] font-bold text-black -mt-10 leading-snug md:hidden text-center">
+              <p>{{ t('digital_platform') }} {{ t('for_school') }}</p>
+            </div>
+
+            <img src="/images/svg/underline.svg" alt="underline" class="w-[300px] mx-auto md:mx-0 md:-ml-[65px]" />
+
+            <p class="text-[18px] text-[#222] max-w-md text-center md:text-left">
+              {{ t('automate_management') }}
+            </p>
+
+            <img src="/images/svg/green-curve.svg" alt="curve" class="relative left-[350px] bottom-10 w-[180px] mt-4 hidden md:flex" />
+
+            <button class="mx-auto md:mx-0  md:mt-0 relative md:bottom-36 bg-[#005B88] text-white px-6 py-3 rounded-xl text-sm font-bold flex items-center gap-2 shadow-md">
+              {{ t('let_try') }}
+              <span class="text-2xl my-auto">→</span>
+            </button>
           </div>
         </div>
-        <div class="text-3xl font-bold text-black -mt-10 leading-snug hidden md:flex">
-          <div>
-            <p>{{t('digital_platform')}}</p>
-            <p>{{t('for_school')}}</p>
-          </div>
-
-        </div>
-        <div class="text-[40px] font-bold text-black -mt-10 leading-snug md:hidden text-center ">
-          <p>{{t('digital_platform')}} {{t('for_school')}}</p>
-        </div>
-
-
-        <img src="/images/svg/underline.svg" alt="underline" class="w-[300px] mx-auto md:mx-0 md:-ml-[65px]" />
-
-        <p class="text-base text-[#222] max-w-md text-center md:text-left">
-          {{t('automate_management')}}
-        </p>
-
-        <img src="/images/svg/green-curve.svg" alt="curve" class="relative left-[350px] bottom-10 w-[180px] mt-4 hidden md:flex" />
-
-        <button class="mx-auto md:mx-0 mt-5 md:mt-0 relative md:bottom-36 bg-[#005B88] text-white px-6 py-3 rounded-xl text-sm font-bold flex items-center gap-2 shadow-md">
-          {{t('let_try')}}
-          <span class="text-2xl my-auto">→</span>
-        </button>
-
-
       </div>
     </div>
-
 
 
     <!-- ШКОЛЫ CARD EXACT DESIGN -->

@@ -40,7 +40,7 @@ const toggleMenu = () => {
       </div>
 
       <!-- Navigation Links -->
-      <div class="flex flex-col items-center gap-6 text-base font-bold text-black capitalize">
+      <div class="flex flex-col items-center gap-6 text-base font-bold text-black capitalize hover:text-blue-300">
         <a href="#" @click="toggleMenu">{{ t('features') }}</a>
         <a href="#" @click="toggleMenu">{{ t('capabilities') }}</a>
         <a href="#" @click="toggleMenu">{{ t('who_is_it_for') }}</a>

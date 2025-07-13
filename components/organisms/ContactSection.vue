@@ -8,18 +8,19 @@
         {{ t('headline') }}
       </h2>
     </div>
-    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[45px] items-start">
       <!-- Left image -->
-      <div class="max-w-sm">
-        <img src="/images/png/laptop.png" alt="Laptop" class="w-full h-auto object-cover hidden md:flex" />
+      <div class="ml-[80px]">
+        <img src="/images/png/laptop.png" alt="Laptop" class="h-[456px] object-cover hidden md:flex" />
         <img src="/images/png/contacts-mobile.png" alt="Mobile" class="w-full h-auto object-cover md:hidden" />
       </div>
 
       <!-- Right form -->
-      <div class="w-full max-w-lg">
+      <div class="w-full ">
         <form class="space-y-4 text-[#005f87]">
           <label class="font-bold ml-2">{{ t('label_name') }}</label>
           <input
+              required
               type="text"
               :placeholder="t('placeholder_name')"
               class="w-full px-4 py-3 rounded-3xl border-2 border-[#005f87] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077A3]"
@@ -27,6 +28,7 @@
 
           <label class="font-bold ml-2">{{ t('label_school') }}</label>
           <input
+              required
               type="text"
               :placeholder="t('placeholder_school')"
               class="w-full px-4 py-3 rounded-3xl border-2 border-[#005f87] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077A3]"
@@ -41,17 +43,19 @@
 
           <label class="font-bold ml-2">{{ t('label_phone') }}</label>
           <input
+              required
               type="tel"
               :placeholder="t('placeholder_phone')"
               class="w-full px-4 py-3 rounded-3xl border-2 border-[#005f87] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077A3]"
           />
-
-          <button
-              type="submit"
-              class="bg-[#0077A3] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#005f87] transition w-full"
-          >
-            {{ t('submit') }} →
-          </button>
+          <div class="flex justify-end">
+            <button
+                type="submit"
+                class="bg-[#005A83] text-white font-semibold py-3 px-6 rounded-xl hover:bg-[#005f87] transition w-1/2 cursor-pointer"
+            >
+              {{ t('submit') }} →
+            </button>
+          </div>
         </form>
       </div>
     </div>

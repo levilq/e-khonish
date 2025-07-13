@@ -46,22 +46,26 @@ const animated = ref(false)
 const schoolCount = ref(0)
 const userCount = ref(0)
 
-const schools = 47  // Replace with real data if needed
-const users = 123   // Replace with real data if needed
+const schools = 300  // Replace with real data if needed
+const users = 250500   // Replace with real data if needed
 
 const animateCount = (refValue, target) => {
+  const duration = 3000 // 3 seconds
+  const steps = 60      // Total animation steps (you can increase for smoother)
+  const increment = Math.ceil(target / steps)
   let current = 0
-  const duration = 1500
-  const stepTime = Math.max(Math.floor(duration / target), 20)
 
   const timer = setInterval(() => {
-    current++
-    refValue.value = current
+    current += increment
     if (current >= target) {
+      refValue.value = target
       clearInterval(timer)
+    } else {
+      refValue.value = current
     }
-  }, stepTime)
+  }, duration / steps)
 }
+
 
 const observeSection = () => {
   const observer = new IntersectionObserver(

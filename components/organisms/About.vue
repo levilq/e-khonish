@@ -23,12 +23,11 @@
       <!-- Video Player Section -->
       <div class="flex justify-center">
         <div class="w-full max-w-md aspect-video rounded-xl overflow-hidden shadow-lg relative">
-          <iframe
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              class="w-full h-full"
-          ></iframe>
+          <video controls class="w-full h-full"  muted playsinline>
+            <source src="/videos/about.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
         </div>
       </div>
     </div>

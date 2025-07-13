@@ -8,8 +8,8 @@
     />
 
     <!-- Heading -->
-    <h2 class="text-[24px] md:text-[28px] lg:text-[32px] font-bold text-[#1E1E1E] mt-16 capitalize">
-      {{t('why')}} <span class="text-[#0077A3] font-extrabold" style="font-family: 'Montserrat', sans-serif;">E-KHONISH?</span>
+    <h2 class="text-[24px] md:text-[28px] lg:text-[48px] font-bold text-[#005A83] mt-16 capitalize">
+      {{t('why')}} <span class="text-[#005A83] font-extrabold" style="font-family: 'Montserrat', sans-serif;">E-KHONISH?</span>
     </h2>
 
     <!-- Description Box -->

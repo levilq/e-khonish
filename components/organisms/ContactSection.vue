@@ -10,9 +10,9 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[45px] items-start">
       <!-- Left image -->
-      <div class="ml-[80px]">
-        <img src="/images/png/laptop.png" alt="Laptop" class="h-[456px] object-cover hidden md:flex" />
-        <img src="/images/png/contacts-mobile.png" alt="Mobile" class="w-full h-auto object-cover md:hidden" />
+      <div class="">
+        <img src="/images/png/laptop.png" alt="Laptop" class="h-[456px] object-cover hidden md:flex ml-[80px]" />
+        <img src="/images/png/contacts-mobile.png" alt="Mobile" class="w-full flex justify-center object-cover md:hidden" />
       </div>
 
       <!-- Right form -->

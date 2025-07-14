@@ -112,10 +112,10 @@ onUnmounted(() => {
               backgroundImage: 'linear-gradient(to bottom right, #FFA41B, #B8E986)'
              }">
           <button class="text-[#006080] text-xl font-bold absolute top-3 left-4 cursor-pointer" @click="closeVideo">✕</button>
-          <iframe class="rounded-xl w-full h-full p-6"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  frameborder="0"
-                  allowfullscreen></iframe>
+          <video controls class="w-full h-full p-5 "  muted playsinline>
+            <source src="/videos/about.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </Transition>
 

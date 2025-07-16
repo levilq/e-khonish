@@ -99,7 +99,7 @@
           </div>
         </div>
         <img src="/images/svg/gos-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="gos icon" />
-        <div class="text-black text-[12px] font-bold leading-[1.5] -mt-3 max-w-[300px] absolute">
+        <div class="text-black text-[12px] font-bold leading-[1.5]  max-w-[300px] absolute">
           <p>{{ t('manage_teacher') }}</p>
         </div>
       </div>

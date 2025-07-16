@@ -16,7 +16,7 @@
             <h3 class="text-xl font-bold text-[#1E1E1E] mb-2">
               {{ t("growth") }}
             </h3>
-            <p class="text-gray-500 text-sm leading-6 ">
+            <p class="text-gray-500 text-sm leading-6" style="font-weight: 700;">
               {{ t("growth_desc") }}
             </p>
           </div>
@@ -31,7 +31,7 @@
             <h3 class="text-xl font-bold text-[#1E1E1E] mb-2">
               {{ t("availability") }}
             </h3>
-            <p class="text-gray-500 text-sm leading-6 ">
+            <p class="text-gray-500 text-sm leading-6 " style="font-weight: 700;">
               {{ t("availability_desc") }}
             </p>
           </div>
@@ -49,7 +49,7 @@
             <h3 class="text-xl font-bold text-[#1E1E1E] mb-2">
               {{ t("innovations") }}
             </h3>
-            <p class="text-gray-500 text-sm leading-6 ">
+            <p class="text-gray-500 text-sm leading-6 " style="font-weight: 700;">
               {{ t("innovations_desc") }}
             </p>
           </div>
@@ -69,7 +69,7 @@
               <h3 class="text-xl font-bold text-[#1E1E1E] mb-2">
                 {{ t("safety") }}
               </h3>
-              <p class="text-gray-500 text-sm leading-6 ">
+              <p class="text-gray-500 text-sm leading-6 " style="font-weight: 700";>
                 {{ t("safety_desc") }}
               </p>
             </div>
@@ -83,7 +83,7 @@
               <h3 class="text-xl font-bold text-[#1E1E1E] mb-2">
                 {{ t("partnership") }}
               </h3>
-              <p class="text-gray-500 text-sm leading-6 ">
+              <p class="text-gray-500 text-sm leading-6 " style="font-weight: 700;">
                 {{ t("partnership_desc") }}
               </p>
             </div>

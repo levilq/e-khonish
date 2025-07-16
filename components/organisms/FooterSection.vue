@@ -3,12 +3,12 @@
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-between">
       <!-- Left: Logo and Description -->
       <div class="text-center md:text-left">
-        <img src="/images/png/logo.png" alt="Khonish Logo" class="w-32 mx-auto md:mx-0 mb-4" />
-        <p class="text-sm w-1/4 text-center ">{{ t("footer.tagline") }}</p>
+        <img src="/images/png/logo.png" alt="Khonish Logo" class="w-32 mx-auto md:mx-0 mb-4 md:ml-9" />
+        <p class="text-sm w-[200px] text-center mx-auto md:mx-0 ">{{ t("footer.tagline") }}</p>
       </div>
 
       <!-- Center: Social Media -->
-      <div class="flex justify-center md:justify-end space-x-6">
+      <div class="flex justify-center md:justify-end space-x-3 md:space-x-2 my-auto">
         <a href="https://facebook.com" target="_blank" aria-label="Facebook">
           <img src="/images/svg/facebook.svg" alt="facebook">
         </a>
@@ -16,7 +16,7 @@
           <img src="/images/svg/instagram.svg" alt="instagram">
         </a>
         <a href="https://t.me" target="_blank" aria-label="Telegram">
-          <img src="/images/svg/telegram.svg" alt="telegram">
+          <img src="/images/svg/telegram.svg" class="mt-[3px]" alt="telegram">
         </a>
       </div>
     </div>

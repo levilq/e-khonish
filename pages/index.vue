@@ -8,7 +8,7 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <div class="w-full  md:py-14">
+  <div class="w-full  md:py-9">
     <!-- Outer Wrapper: Centering the whole grid -->
     <!-- Wrapper: Make sure it’s full width and centers its content -->
     <div class="w-full px-4">
@@ -20,12 +20,12 @@ const { t } = useI18n({
 
           <!-- Left Side -->
           <div class="w-full md:w-[552px] space-y-3 mx-auto">
-            <h1 style="font-family: 'Montserrat', sans-serif;" class="text-[#005B88] mt-10 md:mt-0 text-4xl md:text-[74px] font-extrabold leading-tight font-mont text-center md:text-left">
+            <h1 style="font-family: 'Montserrat', sans-serif;" class="text-[#005B88] mt-10 md:mt-0 text-4xl md:text-[64px] font-extrabold leading-tight font-mont text-center md:text-left">
               E-KHONISH
             </h1>
 
             <div class="flex -mt-16">
-              <div  class="flex gap-x-4 text-[170px] text-[#FF9900] font-extrabold items-center mx-auto md:mx-0">
+              <div  class="flex gap-x-4 text-[140px] text-[#FF9900] font-extrabold items-center mx-auto md:mx-0">
                 <span style="font-family: 'Montserrat', sans-serif;">*</span>
                 <span style="font-family: 'Montserrat', sans-serif;">*</span>
                 <span style="font-family: 'Montserrat', sans-serif;">*</span>
@@ -50,9 +50,9 @@ const { t } = useI18n({
               {{ t('automate_management') }}
             </p>
 
-            <img src="/images/svg/green-curve.svg" alt="curve" class="relative left-[350px] bottom-10 w-[180px] mt-4 hidden md:flex" />
+            <img src="/images/svg/green-curve.svg" alt="curve" class="relative left-[380px] bottom-16 w-[180px] mt-4 hidden md:flex" />
 
-            <button class="mx-auto md:mx-0  md:mt-0 relative md:bottom-36 bg-[#005B88] text-white px-6 py-3 rounded-xl text-sm font-bold flex items-center gap-2 shadow-md">
+            <button class="hover:bg-[#00466a] cursor-pointer mx-auto md:mx-0  md:mt-0 relative md:bottom-[170px] bg-[#005B88] text-white px-6 py-2 rounded-xl text-sm font-bold flex items-center gap-2 shadow-md">
               {{ t('let_try') }}
               <span class="text-2xl my-auto">→</span>
             </button>
@@ -77,11 +77,11 @@ const { t } = useI18n({
 
     <OrganismsTestimonialsSlider/>
 
-    <OrganismsSupportedBy/>
+
 
     <OrganismsContactSection/>
 
-
+    <OrganismsSupportedBy class="md:mt-16"/>
 
   </div>
 

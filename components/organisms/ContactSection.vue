@@ -51,7 +51,7 @@
           <div class="flex justify-end">
             <button
                 type="submit"
-                class="bg-[#005A83] text-white font-semibold py-3 px-6 rounded-xl hover:bg-[#005f87] transition w-1/2 cursor-pointer"
+                class="bg-[#005A83] text-white font-semibold py-3 px-6 rounded-xl hover:bg-[#00466a] cursor-pointer transition w-1/2 "
             >
               {{ t('submit') }} →
             </button>

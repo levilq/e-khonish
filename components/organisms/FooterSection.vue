@@ -8,7 +8,7 @@
       </div>
 
       <!-- Center: Social Media -->
-      <div class="flex justify-center md:justify-end space-x-3 md:space-x-2 my-auto">
+      <div class="flex justify-center md:justify-end space-x-3 md:space-x-2 my-auto cursor-pointer">
         <a href="https://facebook.com" target="_blank" aria-label="Facebook">
           <img src="/images/svg/facebook.svg" alt="facebook">
         </a>
@@ -33,7 +33,7 @@
             :key="option.code"
             @click="switchLanguage(option.code)"
         >
-          <img :src="option.flag" :alt="option.label" class="w-6 h-6 rounded-full" />
+          <img :src="option.flag" :alt="option.label" class="w-6 h-6 rounded-full cursor-pointer" />
         </button>
       </div>
 

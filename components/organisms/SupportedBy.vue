@@ -1,5 +1,5 @@
 <template>
-  <section class="py-10 flex flex-col items-center">
+  <section class="py-10 flex flex-col items-center ">
     <h2 class="text-2xl md:text-4xl font-bold text-[#004F7C] mb-16 text-center">
       {{ t('supported_by') }}
     </h2>
@@ -57,9 +57,9 @@ const { t } = useI18n()
   },
   "ru": {
     "supported_by": "При поддержке",
-    "khatlon": "Органы исполнительной власти Хатлонской области",
-    "regional_public_formation": "Областное народное образование",
-    "agency_of_education": "Агентство инноваций и цифровых технологий",
+    "khatlon": "Исполнительный орган государственной власти Хатлонской области",
+    "regional_public_formation": "Управление образования Хатлонской области. Отделы образования городов и районов",
+    "agency_of_education": "Агентство инноваций и цифровых технологий при Президенте Республики Таджикистан",
     "jurat": "ОО Джуръат"
   },
   "tj": {

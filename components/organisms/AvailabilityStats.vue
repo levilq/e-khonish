@@ -7,7 +7,7 @@
           <img src="/images/svg/availability.svg" alt="availability" class="w-8 h-8" />
         </div>
         <h3 class="text-2xl font-extrabold text-[#2E2E2E]">{{ t("availability") }}</h3>
-        <p class="text-gray-500 mt-2 text-sm font-bold">
+        <p class="text-gray-500 mt-2 text-sm font-bold px-4">
           {{ t("availability_desc") }}
         </p>
       </div>

@@ -81,15 +81,17 @@ import { useI18n } from 'vue-i18n'
 const { t, locale, locales, setLocale } = useI18n()
 
 const flags = {
-  en: '/flags/gb.svg',
-  ru: '/flags/ru.svg',
   tj: '/flags/tj.svg',
+  ru: '/flags/ru.svg',
+  en: '/flags/gb.svg',
+
 }
 
 const labels = {
-  en: 'English',
-  ru: 'Русский',
   tj: 'Тоҷикӣ',
+  ru: 'Русский',
+  en: 'English',
+
 }
 
 const languageOptions = computed(() =>
@@ -111,7 +113,7 @@ const showModal = ref(false)
 {
   "en": {
     "footer": {
-      "tagline": "A smart digital platform for schools",
+      "tagline": "Transformation of the education system",
       "privacy_policy": "Privacy Policy",
       "all_rights": "All rights reserved"
     },
@@ -121,7 +123,7 @@ const showModal = ref(false)
   },
   "ru": {
     "footer": {
-      "tagline": "умная цифровая платформа для школ",
+      "tagline": "Трансформация системы образования",
       "privacy_policy": "Политика конфиденциальности",
       "all_rights": "Все права защищены"
     },
@@ -130,7 +132,7 @@ const showModal = ref(false)
   },
   "tj": {
     "footer": {
-      "tagline": "Платформаи рақамии муассисаҳои таълимӣ",
+      "tagline": "Ракамикунонии сохаи маориф",
       "privacy_policy": "Сиёсати махфият",
       "all_rights": "Ҳамаи ҳуқуқҳо ҳифз шудаанд"
     },

@@ -268,19 +268,19 @@ onUnmounted(() => {
     "digitalization": "digitalization",
     "innovation": "innovation",
     "transformation": "transformation",
-    "transfer_education": "e-Khonish is transforming the education system of Tajikistan by leveraging innovation, providing interactive learning and support to students and teachers, preparing them for the digital age."
+    "transfer_education": "E-Khonish is the new standard of education in Tajikistan. We implement digital solutions that make learning interactive, accessible, and effective. By supporting students and teachers, leveraging modern technologies, and focusing on digital skills, we prepare a new generation for the challenges of the 21st century."
   },
   "ru": {
     "digitalization": "Цифровизация",
     "innovation": "Инновации",
     "transformation": "Трансформация",
-    "transfer_education": "e-Khonish трансформирует систему образования Таджикистана, используя инновации, предоставляя интерактивное обучение и поддержку учащимся и учителям, готовя их к цифровой эпохе."
+    "transfer_education": "E-Khonish — это новый стандарт образования в Таджикистане. Мы внедряем цифровые решения, которые делают обучение интерактивным, доступным и эффективным. Поддержка учеников и учителей, современные технологии и фокус на цифровые навыки — всё это помогает готовить новое поколение к вызовам XXI века."
   },
   "tj": {
     "digitalization": "Рақамизатсия",
     "innovation": "Навоварй",
     "transformation": "Трансформатсия",
-    "transfer_education": "e-Khonish системаи маорифи Тоҷикистонро тавассути инноватсия табдил дода, омӯзиши интерактивӣ ва дастгирӣ ба донишҷӯён ва омӯзгоронро пешкаш намуда, онҳоро ба асри рақамӣ омода месозад"
+    "transfer_education": "E-Khonish — стандарти нави таҳсилот дар Тоҷикистон аст. Мо ҳалли рақамиро ҷорӣ мекунем, ки раванди таълимро интерактивӣ, дастрас ва самаранок мегардонанд. Дастгирии хонандагону омӯзгорон, истифодаи технологияҳои муосир ва диққати хос ба малакаҳои рақамӣ ба мо имкон медиҳанд, ки насли навро барои рӯбарӯ шудан бо монеаҳои асри XXI омода созем."
   }
 }
 </i18n>

@@ -69,6 +69,8 @@ const { t } = useI18n({
     <OrganismsPurposeSection/>
     <OrganismsPlatformFeatures/>
 
+    <OrganismsPlatforCapabilities/>
+
     <OrganismsAbout/>
 
     <OrganismsAvailabilityStats/>

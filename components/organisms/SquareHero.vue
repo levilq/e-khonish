@@ -2,14 +2,14 @@
   <section class="flex flex-col gap-y-6 relative mt-10 px-4">
     <!-- Top Row -->
     <div class="pt-12 flex flex-col md:flex-row justify-between items-center">
-      <h2 class="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E1E1E] md:text-left mb-6 md:mb-0">
+      <h2 class="text-center text-3xl sm:text-4xl md:text-4xl font-bold text-[#1E1E1E] md:text-left mb-6 md:mb-0">
         {{ t('for_who') }} <br />
         <span class="text-[#0077A3]">{{ t('platform') }}?</span>
       </h2>
       <img
           src="/images/svg/swirly-arrow.svg"
           alt="arrow"
-          class="hidden md:block absolute top-[-100px] right-[100px] w-[250px]"
+          class="hidden md:block absolute top-[-100px] right-[50px] w-[250px]"
       />
     </div>
 
@@ -145,18 +145,18 @@ const { t } = useI18n({
 
   },
   "tj": {
-    "for_who": "Низоми электронии мо барои кӣ ",
-    "platform": "пешбинӣ шудааст",
+    "for_who": "НИЗОМИ ЭЛЕКТРОНИИ МО БАРОИ КИ",
+    "platform": "ПЕШНИХ,ОД ШУДААСТ",
     "schools": "Мактабҳо",
-    "functions_for_managing": "Ҳалли ягона барои идоракунии шабакаи мактабҳо — новобаста аз он ки он минтақа, вилоят ё як муассисаи алоҳидаи таълимӣ бошад.",
-    "functions_designed": "",
+    "functions_for_managing": "ҲАЛЛИ ЯГОНА БАРОИ ИДОРАКУНИИ ШАБАКАИ МАКТАБҲО - ХОҲ МИНТАҚА, ВИЛОЯТ Ё ИН КИ ДИГАР МУАССИСАИ ТАЪЛИМИ.",
+    "functions_designed": "БАРОИ ТАШКИЛИ ТАЪЛИМ ДАР САТҲИ ШАҲРӢ Ё ИДОРАВӢ КӮМАК МЕРАСОНАД.",
     "teachers":"Муаллимон",
-    "the_system_offers": "Воситаи қулай барои банақшагирӣ, назорат ва фардикунонии таълим.",
-    "enhanced_tools": "Ҳама чиз барои осон кардани кор ва беҳтар кардани ҳамкорӣ бо волидайн муҳайё шудааст.",
+    "the_system_offers": "ВОСИТАҲОИ МУВОФИҚ БАРОИ БАНАҚШАГИРӢ,НАЗОРАТ ВА ФАРДӢКУНОНИИ ОМӮЗИШ.",
+    "enhanced_tools": "ҲАМА ЧИЗ БАРОИ ОСОН КАРДАНИ КОР ВА БЕҲТАР КАРДАНИ МУНОСИБАТ БО ВОЛИДОН.",
     "parents": "Волидайн",
-    "the_platform_helps": "Назорати мунтазам аз болои муваффақияти фарзанд, сари вақт дарёфти мушкилиҳо ва мусоидат дар ҳалли онҳо.",
+    "the_platform_helps": "ПЕШРАВИИ ФАРЗАНДИ ХУДРО НАЗОРАТ КАРДА, МУШКИЛОТРО САРИ ВАҚТ ПАЙ БАРЕД ВА КӮМАК КУНЕД. НИЗОМИ ЭЛЕКТРОНИ, ДАСТРАСИИ ШАФФОФРО БО ҲАМА ЧИЗҲОИ МУҲИМ ТАЪМИН МЕКУНАД.",
     "government_institutions": "Мақомот ва муассисаҳои давлатӣ",
-    "manage_teacher": "Назорати ҳамаҷониба аз болои раванди таълим, захираҳои инсонӣ ва низоми таҳсилот. Танзимоти фарогир барои иҷрои ҳар гуна супоришҳо"
+    "manage_teacher": "НАЗОРАТИ ПУРРА ДАР ЧАРАЁНИ ТАЪЛИМ, КАДРХО ВА ТАМОМИ НИЗОМИ МАОРИФ. ТАНЗИМОТИ ЧАНДИР БАРОИ ҲАМА ГУНА МАШКХО."
 
   }
 }

@@ -27,11 +27,11 @@
               <img class="absolute" src="/images/png/2-card-blue.png" alt="as">
 
               <div v-if="isExpanded(0) || !isLargeScreen" class="flex flex-col lg:flex-row">
-                <div class="md:mt-[100px]">
+                <div class="md:mt-[90px]">
                   <p class="text-md mt-4 font-bold">
                     {{t('e_gradebook_desc1')}}
                   </p>
-                  <p class="text-xs mt-4">
+                  <p class="text-xs mt-2">
                     {{t('e_gradebook_desc2')}}
                   </p>
                 </div>
@@ -60,7 +60,7 @@
               <img class="absolute right-0" src="/images/png/2-card-blue.png" alt="as">
               <div v-if="isExpanded(1) || !isLargeScreen" class="flex flex-col lg:flex-row">
                 <img v-if="isExpanded(1) || !isLargeScreen" class="h-[280px]  md:-ml-[70px]" src="/images/png/communication_parents.png" alt="as">
-                <div class="md:mt-[150px]">
+                <div class="md:mt-[140px]">
                   <p class="text-md mt-4 font-extrabold">
                     {{t('commun_parents_desc1')}}
                   </p>
@@ -129,7 +129,7 @@
               <img class="absolute right-0 opacity-40" src="/images/png/4-card-blue.png" alt="as">
               <div v-if="isExpanded(3) || !isLargeScreen" class="flex flex-col lg:flex-row">
                 <img v-if="isExpanded(3) || !isLargeScreen" class="h-[280px] pr-[20px]" src="/images/png/apps_img.png" alt="as">
-                <div class="md:mt-[150px]">
+                <div class="md:mt-[140px]">
                   <p class="text-md mt-4 font-extrabold">
                     {{t('integration_app_desc1')}}
                   </p>

@@ -8,7 +8,7 @@
       <!-- Item 1 -->
       <div class="flex flex-col items-center text-center w-full sm:w-[280px]">
         <img src="/images/png/tjk-gerb.png" alt="Hukumat" class="w-[80px] h-[80px] object-contain mb-4" />
-        <p class="text-md text-[#004F7C] font-black leading-snug">
+        <p class="text-md text-[#004F7C] font-black leading-snug px-4">
           {{ t('khatlon') }}
         </p>
       </div>

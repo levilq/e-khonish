@@ -8,8 +8,8 @@
     />
 
     <!-- Heading -->
-    <h2 class="text-[24px] md:text-[28px] lg:text-[48px] font-bold text-[#005A83] mt-16 capitalize">
-      {{t('why')}} <span class="text-[#005A83] font-extrabold" style="font-family: 'Montserrat', sans-serif;">E-KHONISH?</span>
+    <h2 class="text-[24px] md:text-[28px] lg:text-[48px] font-bold text-[#005A83] mt-16 ">
+      {{t('why')}} <span class="text-[#005A83] font-extrabold" style="font-family: 'Montserrat', sans-serif;">E-KHONISH?</span> {{t('choose')}}
     </h2>
 
     <!-- Description Box -->
@@ -27,19 +27,19 @@ const { t } = useI18n({
 <i18n lang="json">
 {
   "en": {
-    "why": "why",
-    "the_erp": "The ERP-based platform streamlines educational processes for all participants: students get easy access to schedules and learning materials, parents can track academic performance and their child’s development, teachers manage classes and engage with families, and administrators customize the system to meet institutional needs and ensure education quality control."
-
+    "why": "Why",
+    "the_erp": "The ERP-based platform streamlines educational processes for all participants: students get easy access to schedules and learning materials, parents can track academic performance and their child’s development, teachers manage classes and engage with families, and administrators customize the system to meet institutional needs and ensure education quality control.",
+    "choose": ""
   },
   "ru": {
     "why": "Почему выбирают",
-    "the_erp": "Платформа на базе ERP упрощает образовательные процессы для всех участников: школьники получают удобный доступ к расписанию и учебной информации, родители к успеваемости и динамике развития ребенка, учителя – к управлению занятиями и взаимодействию с семьями, а администрация – к настройке системы под нужды учреждения и контролю качества образования."
-
+    "the_erp": "Платформа на базе ERP упрощает образовательные процессы для всех участников: школьники получают удобный доступ к расписанию и учебной информации, родители к успеваемости и динамике развития ребенка, учителя – к управлению занятиями и взаимодействию с семьями, а администрация – к настройке системы под нужды учреждения и контролю качества образования.",
+    "choose": ""
   },
   "tj": {
     "why": "Чаро",
-    "the_erp": "Низоми электронии мо, ки дар асоси низоми ERP таҳия шудааст, раванди таълимро барои ҳамаи иштирокчиён осонтар мегардонад: хонандагон дастрасии қулай ба ҷадвали дарсҳо ва маводи таълимӣ доранд, волидайн натиҷаҳои таҳсил ва пешрафти фарзанди худро пайгирӣ мекунанд, муаллимон равиши таълимро идора мекунанд ва бо волидайн дар тамос мешаванд, маъмурият низомро мутобиқи эҳтиёҷоти муассиса танзим намуда, сифати таҳсилотро назорат мекунад"
-
+    "the_erp": "Низоми электронии (платформаи) ERP асосёфта равандҳои таълимиро барои ҳамаи иштирокчиён содда менамояд: Хонандагон дастрасии қулай ба ҷадвал ва иттилооти таълимӣ доранд,Волидон имконияти дидан ва пайгирии дастовардҳои таълимӣ ва динамикаи рушди фарзандашонро пайдо менамоянд, Муаллимон (омӯзгорон) бошанд ба идоракунии дарсҳо ва муошират бо оилаҳо дастрасӣ пайдо мекунанд, Маъмурият барои мутобиқсозии низом ба ниёзҳои муассиса ва назорати сифати таълим дастрасӣ пайдо мекунад.",
+    "choose": "– ро интихоб менамоянд"
   }
 }
 </i18n>

@@ -91,15 +91,15 @@ const { t } = useI18n()
     "submit": "Оставить заявку"
   },
   "tj": {
-    "headline": "Равандҳои рақамисозии мактабатонро аз имрӯз оғоз намоед!",
-    "label_name": "Номи шумо",
+    "headline": "Рақамикунонии мактабатонро аз ҳамин рӯз сар кунед",
+    "label_name": "Ном",
     "label_school": "Номи мактаб",
-    "label_email": "Почтаи электронӣ",
-    "label_phone": "Рақами телефон",
+    "label_email": "Email",
+    "label_phone": "Телефон",
     "placeholder_name": "Ному насаб",
     "placeholder_school": "Мактаби №4",
     "placeholder_phone": "+992 00 000 0000",
-    "submit": "Дархост гузоред"
+    "submit": "Дархостатонро гузоред"
   }
 }
 </i18n>

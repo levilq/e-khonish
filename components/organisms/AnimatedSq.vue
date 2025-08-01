@@ -178,13 +178,13 @@ onUnmounted(() => {
       <Transition name="slide-in">
         <div v-if="showTransformation"
              class="absolute z-50 bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-br from-[#C8F26D] to-[#FFA41B] rounded-[40px] shadow-xl p-6 flex flex-col justify-between">
-          <p class="text-sm text-[#004F7C] font-semibold leading-relaxed mt-10">
+          <p class="text-sm text-[#004F7C] font-semibold leading-relaxed ">
             {{ t('transfer_education') }}
           </p>
           <div
-              class="self-end w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer"
+              class="self-end w-10 h-10 rounded-full border border-white flex-none items-center justify-center cursor-pointer"
               @click="toggleTransformation">
-            <img src="/images/svg/arrow.svg" class="w-4 h-4 rotate-45" alt="arrow"/>
+            <img src="/images/svg/arrow.svg" class="w-4 h-4 rotate-45 mt-3 ml-3" alt="arrow"/>
           </div>
         </div>
       </Transition>
@@ -280,7 +280,7 @@ onUnmounted(() => {
     "digitalization": "Рақамисозӣ",
     "innovation": "Навоварй",
     "transformation": "Тағйирёбӣ",
-    "transfer_education": "E-Khonish — стандарти нави таҳсилот дар Тоҷикистон аст. Мо ҳалли рақамиро ҷорӣ мекунем, ки раванди таълимро интерактивӣ, дастрас ва самаранок мегардонанд. Дастгирии хонандагону омӯзгорон, истифодаи технологияҳои муосир ва диққати хос ба малакаҳои рақамӣ ба мо имкон медиҳанд, ки насли навро барои рӯбарӯ шудан бо монеаҳои асри XXI омода созем."
+    "transfer_education": "E-Khonish — стандарти нави таълим дар Тоҷикистон. Мо тарзҳои ҳалли рақамие ворид менамоем, ки таълимро интерактивӣ, дастрас ва самаранок мекунад. Дастгирии талабагон ва муаллимон, технологияҳои муосир ва таваҷҷуҳ ба малакаҳои рақамӣ — ҳамаи ин барои омода намудани насли нав ба даъватҳои асри ХХ1 ёрӣ мерасонад."
   }
 }
 </i18n>

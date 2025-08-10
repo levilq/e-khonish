@@ -266,8 +266,8 @@ onUnmounted(() => {
 {
   "en": {
     "digitalization": "digitalization",
-    "innovation": "innovation",
-    "transformation": "transformation",
+    "innovation": "Innovations",
+    "transformation": "Evolutionary education",
     "transfer_education": "E-Khonish is the new standard of education in Tajikistan. We implement digital solutions that make learning interactive, accessible, and effective. By supporting students and teachers, leveraging modern technologies, and focusing on digital skills, we prepare a new generation for the challenges of the 21st century."
   },
   "ru": {

@@ -115,18 +115,18 @@ const { t } = useI18n({
 <i18n lang="json">
 {
   "en": {
-    "for_who": "For who our",
+    "for_who": "Who can use our",
     "platform": "platform",
     "schools": "schools",
-    "functions_for_managing": "Functions for managing a network of educational institutions, districts, or prefectures where schools are located.",
-    "functions_designed": "Functions designed to organize the educational process by departmental and municipal educational authorities.",
+    "functions_for_managing": "Functions for managing networks of educational institutions across districts and prefectures.",
+    "functions_designed": "Tools designed to streamline the educational process for departmental and municipal authorities.",
     "teachers":"teachers",
-    "the_system_offers": "The system offers a comprehensive set of features for convenient and efficient work of educators in educational institutions.",
-    "enhanced_tools": "Enhanced tools for learning control and planning, personalization of certain teaching processes, and opportunities for collaboration with parents.",
+    "the_system_offers": "The system provides a comprehensive set of features to support educators’ efficient and convenient work in educational institutions.",
+    "enhanced_tools": "Advanced tools for monitoring learning progress and planning, personalization of teaching processes, and enhanced opportunities for collaboration with parents.",
     "parents": "parents",
     "the_platform_helps": "The platform helps track children's progress, identify weak areas, and provide timely guidance, support, and assistance through parental involvement and continuous monitoring of all key processes.",
     "government_institutions": "government institutions",
-    "manage_teacher": "Manage teacher workflows, the educational process, and the entire student lifecycle through administrative rights granted to school leadership, with the ability to configure all available and additional features."
+    "manage_teacher": "Manage teacher workflows, the educational process, and the full student lifecycle through administrative rights granted to school leadership — with flexible configuration of all core and optional features."
 
   },
   "ru": {

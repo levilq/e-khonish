@@ -49,7 +49,7 @@ const { t } = useI18n()
 <i18n lang="json">
 {
   "en": {
-    "supported_by": "Is supported by",
+    "supported_by": "Made possible by",
     "khatlon": "Executive authorities of Khatlon region",
     "regional_public_formation": "Regional public formation",
     "agency_of_education": "Agency of innovationsand digital technologies",

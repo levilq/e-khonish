@@ -28,7 +28,7 @@ const { t } = useI18n({
 {
   "en": {
     "why": "Why",
-    "the_erp": "The ERP-based platform streamlines educational processes for all participants: students get easy access to schedules and learning materials, parents can track academic performance and their child’s development, teachers manage classes and engage with families, and administrators customize the system to meet institutional needs and ensure education quality control.",
+    "the_erp": "The ERP-based platform streamlines educational processes for all participants: Students gain easy access to schedules and learning materials; Parents can monitor academic performance and track their child’s development; Teachers manage classes and collaborate with families; Administrators customize the system to meet institutional needs and ensure quality control.",
     "choose": ""
   },
   "ru": {

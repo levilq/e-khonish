@@ -161,12 +161,12 @@ section[id] {
 {
   "en": {
     "digitalization": "digitalization",
-    "innovation": "innovation",
-    "transformation": "transformation",
-    "smart": "smart",
-    "digital_platform": "digital platform",
+    "innovation": "innovations",
+    "transformation": "Evolutionary education",
+    "smart": "digital",
+    "digital_platform": "educational platform",
     "for_school": "for schools",
-    "automate_management": "Automate management, accelerate processes, engage students and parents",
+    "automate_management": "Control, accelerate and involve",
     "let_try": "Let’s try"
   },
   "ru": {

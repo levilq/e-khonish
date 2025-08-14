@@ -93,7 +93,7 @@ const testimonials = [
   "en": {
     "what_schools_say": "What schools say",
     "about_platform": "about platform",
-    "platform_is_already": "The platform is already helping schools across the country simplify management, increase control, and improve communication with parents. School leaders note the convenience, transparency, and real time savings — all of which allows them to focus on the most important thing: the quality of education",
+    "platform_is_already": "The platform is already helping schools across the country simplify management, increase control, and improve communication with parents. School leaders highlight its convenience, transparency, and significant time savings — all of which allow them to focus on what matters most: the quality of education",
     "name_1": "Karimov Siyovush",
     "speciality_1": "Biology teacher",
     "testimonial_1": "EKhonish is an electronic and centralized educational system designed to improve student learning and provide full control over the educational process in schools. This application allows schools, teachers and parents to easily and transparently monitor and manage educational activities",
@@ -103,11 +103,11 @@ const testimonials = [
     "name_3": "Yusupova Ashurmokh",
     "speciality_3": "Primary school teacher",
     "testimonial_3": "Easy communication between school, student and parents: All messages and notifications regarding student learning and behavior are available in the app. Access from anywhere and at any time. The app works on phones, tablets and computers, allowing students and parents to access information and lessons.Digital and efficient: Teaching and monitoring are done electronically without the use of paper documents, saving time for teachers and administrators",
-    "name_4": "Yorov Khursand",
-    "speciality_4": "School director",
+    "name_4": "Darveshova Zulhija",
+    "speciality_4": "School director №2",
     "testimonial_4": "Provides precise and transparent control of the educational process. This contributes to improving the quality of education and the effectiveness of learning. Supports the activity and awareness of parents in matters of their children's education. It integrates and facilitates education using modern technologies",
-    "name_5": "Shamsuddinova Mijgona",
-    "speciality_5": "History and law teacher",
+    "name_5": "Abiev Suhrob",
+    "speciality_5": "Geography teacher",
     "testimonial_5": "EKhonish is a modern and necessary tool for children's cognitive development. This program not only makes reading easier, but also creates an exciting environment for learning Tajik and world books. With this program, students can expand their knowledge and increase their interest in reading. E-learning is an important step towards digitalization of education in Tajikistan"
 
   },
@@ -124,11 +124,11 @@ const testimonials = [
     "name_3": "Юсупова Ашурмох",
     "speciality_3": "Учительница начальных классов",
     "testimonial_3": "Легкое общение между школой, учеником и родителями: Все сообщения и уведомления, касающиеся обучения и поведения учащихся, доступны в приложении. Доступ из любой точки мира и в любое время. Приложение работает на телефонах, планшетах и компьютерах, позволяя учащимся и родителям получать доступ к информации и урокам.Цифровой и эффективный: Обучение и контроль осуществляются в электронном виде без использования бумажных документов, что экономит время преподавателей и администраторов",
-    "name_4": "Ёров Хурсанд",
-    "speciality_4": "Директор школы",
+    "name_4": "Дарвешова Зулхиджа",
+    "speciality_4": "Директр МТМУ №2",
     "testimonial_4": "Обеспечивает точный и прозрачный контроль образовательного процесса. Это способствует повышению качества образования и эффективности обучения. Поддерживает активность и информированность родителей в вопросах образования их детей. Он интегрирует и облегчает образование с использованием современных технологий",
-    "name_5": "Шамсуддинова Миджгона",
-    "speciality_5": "Учительница истории и права",
+    "name_5": "Абдиев Сухроб",
+    "speciality_5": "Учитель географии",
     "testimonial_5": "EKhonish — современный и необходимый инструмент для когнитивного развития детей. Эта программа не только облегчает чтение, но и создает увлекательную среду для изучения таджикских и мировых книг. Благодаря этой программе учащиеся могут расширить свои знания и повысить интерес к чтению. Электронное обучение является важным шагом на пути цифровизации образования в Таджикистане"
 
   },
@@ -145,11 +145,11 @@ const testimonials = [
     "name_3": "Юсуфова Ашӯрмоҳ",
     "speciality_3": "муаллимаи синфҳои ибтидоӣ",
     "testimonial_3": "Муоширати осони байни мактаб, талаба ва падару модар: Ҳамаи хабар ва огоҳии марбут ба таълим ва рафтори талабагон дар замима дастрас аст. Дастрасии ҳамавақтӣ аз ҳамаи гӯшаи ҷаҳон. Замима дар телефонҳо, планшетҳо ва компютерҳо кор мекунад, ба талабагон ва падару модарон имконияти дастрасӣ ба иттилоот ва дарсҳоро фароҳам меоварад. Рақамӣ ва самаранок: Таълим ва назорат дар шакли электронӣ, бе истифодаи ҳуҷҷатҳои коғазӣ амалӣ карда мешавад, ки вақти муаллимон ва маъмуронро сарфа менамояд.",
-    "name_4": "Ёров Хурсанд",
-    "speciality_4": "директори мактаб",
+    "name_4": "Дарвешова Зулҳиҷа",
+    "speciality_4": "Директр МТМУ №2",
     "testimonial_4": "Назорати дақиқ ва шаффофи раванди таълимро таъмин менамояд. Ин ба баланд шудани сифат васамаранокии таълим мсоидат менамояд. Фаъолнокӣ ва огоҳии падару модаронро дар масъалаҳои таълими фарзандонашон дастгирӣ мекунад. Он тавассути истифодаи технологияҳои ҳозиразамон таълимро ҳамгиро ва осон менамояд.",
-    "name_5": "Шамсуддинова Мидҷгона",
-    "speciality_5": "маллимаи таърих ва ҳуқуқ",
+    "name_5": "Абдиев Суҳроб",
+    "speciality_5": "омузгори фанни география",
     "testimonial_5": "EKhonish абзори ҳозиразамон ва зарурии рушди когнитивии кӯдакон мебошад. Ин барнома натанҳо хонданро осон мекунад, балки барои омӯзиши китобҳои тоҷикӣ ва хориҷӣ муҳити ҷолиб ба вуҷуд меоварад. Талабагон ба туфайли ин барнома метавонанд дониши худро васеъ ва шавқи худро ба хондан зиёд намоянд. Таълими электронӣ қадами мҳим дар роҳи рақамикунонии таълим дар Тоҷикистон мебошад."
 
   }

@@ -1,2 +1,18 @@
 User-Agent: *
-Disallow:
+Allow: /
+
+# Разрешить все для основных поисковых роботов
+User-Agent: Googlebot
+Allow: /
+
+User-Agent: Yandexbot
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+
+# Указать путь к карте сайта
+Sitemap: https://e-khonish.tj/sitemap.xml
+
+# Время ожидания между запросами (в секундах)
+Crawl-delay: 1

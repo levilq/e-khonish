@@ -30,3 +30,16 @@
 }
 
 /* Repeat for UltraBold, UltraLight, etc. */
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+a[href^="#"] {
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}

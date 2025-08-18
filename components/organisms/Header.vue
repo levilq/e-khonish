@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n({
-  useScope: 'local'
-})
+  useScope: "local",
+});
 </script>
 <i18n lang="json">
 {
@@ -23,18 +23,16 @@ const { t } = useI18n({
       <img src="/images/png/logo.png" alt="eKhonish logo" class="h-10 w-auto" />
     </div>
 
-    <MoleculesMenuBar/>
-    <MoleculesNavbar class="hidden md:flex"/>
+    <MoleculesMenuBar />
+    <MoleculesNavbar class="hidden md:flex" />
     <!-- Language + Login -->
     <div class="hidden md:flex items-center gap-6">
       <MoleculesLanguageSwitcher />
-      <AtomsButtonsPrimary>
-        {{t('login')}}
-      </AtomsButtonsPrimary>
+      <!-- <AtomsButtonsPrimary>
+          {{ t("login") }}
+        </AtomsButtonsPrimary> -->
     </div>
   </header>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

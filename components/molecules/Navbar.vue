@@ -1,24 +1,43 @@
 <script setup lang="ts">
-import {useI18n} from "vue-i18n";
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n({ useScope: 'local' })
-
+const { t } = useI18n({ useScope: "local" });
 </script>
 
 <template>
   <!-- Navigation Links -->
-  <div class="flex  items-center gap-6 text-base font-bold text-black capitalize ">
-    <a href="#" class="hover:text-blue-400">{{ t('features') }}</a>
-    <a href="#" class="hover:text-blue-400">{{ t('capabilities') }}</a>
-    <a href="#" class="hover:text-blue-400">{{ t('who_is_it_for') }}</a>
-    <a href="#" class="hover:text-blue-400">{{ t('presentation') }}</a>
-    <a href="#" class="hover:text-blue-400">{{ t('contacts') }}</a>
+  <div
+    class="flex items-center gap-6 text-base font-bold text-black capitalize"
+  >
+    <a
+      href="#features"
+      class="hover:text-blue-400 transition-colors duration-200"
+      >{{ t("features") }}</a
+    >
+    <a
+      href="#capabilities"
+      class="hover:text-blue-400 transition-colors duration-200"
+      >{{ t("capabilities") }}</a
+    >
+    <a
+      href="#about"
+      class="hover:text-blue-400 transition-colors duration-200"
+      >{{ t("who_is_it_for") }}</a
+    >
+    <a
+      href="#about"
+      class="hover:text-blue-400 transition-colors duration-200"
+      >{{ t("presentation") }}</a
+    >
+    <a
+      href="#contacts"
+      class="hover:text-blue-400 transition-colors duration-200"
+      >{{ t("contacts") }}</a
+    >
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
 
 <i18n lang="json">
 {

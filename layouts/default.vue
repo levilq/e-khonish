@@ -21,7 +21,7 @@
 
     <!-- Main container -->
     <div class="relative z-10 container mx-auto max-w-[1128px]">
-      <OrganismsHeader class="mx-3 md:mx-0" />
+      <OrganismsHeader class="fixed top-0 mx-3 md:mx-0 " />
       <slot />
       <OrganismsFooterSection />
     </div>

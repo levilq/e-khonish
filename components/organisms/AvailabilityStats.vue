@@ -108,9 +108,9 @@ const { t } = useI18n({ useScope: 'local' })
   },
   "tj": {
     "availability": "Фаъол",
-    "availability_desc": "Платформа барои сокинони вилояти Хатлон дастрас аст ",
-    "connected_schools": "мактаб пайваст карда шудаанд",
-    "registered_accounts": "аккаунт ба қайд гирифта шудаанд"
+    "availability_desc": "Низом барои сокинони вилояти Хатлон дастрас аст ",
+    "connected_schools": "муассисаҳои таълимӣ пайваст карда шудаанд",
+    "registered_accounts": "саҳифа ба қайд гирифта шудаанд"
   }
 }
 </i18n>

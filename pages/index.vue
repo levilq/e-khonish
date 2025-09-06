@@ -13,19 +13,19 @@ const { setPageSEO, generateWebSiteSchema, generateSoftwareApplicationSchema } =
 const titles = {
   ru: "E-Khonish - Умная цифровая платформа для школ Таджикистана",
   en: "E-Khonish - Smart Digital Platform for Schools in Tajikistan",
-  tj: "E-Khonish - Платформаи ҳушманди рақамӣ барои мактабҳои Тоҷикистон",
+  tj: "E-Khonish - Низоми ҳушманди рақамӣ барои муассисаҳои таълимии Тоҷикистон",
 };
 
 const descriptions = {
   ru: "Автоматизируйте управление школой с E-Khonish. Цифровая платформа для управления учебным процессом, вовлечения учеников и родителей в Таджикистане.",
   en: "Automate school management with E-Khonish. Digital platform for educational process management, engaging students and parents in Tajikistan.",
-  tj: "Идоракунии мактабро бо E-Khonish автоматӣ кунед. Платформаи рақамӣ барои идоракунии раванди таълимӣ, ҷалби донишҷӯён ва падару модарон дар Тоҷикистон.",
+  tj: "Идоракунии муассисаҳои таълимиро бо E-Khonish автоматӣ кунед. Низоми рақамӣ барои идоракунии раванди таълимӣ, ҷалби хонандагон ва волидайн дар Тоҷикистон.",
 };
 
 const keywords = {
   ru: "образование, школа, цифровизация, Таджикистан, управление школой, электронный дневник, автоматизация",
   en: "education, school, digitalization, Tajikistan, school management, electronic diary, automation",
-  tj: "маориф, мактаб, рақамикунонӣ, Тоҷикистон, идоракунии мактаб, рӯзномаи электронӣ, автоматикунонӣ",
+  tj: "маориф, муассисаҳои таълимӣ, рақамикунонӣ, Тоҷикистон, идоракунии муассисаҳои таълимӣ, рӯзномаи электронӣ, автоматикунонӣ",
 };
 
 const structuredData = [
@@ -43,7 +43,7 @@ setPageSEO({
 </script>
 
 <template>
-  <div class="w-full md:py-9">
+  <div class="w-full mt-16 md:py-9">
     <!-- Outer Wrapper: Centering the whole grid -->
     <!-- Wrapper: Make sure it’s full width and centers its content -->
     <div class="w-full px-4">
@@ -180,14 +180,14 @@ section[id] {
     "let_try": "Попробовать платформу"
   },
   "tj": {
-    "digitalization": "Рақамизатсия",
-    "innovation": "Навоварй",
+    "digitalization": "Рақамикунонӣ",
+    "innovation": "Навоварӣ",
     "transformation": "Трансформатсия",
-    "smart": "платформаи",
+    "smart": "низоми",
     "digital_platform": "ҳушманди рақамӣ",
-    "for_school": "барои мактабҳо",
-    "automate_management": "Идоракуниро автоматӣ кунед, равандҳоро суръат бахшед, талабагон ва падару модаронро ҷалб намоед",
-    "let_try": "Талаб кардани намоиш"
+    "for_school": "барои муассисаҳои таълимӣ",
+    "automate_management": "Идоракуниро автоматӣ кунед, равандҳоро суръат бахшед, хонандагон ва волидайнро ҷалб намоед",
+    "let_try": "Дидан кардан"
   }
 }
 </i18n>

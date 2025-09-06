@@ -7,7 +7,7 @@ const { t } = useI18n({ useScope: "local" });
 <template>
   <!-- Navigation Links -->
   <div
-    class="flex items-center gap-6 text-base font-bold text-black capitalize"
+    class="flex items-center gap-6 text-base font-bold text-black capitalize "
   >
     <a
       href="#features"

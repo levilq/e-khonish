@@ -63,8 +63,8 @@
 
             <div class="text-sm text-black space-y-4 leading-relaxed px-2">
               <p>{{ t("privacy_content_1") }}</p>
-              <p>{{ t("privacy_content_2") }}</p>
-              <p>{{ t("privacy_content_3") }}</p>
+<!--              <p>{{ t("privacy_content_2") }}</p>-->
+<!--              <p>{{ t("privacy_content_3") }}</p>-->
               <!-- Add more paragraphs as needed -->
             </div>
           </div>
@@ -113,6 +113,7 @@ const showModal = ref(false)
 {
   "en": {
     "footer": {
+      "privacy_title": "Privacy Policy",
       "tagline": "Transformation of the education system",
       "privacy_policy": "Privacy Policy",
       "all_rights": "All rights reserved"
@@ -123,6 +124,7 @@ const showModal = ref(false)
   },
   "ru": {
     "footer": {
+      "privacy_title": "Политика конфиденциальности",
       "tagline": "Трансформация системы образования",
       "privacy_policy": "Политика конфиденциальности",
       "all_rights": "Все права защищены"
@@ -132,7 +134,8 @@ const showModal = ref(false)
   },
   "tj": {
     "footer": {
-      "tagline": "Ракамикунонии сохаи маориф",
+      "privacy_title": "Сиёсати махфият",
+      "tagline": "Рақамикунонии соҳаи маориф",
       "privacy_policy": "Сиёсати махфият",
       "all_rights": "Ҳамаи ҳуқуқҳо ҳифз шудаанд"
     },

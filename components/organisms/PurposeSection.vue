@@ -9,7 +9,7 @@
 
     <!-- Heading -->
     <h2 class="text-[24px] md:text-[28px] lg:text-[48px] font-bold text-[#005A83] mt-16 ">
-      {{t('why')}} <span class="text-[#005A83] font-extrabold" style="font-family: 'Montserrat', sans-serif;">E-KHONISH?</span> {{t('choose')}}
+      {{t('why')}} <span class="text-[#005A83] font-extrabold" style="font-family: 'Montserrat', sans-serif;">E-KHONISH</span> {{t('choose')}}?
     </h2>
 
     <!-- Description Box -->

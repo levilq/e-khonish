@@ -2,7 +2,7 @@
   <div class="max-w-[1128px] mx-auto p-4">
     <h2 class="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E1E1E] md:text-left mb-6 md:mb-0">
       {{ t('possibilities') }} <br />
-      <span class="text-[#0077A3]">{{ t('platformss') }}?</span>
+      <span class="text-[#0077A3]">{{ t('platforms') }}?</span>
     </h2>
     <div class="space-y-4 mt-10">
       <!-- Row 1 -->
@@ -29,10 +29,10 @@
               <div v-if="isExpanded(0) || !isLargeScreen" class="flex flex-col lg:flex-row">
                 <div class="md:mt-[90px]">
                   <p class="text-md mt-4 font-bold">
-                    {{t('e_gradebook_desc1')}}
+                    {{t('landing_page_paragraph_14')}}
                   </p>
                   <p class="text-xs mt-2">
-                    {{t('e_gradebook_desc2')}}
+                    {{t('landing_page_paragraph_15')}}
                   </p>
                 </div>
                 <img v-if="isExpanded(0) || !isLargeScreen" class="h-[280px] -mr-9" src="/images/png/electronic-gradebook.png" alt="as">
@@ -56,16 +56,16 @@
           >↗</button>
           <Transition name="fade" mode="out-in">
             <div key="card-1">
-              <h2 class="text-3xl font-bold mt-5 text-right">{{t('commun_parents')}}</h2>
+              <h2 class="text-3xl font-bold mt-5 text-right">{{t('parents_visibility')}}</h2>
               <img class="absolute right-0" src="/images/png/2-card-blue.png" alt="as">
               <div v-if="isExpanded(1) || !isLargeScreen" class="flex flex-col lg:flex-row">
                 <img v-if="isExpanded(1) || !isLargeScreen" class="h-[280px]  md:-ml-[70px]" src="/images/png/communication_parents.png" alt="as">
                 <div class="md:mt-[140px]">
                   <p class="text-md mt-4 font-extrabold">
-                    {{t('commun_parents_desc1')}}
+                    {{t('landing_page_paragraph_18')}}
                   </p>
                   <p class="text-xs mt-4">
-                    {{t('commun_parents_desc2')}}
+                    {{t('landing_page_paragraph_19')}}
                   </p>
                 </div>
 
@@ -98,10 +98,10 @@
               <div v-if="isExpanded(2) || !isLargeScreen" class="flex flex-col lg:flex-row z-10">
                 <div class="md:mt-[100px]">
                   <p class="text-md mt-4 font-bold">
-                    {{t('e_library_desc1')}}
+                    {{t('landing_page_paragraph_16')}}
                   </p>
                   <p class="text-xs mt-4">
-                    {{t('e_library_desc2')}}
+                    {{t('landing_page_paragraph_17')}}
                   </p>
                 </div>
                 <img v-if="isExpanded(2) || !isLargeScreen" class="h-[280px] -mr-9" src="/images/png/e-library.png" alt="as">
@@ -131,11 +131,9 @@
                 <img v-if="isExpanded(3) || !isLargeScreen" class="h-[280px] pr-[20px]" src="/images/png/apps_img.png" alt="as">
                 <div class="md:mt-[140px]">
                   <p class="text-md mt-4 font-extrabold">
-                    {{t('integration_app_desc1')}}
+                    {{t('landing_page_paragraph_20')}}
                   </p>
-                  <p class="text-xs mt-4">
-                    {{t('integration_app_desc2')}}
-                  </p>
+
                 </div>
 
               </div>
@@ -148,8 +146,9 @@
 </template>
 
 <script setup lang="ts">
+import { globalTranslate as t } from 'assets/js/language'
+
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-const { t } = useI18n()
 const expandedCard = ref(0)
 const isLargeScreen = ref(false)
 
@@ -195,55 +194,3 @@ onBeforeUnmount(() => {
   opacity: 0;
 }
 </style>
-<i18n lang="json">
-{
-  "en": {
-    "possibilities": "Platform",
-    "platformss": "capabilities",
-    "e_gradebook": "Electronic gradebook and diary. Online homework assignments",
-    "e_gradebook_desc1": "Everything at your fingertips — grades, assignments, teacher comments.",
-    "e_gradebook_desc2": "No more searching for the paper diary or trying to remember what was assigned. All grades and tasks are just one click away.",
-    "e_library": "Electronic library",
-    "e_library_desc1": "Textbooks, manuals, and learning resources — always at your fingertips.",
-    "e_library_desc2": "No need to carry heavy books or search for materials. Everything you need for studying is just a click away.",
-    "commun_parents": "Full Visibility for Parents",
-    "commun_parents_desc1": "Parents stay informed about everything",
-    "commun_parents_desc2": "Real-time updates on attendance, behavior, and academic performance — no surprises at parent-teacher meetings.",
-    "integration_app": "Integration with Ministry of Education systems",
-    "integration_app_desc1": "Mobile app for parents and students",
-    "integration_app_desc2": ""
-  },
-  "ru": {
-    "possibilities": "Возможности",
-    "platformss": "платформы",
-    "e_gradebook": "Электронный журнал и дневник. Домашние задания онлайн",
-    "e_gradebook_desc1": "Все под рукой - оценки, задания, комментарии учителей",
-    "e_gradebook_desc2": "Больше не нужно искать бумажный дневник или вспоминать, что задали. Все оценки и задания - в одном клике.",
-    "e_library": "Электронная библиотека",
-    "e_library_desc1": "Учебники и книги - всегда с собой",
-    "e_library_desc2": "Цифровая библиотека позволяет получать доступ к нужным материалам из любого устройства. Не нужно таскать тяжелый рюкзак!",
-    "commun_parents": "Коммуникация с родителями",
-    "commun_parents_desc1": "Родители в курсе всего",
-    "commun_parents_desc2": "Посещаемость, поведение, успеваемость - родители получают уведомления в реальном времени. Без сюрпризов на родительском собрании.",
-    "integration_app": "Интеграция с системами Министерства Образования",
-    "integration_app_desc1": "Мобильное приложение для родителей/учеников",
-    "integration_app_desc2": ""
-  },
-  "tj": {
-    "possibilities": "Имкониятҳои асосии",
-    "platformss": "низоми электронӣ",
-    "e_gradebook": "Журнали синфӣ ва рӯзномаи электронӣ/Вазифаи хонагии онлайн",
-    "e_gradebook_desc1": "Ҳама чиз дар зери даст – баҳоҳо, вазифаҳо, шарҳҳои омӯзгорон",
-    "e_gradebook_desc2": "Дигар ҷустуҷӯ кардани журнали коғазӣ ва ба ёд овардани вазифаҳо лозим намешавад. Ҳамаи баҳоҳо ва вазифаҳо – дар як зер.",
-    "e_library": "Китобхонаи электронӣ",
-    "e_library_desc1": "Китобҳои дарсӣ ва китобҳои дигар – ҳамеша бо худ",
-    "e_library_desc2": "Китобхонаи рақамӣ барои дастрасӣ пайдо кардан ба маводи лозимӣ аз ҳар гуна дастгоҳ имконият фароҳам меоварад. Кофтани дарсхалтаи вазнин лозим намешавад!",
-    "commun_parents": "Алоқа бо волидайн",
-    "commun_parents_desc1": "Волидайн ҳамаашро медонанд",
-    "commun_parents_desc2": "Иштирок дар дарсҳо, рафтор, муваффақият дар таҳсил – волидайн маълумотро ҳамон замон мегиранд. Бе ягон хабари ногаҳонӣ дар маҷлис.",
-    "integration_app": "Ҳамгироӣ бо низомҳои Вазорат",
-    "integration_app_desc1": "Замимаи мобилӣ барои волидайн/хонандагон",
-    "integration_app_desc2": ""
-  }
-}
-</i18n>

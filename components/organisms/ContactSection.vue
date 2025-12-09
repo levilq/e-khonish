@@ -5,7 +5,7 @@
         class="text-3xl lg:text-5xl mb-8 text-center leading-snug font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#005A83] to-[#FF9D00]"
         style="font-family: 'Montserrat', sans-serif"
       >
-        {{ t("headline") }}
+        {{ t("start_digitalizing_your_school_today") }}
       </h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[45px] items-start">
@@ -133,7 +133,8 @@
 </template>
 
 <script setup>
-const { t } = useI18n();
+import { globalTranslate as t } from 'assets/js/language'
+
 const { submitRequest, isSubmitting, error, success, resetForm } =
   useLandingRequest();
 const { validatePhoneNumber, applyPhoneMask, preventLongInput } =
@@ -213,64 +214,3 @@ const handleSubmit = async (event) => {
 };
 </script>
 
-<i18n lang="json">
-{
-  "en": {
-    "headline": "Start digitalizing your school today",
-    "label_name": "Full Name",
-    "label_school": "School",
-    "label_email": "Email",
-    "label_phone": "Phone",
-    "placeholder_name": "Your full name",
-    "placeholder_school": "School No. 4",
-    "placeholder_phone": "+992 00 000 0000",
-    "submit": "Submit Request",
-    "submitting": "Submitting...",
-    "success_message": "Your request has been successfully submitted!",
-    "field_required": "This field is required",
-    "invalid_email": "Please enter a valid email address",
-    "invalid_phone": "Please enter a valid phone number (+992000000000)",
-    "validation_error": "Please check the form and try again",
-    "server_error": "Server error. Please try again later",
-    "network_error": "Network error. Please check your connection"
-  },
-  "ru": {
-    "headline": "Начните цифровизацию вашей школы уже сегодня",
-    "label_name": "ФИО",
-    "label_school": "Название школы",
-    "label_email": "E-mail",
-    "label_phone": "Телефон",
-    "placeholder_name": "ФИО",
-    "placeholder_school": "Школа №4",
-    "placeholder_phone": "+992 00 000 0000",
-    "submit": "Оставить заявку",
-    "submitting": "Отправка...",
-    "success_message": "Ваша заявка успешно отправлена!",
-    "field_required": "Это поле обязательно для заполнения",
-    "invalid_email": "Введите корректный email адрес",
-    "invalid_phone": "Введите корректный номер телефона (+992000000000)",
-    "validation_error": "Проверьте форму и попробуйте снова",
-    "server_error": "Ошибка сервера. Попробуйте позже",
-    "network_error": "Ошибка сети. Проверьте подключение"
-  },
-  "tj": {
-    "headline": "Рақамикунонии муассисаи таълимиро аз ҳамин рӯз сар кунед",
-    "label_name": "Ном",
-    "label_school": "Номи муассисаи таълимӣ",
-    "label_email": "Email",
-    "label_phone": "Телефон",
-    "placeholder_name": "Ному насаб",
-    "placeholder_school": "Муассисаи таълимии №4",
-    "placeholder_phone": "+992 00 000 0000",
-    "submit": "Дархостатонро гузоред",
-    "submitting": "Ирсол...",
-    "success_message": "Дархостатон бо муваффақият ирсол шуд!",
-    "field_required": "Ин майдон зарур аст",
-    "invalid_email": "Email-и дурустро ворид кунед",
-    "invalid_phone": "Рақами телефони дурустро ворид кунед (+992000000000)",
-    "validation_error": "Формаро санҷед ва боз кӯшиш кунед",
-    "server_error": "Хатои сервер. Баъдтар кӯшиш кунед",
-    "network_error": "Хатои шабака. Пайвастшавиро санҷед"
-  }
-}
-</i18n>

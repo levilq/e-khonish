@@ -19,7 +19,6 @@ interface LandingRequestResponse {
 }
 
 export const useLandingRequest = () => {
-  const { t } = useI18n()
 
   const isSubmitting = ref(false)
   const error = ref<string | null>(null)

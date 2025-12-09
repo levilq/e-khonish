@@ -1,78 +1,164 @@
+<script setup lang="ts">
+import { ref, onMounted, computed } from 'vue'
+import { actions, state } from "assets/js/language"
+
+const open = ref(false)
+const hydrated = ref(false)
+const currentLang = ref<string>('lang_32')
+
+const languages = {
+  lang_32: { code: 'lang_32', label: 'Тоҷикӣ', flag: '/flags/tj.svg' },
+  lang_33: { code: 'lang_33', label: 'Рус', flag: '/flags/ru.svg' },
+  english: { code: 'english', label: 'Eng', flag: '/flags/gb.svg' }
+} as const
+
+const detectLang = (): string => {
+  if (typeof window === 'undefined') return 'lang_32'
+  const saved =
+      localStorage.getItem('lang') ||
+      localStorage.getItem('language') ||
+      localStorage.getItem('currentLang')
+  return saved && saved in languages ? saved : 'lang_32'
+}
+
+const toggleDropdown = () => (open.value = !open.value)
+
+const switchLanguage = async (code: string) => {
+  if (!languages[code as keyof typeof languages]) return
+  if (code === currentLang.value) return
+
+  localStorage.setItem('lang', code)
+  currentLang.value = code
+  open.value = false
+  await loadLanguageWords(code)
+}
+
+const currentFlag = computed(
+    () =>
+        languages[currentLang.value as keyof typeof languages]?.flag ??
+        '/flags/gb.landing'
+)
+const languageOptions = computed(() =>
+    Object.values(languages).filter(l => l.code !== currentLang.value)
+)
+
+const loadLanguageWords = async (code: string) => {
+  if (state.selectLang === code && state.loading > 0) return
+
+  state.selectLang = code
+  state.loading = 1
+
+  await Promise.all([
+    actions.GET_LANGUAGE_WORDS(code, 'start_screen'),
+  ])
+
+  state.loading = 2
+}
+
+onMounted(async () => {
+  const detected = detectLang()
+  currentLang.value = detected
+  await loadLanguageWords(detected)
+
+  hydrated.value = true
+})
+</script>
+
 <template>
-  <div class="relative inline-block ">
-    <!-- Trigger button (flag + caret on right) -->
-    <button @click="toggleDropdown" class="flex items-center gap-1 cursor-pointer">
-      <img :src="currentFlag" class="w-6 h-6 rounded-full" alt="Flag"/>
+  <div v-if="hydrated" class="lang-wrapper">
+    <button class="lang-button" @click="toggleDropdown">
+      <img :src="currentFlag" alt="flag" class="flag" />
+
       <svg
           v-if="!open"
-          class="w-5 h-5 text-gray-500 ml-1"
-          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="#333"
           viewBox="0 0 24 24"
-          stroke="currentColor"
       >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        <path d="M12 16l-6-6h12z" />
       </svg>
       <svg
           v-else
-          class="w-5 h-5 text-gray-500 ml-1"
-          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="#333"
           viewBox="0 0 24 24"
-          stroke="currentColor"
       >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        <path d="M12 8l6 6H6z" />
       </svg>
     </button>
 
-    <!-- Dropdown -->
-    <div v-if="open" class="absolute mt-2 flex flex-col gap-2 z-50">
+    <div v-if="open" class="lang-dropdown">
       <div
-          v-for="option in languageOptions"
-          :key="option.code"
-          @click="switchLanguage(option.code)"
-          class="flex items-center gap-2 cursor-pointer"
+          v-for="opt in languageOptions"
+          :key="opt.code"
+          class="lang-option"
+          @click="switchLanguage(opt.code)"
       >
-        <img :src="option.flag" class="w-6 h-6 rounded-full" alt="flag"/>
-        <span class="text-sm font-semibold text-black">{{ option.label }}</span>
+        <img :src="opt.flag" :alt="opt.label" class="flag" />
+        <span class="lang-label">{{ opt.label }}</span>
       </div>
     </div>
   </div>
 </template>
 
-
-<script setup lang="ts">
-const { locale, locales, setLocale } = useI18n()
-const open = ref(false)
-
-const toggleDropdown = () => (open.value = !open.value)
-const switchLanguage = (code: string) => {
-  setLocale(code)
-  open.value = false
+<style scoped>
+.lang-wrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.lang-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.lang-button:hover {
+  background: rgba(0, 207, 255, 0.1);
+}
+.flag {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-const flags: Record<string, string> = {
-  ru: '/flags/ru.svg',
-  en: '/flags/gb.svg',
-  tj: '/flags/tj.svg',
+.lang-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  z-index: 100;
+  min-width: 110px;
 }
-
-const labels: Record<string, string> = {
-  ru: 'Рус',
-  en: 'Eng',
-  tj: 'Тоҷикӣ',
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
-
-const currentFlag = computed(() => flags[locale.value])
-const localesList = locales.value as Array<{ code: string }>
-
-// ✅ Only show other languages in dropdown
-const languageOptions = computed(() =>
-    localesList
-        .filter(l => l.code !== locale.value)
-        .map(l => ({
-          code: l.code,
-          flag: flags[l.code],
-          label: labels[l.code],
-        }))
-)
-</script>
-
+.lang-option:hover {
+  background: rgba(0, 207, 255, 0.1);
+}
+.lang-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+</style>

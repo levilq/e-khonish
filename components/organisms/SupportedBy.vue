@@ -9,7 +9,7 @@
       <div class="flex flex-col items-center text-center w-full sm:w-[280px]">
         <img src="/images/png/tjk-gerb.png" alt="Hukumat" class="w-[80px] h-[80px] object-contain mb-4" />
         <p class="text-md text-[#004F7C] font-black leading-snug px-4">
-          {{ t('khatlon') }}
+          {{ t('khatlon_authorities') }}
         </p>
       </div>
 
@@ -42,32 +42,8 @@
 
 
 <script setup lang="ts">
-const { t } = useI18n()
-</script>
+import { globalTranslate as translateFn } from 'assets/js/language'
+
+const t = (...args: any[]) => translateFn(...args)</script>
 <style scoped>
 </style>
-<i18n lang="json">
-{
-  "en": {
-    "supported_by": "Made possible by",
-    "khatlon": "Executive authorities of Khatlon region",
-    "regional_public_formation": "Regional public formation",
-    "agency_of_education": "Agency of innovationsand digital technologies",
-    "jurat": ""
-  },
-  "ru": {
-    "supported_by": "При поддержке",
-    "khatlon": "Исполнительный орган государственной власти Хатлонской области",
-    "regional_public_formation": "Управление образования Хатлонской области. Отделы образования городов и районов",
-    "agency_of_education": "Агентство инноваций и цифровых технологий при Президенте Республики Таджикистан",
-    "jurat": "ОО Джуръат"
-  },
-  "tj": {
-    "supported_by": "Ҳамкориҳо",
-    "khatlon": "Мақомоти иҷроияи ҳокимияти давлатии вилояти Хатлон",
-    "regional_public_formation": "Раёсати маорифи мақомоти иҷроияи ҳокимияти давлатии вилояти Хатлон",
-    "agency_of_education": "Агентии инноватсия ва технологияҳои ракамӣ",
-    "jurat": "Ташкилоти ҷамъиятии Ҷуръат"
-  }
-}
-</i18n>

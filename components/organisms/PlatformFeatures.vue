@@ -9,7 +9,7 @@
           </div>
         </div>
         <p class="text-sm text-[#1E1E1E] leading-relaxed">
-          {{t('platform_enables')}}
+          {{t('landing_page_paragraph_8')}}
         </p>
       </div>
 
@@ -21,7 +21,7 @@
           </div>
         </div>
         <p class="text-sm text-[#1E1E1E] leading-relaxed">
-            {{t('career')}}
+            {{t('landing_page_paragraph_9')}}
         </p>
       </div>
 
@@ -33,7 +33,7 @@
           </div>
         </div>
         <p class="text-sm text-[#1E1E1E] leading-relaxed">
-          {{t('online')}}
+          {{t('landing_page_paragraph_10')}}
         </p>
       </div>
 
@@ -45,7 +45,7 @@
           </div>
         </div>
         <p class="text-sm text-[#1E1E1E] leading-relaxed">
-          {{t('platform_teacher')}}
+          {{t('landing_page_paragraph_11')}}
         </p>
       </div>
 
@@ -57,7 +57,7 @@
           </div>
         </div>
         <p class="text-sm text-[#1E1E1E] leading-relaxed">
-          {{t('modules')}}
+          {{t('landing_page_paragraph_12')}}
         </p>
       </div>
 
@@ -69,7 +69,7 @@
           </div>
         </div>
         <p class="text-sm text-[#1E1E1E] leading-relaxed">
-          {{t('unified')}}
+          {{t('landing_page_paragraph_13')}}
         </p>
       </div>
     </div>
@@ -78,35 +78,6 @@
 </template>
 
 <script setup>
-const { t } = useI18n({
-  useScope: 'local'
-})
+import { globalTranslate as t } from 'assets/js/language'
+
 </script>
-<i18n lang="json">
-{
-  "en": {
-    "platform_enables": "The platform enables the exchange of information between schools, parents and students, with a focus on transparency and efficiency.",
-    "career": "Career guidance and an individual learning path for every student",
-    "online": "Online access to video lessons, tests, library, schedule, and progress — anytime, anywhere",
-    "platform_teacher": "Platform for teacher professional development — regular online training and certification",
-    "modules": "Modules for students, parents, and teachers for more convenient and flexible management",
-    "unified": "A unified digital ecosystem for all education participants"
-  },
-  "ru": {
-    "platform_enables": "Платформа обеспечивает обмен информацией между школами, родителями и учениками, уделяя особое внимание прозрачности и оперативности",
-    "career": "Профориентация и индивидуальная образовательная траектория каждого ученика",
-    "online": "Онлайн доступ к видеоурокам, тестам, библиотеке, расписанию и прогрессу из любого места в любое время",
-    "platform_teacher": "Платформа для повышения квалификации педагогов – регулярное онлайн-обучение и сертификация",
-    "modules": "Модули для учащихся, родителей, учителей, для более удобного и гибкого управления",
-    "unified": "Единая цифровая экосистема для всех участников образования"
-  },
-  "tj": {
-    "platform_enables": "Низом мубодилаи иттилоотро байни муасмисаҳои таълимӣ, волидайн ва хонандагон бо таваҷҷӯҳ ба шаффофият ва самаранокӣ фароҳам меорад.",
-    "career": "Роҳнамоӣ ва траекторияи таълимии инфиродӣ барои ҳар як хонанда.",
-    "online": "Дастрасии онлайн ба дарсҳои видеоӣ, санҷишҳо, китобхона, ҷадвал ва пешравӣ дар дилхоҳ вақт ва ҷой.",
-    "platform_teacher": "Низоми электронии такмили ихтисоси омӯзгорон – омӯзиши мунтазами онлайн ва сертификатсия мебошад.",
-    "modules": "Модулҳо барои хонандагон, волидайн, омӯзгорон, ки идоракунии онҳоро осон ва қулай мегардонад.",
-    "unified": "Эконизоми ягонаи рақамӣ барои ҳамаи иштирокчиёни раванди таълим."
-  }
-}
-</i18n>

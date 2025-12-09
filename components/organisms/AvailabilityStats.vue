@@ -8,7 +8,7 @@
         </div>
         <h3 class="text-2xl font-extrabold text-[#2E2E2E]">{{ t("availability") }}</h3>
         <p class="text-gray-500 mt-2 text-sm font-bold px-4">
-          {{ t("availability_desc") }}
+          {{ t("landing_page_paragraph_22") }}
         </p>
       </div>
 
@@ -38,6 +38,8 @@
 </template>
 
 <script setup>
+import { globalTranslate as t } from 'assets/js/language'
+
 import { onMounted, ref } from 'vue'
 
 const sectionRef = ref(null)
@@ -88,29 +90,5 @@ const observeSection = () => {
 onMounted(() => {
   observeSection()
 })
-
-const { t } = useI18n({ useScope: 'local' })
 </script>
 
-<i18n lang="json">
-{
-  "en": {
-    "availability": "Availability",
-    "availability_desc": "The platform is already available to residents of the Khatlon region",
-    "connected_schools": "Connected schools",
-    "registered_accounts": "Registered accounts"
-  },
-  "ru": {
-    "availability": "Доступность",
-    "availability_desc": "Платформа уже доступна для жителей Хатлонской области",
-    "connected_schools": "Подключенных школ",
-    "registered_accounts": "Зарегистрированные аккаунты"
-  },
-  "tj": {
-    "availability": "Фаъол",
-    "availability_desc": "Низом барои сокинони вилояти Хатлон дастрас аст ",
-    "connected_schools": "Муассисаҳои таълимӣ пайваст карда шудаанд",
-    "registered_accounts": "Саҳифа ба қайд гирифта шудаанд"
-  }
-}
-</i18n>

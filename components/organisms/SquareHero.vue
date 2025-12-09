@@ -25,8 +25,8 @@
         </div>
         <img src="/images/svg/school-icon.svg" class="absolute top-4 right-4 w-[100px] h-[100px] opacity-60" alt="school icon" />
         <div class="text-[#1E1E1E] text-[14px] font-bold leading-[1.5] mt-6 max-w-[290px] md:max-w-[300px] absolute">
-          <p>{{ t('functions_for_managing') }}</p>
-          <p class="mt-2">{{ t('functions_designed') }}</p>
+          <p>{{ t('landing_page_paragraph_1') }}</p>
+          <p class="mt-2">{{ t('landing_page_paragraph_2') }}</p>
         </div>
       </div>
 
@@ -44,8 +44,8 @@
         </div>
         <img src="/images/svg/teacher-icon.svg" class="absolute top-4  w-[100px] h-[100px] opacity-60" alt="teacher icon" />
         <div class="text-white text-[14px]  font-bold leading-[1.5] mt-7 max-w-[290px] md:max-w-[310px] absolute">
-          <p>{{ t('the_system_offers') }}</p>
-          <p class="mt-2">{{ t('enhanced_tools') }}</p>
+          <p>{{ t('landing_page_paragraph_3') }}</p>
+          <p class="mt-2">{{ t('landing_page_paragraph_4') }}</p>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@
         </div>
         <img src="/images/svg/parents-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="parents icon" />
         <div class="text-white text-[14px]  font-semibold leading-[1.5] mt-4 max-w-[450px] absolute">
-          <p>{{ t('the_platform_helps') }}</p>
+          <p>{{ t('landing_page_paragraph_5') }}</p>
         </div>
       </div>
 
@@ -74,7 +74,7 @@
         </div>
         <img src="/images/svg/parents-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="parents icon" />
         <div class="text-white text-[12px] font-bold leading-[1.5] mt-3 max-w-[290px] absolute">
-          <p>{{ t('the_platform_helps') }}</p>
+          <p>{{ t('landing_page_paragraph_5') }}</p>
         </div>
       </div>
 
@@ -87,7 +87,7 @@
         </div>
         <img src="/images/svg/gos-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="gos icon" />
         <div class="text-black text-[14px]  font-bold leading-[1.5] max-w-[504px] absolute top-7">
-          <p>{{ t('manage_teacher') }}</p>
+          <p>{{ t('landing_page_paragraph_6') }}</p>
         </div>
       </div>
 
@@ -100,7 +100,7 @@
         </div>
         <img src="/images/svg/gos-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="gos icon" />
         <div class="text-black text-[12px] font-bold leading-[1.5]  max-w-[300px] absolute">
-          <p>{{ t('manage_teacher') }}</p>
+          <p>{{ t('landing_page_paragraph_6') }}</p>
         </div>
       </div>
     </div>
@@ -108,56 +108,5 @@
 </template>
 
 <script setup>
-const { t } = useI18n({
-  useScope: 'local'
-})
+import {globalTranslate as t} from "assets/js/language.js";
 </script>
-<i18n lang="json">
-{
-  "en": {
-    "for_who": "Who can use our",
-    "platform": "platform",
-    "schools": "schools",
-    "functions_for_managing": "Functions for managing networks of educational institutions across districts and prefectures.",
-    "functions_designed": "Tools designed to streamline the educational process for departmental and municipal authorities.",
-    "teachers":"teachers",
-    "the_system_offers": "The system provides a comprehensive set of features to support educators’ efficient and convenient work in educational institutions.",
-    "enhanced_tools": "Advanced tools for monitoring learning progress and planning, personalization of teaching processes, and enhanced opportunities for collaboration with parents.",
-    "parents": "parents",
-    "the_platform_helps": "The platform helps track children's progress, identify weak areas, and provide timely guidance, support, and assistance through parental involvement and continuous monitoring of all key processes.",
-    "government_institutions": "government institutions",
-    "manage_teacher": "Manage teacher workflows, the educational process, and the full student lifecycle through administrative rights granted to school leadership — with flexible configuration of all core and optional features."
-
-  },
-  "ru": {
-    "for_who": "Для кого наша",
-    "platform": "платформа",
-    "schools": "ШКОЛЫ",
-    "functions_for_managing": "Единое решение для управления сетью школ — будь то регион, область или отдельное учебное заведение. ",
-    "functions_designed": "Помогает организовать обучение на уровне муниципалитета или ведомства..",
-    "teachers":"УЧИТЕЛЯ",
-    "the_system_offers": "Удобные инструменты для планирования, контроля и персонализации обучения.",
-    "enhanced_tools": "Всё, чтобы облегчить работу и наладить взаимодействие с родителями.",
-    "parents": "РОДИТЕЛИ",
-    "the_platform_helps": "Следите за успеваемостью ребёнка, вовремя замечайте трудности и помогайте. Платформа даёт прозрачный доступ ко всему, что важно.",
-    "government_institutions": "ГОСУДАРСТВЕННЫЕ УЧРЕЖДЕНИЯ",
-    "manage_teacher": "Полный контроль над учебным процессом, кадрами и всей системой образования. Гибкие настройки под любые задачи."
-
-  },
-  "tj": {
-    "for_who": "Низоми электронии мо барои ки",
-    "platform": "пешниҳод шудааст",
-    "schools": "Муассисаҳои таълимӣ",
-    "functions_for_managing": "Амалҳо барои идоракунии шабакаи намояндагиҳои муассисаҳои таълимӣ, шаҳр ва ноҳияҳое ки дар онҳо муассисаҳои таълимӣ қарор доранд.",
-    "functions_designed": "Амалҳое ки аз тарафи сохторҳои таълимии идоравӣ ва шаҳрӣ барои ташкили раванди таълим пешбинӣ карда шудаанд",
-    "teachers":"Омӯзгорон",
-    "the_system_offers": "Низом барои кори мувофиқ ва самараноки омӯзгорон дар муассисаҳои таълимӣ  маҷмӯи васеи амалҳоро пешниҳод менамояд. ",
-    "enhanced_tools": "Асбоби такмилшудаи назорат ва банақшагирии таълим, инфиродикунонии як ҷузъи қоидаҳои таълим, имкониятҳои кори якҷоя бо волидайн",
-    "parents": "Волидайн",
-    "the_platform_helps": "Низом барои пайгирии муваффақиятҳои хонандагон, дидани камбудиҳо ва саривақт роҳнамоӣ кардан, дастгирӣ ва пешниҳоди ёрӣ ба кӯдак тавассути ҷалби волидайн ва имконияти мониторинги доимии ҳамаи равандҳои муҳим ёрӣ мерасонад.",
-    "government_institutions": "Муассисаҳои давлатӣ",
-    "manage_teacher": "Идоракунии раванди кори омӯзгорон, раванди таълим ва маҷмӯи сиклҳои ҳаётии хонандагон тавассути ҳуқуқҳои маъмурӣ барои роҳбарияти муассисаи таълимӣ бо имконияти танзими ҳамаи амалҳои мавҷуда ва иловагӣ"
-
-  }
-}
-</i18n>

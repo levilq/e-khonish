@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {ref, onMounted, onUnmounted} from 'vue'
-
-const {t} = useI18n({useScope: 'local'})
+import {globalTranslate as t} from "assets/js/language";
 
 const showVideo = ref(false)
 const showImage = ref(false)
@@ -104,7 +103,7 @@ onUnmounted(() => {
                     'opacity-100 pointer-events-auto delay-0': !showVideo}"
            class="transition-opacity duration-1000 ease-in-out capitalize w-[150px] h-[150px] bg-gradient-to-br from-[#00CFFF] to-[#006080] rounded-bl-[100px] hidden md:flex flex-col items-center justify-center p-2 text-white text-sm font-bold">
         <img src="/images/svg/lightbulb.svg" alt="Инновации" class="w-[70px] h-[70px] mb-2"/>
-        {{ t('innovation') }}
+        {{ t('innovations') }}
       </div>
 
       <div class="w-[150px] h-[150px] bg-gradient-to-br from-[#B8E986] to-[#FFA41B] rounded-bl-[100px]"></div>
@@ -179,7 +178,7 @@ onUnmounted(() => {
         <div v-if="showTransformation"
              class="absolute z-50 bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-br from-[#C8F26D] to-[#FFA41B] rounded-[40px] shadow-xl p-6 flex flex-col justify-between">
           <p class="text-sm text-[#004F7C] font-semibold leading-relaxed ">
-            {{ t('transfer_education') }}
+            {{ t('transformation_paragraph_1') }}
           </p>
           <div
               class="self-end w-10 h-10 rounded-full border border-white flex-none items-center justify-center cursor-pointer"
@@ -262,25 +261,3 @@ onUnmounted(() => {
 
 
 </style>
-<i18n lang="json">
-{
-  "en": {
-    "digitalization": "digitalization",
-    "innovation": "Innovations",
-    "transformation": "Evolutionary education",
-    "transfer_education": "E-Khonish is the new standard of education in Tajikistan. We implement digital solutions that make learning interactive, accessible, and effective. By supporting students and teachers, leveraging modern technologies, and focusing on digital skills, we prepare a new generation for the challenges of the 21st century."
-  },
-  "ru": {
-    "digitalization": "Цифровизация",
-    "innovation": "Инновации",
-    "transformation": "Трансформация",
-    "transfer_education": "E-Khonish — это новый стандарт образования в Таджикистане. Мы внедряем цифровые решения, которые делают обучение интерактивным, доступным и эффективным. Поддержка учеников и учителей, современные технологии и фокус на цифровые навыки — всё это помогает готовить новое поколение к вызовам XXI века."
-  },
-  "tj": {
-    "digitalization": "Рақамикунонӣ",
-    "innovation": "Навоварӣ",
-    "transformation": "Тағйирёбӣ",
-    "transfer_education": "E-Khonish — стандарти нави таълим дар Тоҷикистон. Мо тарзҳои ҳалли рақамие ворид менамоем, ки таълимро интерактивӣ, дастрас ва самаранок мекунад. Дастгирии хонандагон ва омӯзгорон, технологияҳои муосир ва таваҷҷуҳ ба малакаҳои рақамӣ — ҳамаи ин барои омода намудани насли нав ба даъватҳои асри ХХI ёрӣ мерасонад."
-  }
-}
-</i18n>

@@ -2,55 +2,19 @@
 definePageMeta({
   layout: "default",
 });
+import {globalTranslate as t} from "assets/js/language.js";
 
-const { t, locale } = useI18n({
-  useScope: "local",
-});
-
-const { setPageSEO, generateWebSiteSchema, generateSoftwareApplicationSchema } =
-  useSEO();
-
-const titles = {
-  ru: "E-Khonish - Умная цифровая платформа для школ Таджикистана",
-  en: "E-Khonish - Smart Digital Platform for Schools in Tajikistan",
-  tj: "E-Khonish - Низоми ҳушманди рақамӣ барои муассисаҳои таълимии Тоҷикистон",
-};
-
-const descriptions = {
-  ru: "Автоматизируйте управление школой с E-Khonish. Цифровая платформа для управления учебным процессом, вовлечения учеников и родителей в Таджикистане.",
-  en: "Automate school management with E-Khonish. Digital platform for educational process management, engaging students and parents in Tajikistan.",
-  tj: "Идоракунии муассисаҳои таълимиро бо E-Khonish автоматӣ кунед. Низоми рақамӣ барои идоракунии раванди таълимӣ, ҷалби хонандагон ва волидайн дар Тоҷикистон.",
-};
-
-const keywords = {
-  ru: "образование, школа, цифровизация, Таджикистан, управление школой, электронный дневник, автоматизация",
-  en: "education, school, digitalization, Tajikistan, school management, electronic diary, automation",
-  tj: "маориф, муассисаҳои таълимӣ, рақамикунонӣ, Тоҷикистон, идоракунии муассисаҳои таълимӣ, рӯзномаи электронӣ, автоматикунонӣ",
-};
-
-const structuredData = [
-  generateWebSiteSchema(),
-  generateSoftwareApplicationSchema(),
-];
-
-setPageSEO({
-  title: titles,
-  description: descriptions,
-  keywords: keywords,
-  canonicalPath: "/",
-  structuredData: structuredData,
-});
 </script>
 
 <template>
-  <div class="w-full mt-16 md:py-9">
+  <div class="w-full mt-20 md:py-9">
     <!-- Outer Wrapper: Centering the whole grid -->
     <!-- Wrapper: Make sure it’s full width and centers its content -->
     <div class="w-full px-4">
       <div class="max-w-[1128px] mx-auto flex justify-center">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[45px] items-start">
           <!-- Right Grid -->
-          <OrganismsAnimatedSq />
+           <OrganismsAnimatedSq />
 
           <!-- Left Side -->
           <div class="w-full md:w-[552px] space-y-3 mx-auto">
@@ -100,7 +64,7 @@ setPageSEO({
             <p
               class="text-[18px] text-[#222] max-w-md text-center md:text-left"
             >
-              {{ t("automate_management") }}
+              {{ t('landing_page_paragraph_1') }}
             </p>
 
             <img
@@ -156,38 +120,3 @@ section[id] {
   scroll-margin-top: 80px;
 }
 </style>
-
-<i18n lang="json">
-{
-  "en": {
-    "digitalization": "digitalization",
-    "innovation": "innovations",
-    "transformation": "Evolutionary education",
-    "smart": "digital",
-    "digital_platform": "educational platform",
-    "for_school": "for schools",
-    "automate_management": "Control, accelerate and involve",
-    "let_try": "Let’s try"
-  },
-  "ru": {
-    "digitalization": "Цифровизация",
-    "innovation": "Инновации",
-    "transformation": "Трансформация",
-    "smart": "умная",
-    "digital_platform": "цифровая платформа",
-    "for_school": "для школ",
-    "automate_management": "Автоматизируйте управление, ускорьте процессы, вовлекайте учеников и родителей",
-    "let_try": "Попробовать платформу"
-  },
-  "tj": {
-    "digitalization": "Рақамикунонӣ",
-    "innovation": "Навоварӣ",
-    "transformation": "Трансформатсия",
-    "smart": "низоми",
-    "digital_platform": "ҳушманди рақамӣ",
-    "for_school": "барои муассисаҳои таълимӣ",
-    "automate_management": "Идоракуниро автоматӣ кунед, равандҳоро суръат бахшед, хонандагон ва волидайнро ҷалб намоед",
-    "let_try": "Дидан кардан"
-  }
-}
-</i18n>

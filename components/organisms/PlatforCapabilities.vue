@@ -4,38 +4,40 @@
       {{ t('possibilities') }} <br />
       <span class="text-[#0077A3]">{{ t('platforms') }}?</span>
     </h2>
+
     <div class="space-y-4 mt-10">
       <!-- Row 1 -->
       <div class="flex flex-col lg:flex-row gap-4 transition-all duration-500">
         <!-- Card 0 -->
         <div
             :class="[
-            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500',
+            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500 cursor-pointer',
             getCardSize(0),
             'bg-gradient-to-tr from-[#005A83] to-[#3F6171] text-white'
           ]"
+            @mouseenter="expandCard(0)"
         >
-          <button
-              v-if="isLargeScreen && expandedCard !== 0"
-              class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow"
-              @click.stop="expandCard(0)"
-          >↗</button>
-
           <Transition name="fade" mode="out-in">
             <div key="card-0">
-              <h2 class="text-3xl font-bold mt-5 ">{{t('e_gradebook')}}</h2>
-              <img class="absolute" src="/images/png/2-card-blue.png" alt="as">
+              <h2 class="text-3xl font-bold mt-5">{{ t('e_gradebook') }}</h2>
+              <img class="absolute" src="/images/webp/2-card-blue.webp" alt="gradebook-bg" />
 
               <div v-if="isExpanded(0) || !isLargeScreen" class="flex flex-col lg:flex-row">
                 <div class="md:mt-[90px]">
                   <p class="text-md mt-4 font-bold">
-                    {{t('landing_page_paragraph_14')}}
+                    {{ t('landing_page_paragraph_14') }}
                   </p>
                   <p class="text-xs mt-2">
-                    {{t('landing_page_paragraph_15')}}
+                    {{ t('landing_page_paragraph_15') }}
                   </p>
                 </div>
-                <img v-if="isExpanded(0) || !isLargeScreen" class="h-[280px] -mr-9" src="/images/png/electronic-gradebook.png" alt="as">
+
+                <img
+                    v-if="isExpanded(0) || !isLargeScreen"
+                    class="h-[280px] -mr-9"
+                    src="/images/webp/electronic-gradebook.webp"
+                    alt="gradebook-img"
+                />
               </div>
             </div>
           </Transition>
@@ -44,28 +46,32 @@
         <!-- Card 1 -->
         <div
             :class="[
-            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500',
+            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500 cursor-pointer',
             getCardSize(1),
             'bg-gradient-to-br from-[#B9F250] to-[#D3F691] text-black'
           ]"
+            @mouseenter="expandCard(1)"
         >
-          <button
-              v-if="isLargeScreen && expandedCard !== 1"
-              class="absolute top-2 left-2 z-10 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow"
-              @click.stop="expandCard(1)"
-          >↗</button>
           <Transition name="fade" mode="out-in">
             <div key="card-1">
-              <h2 class="text-3xl font-bold mt-5 text-right">{{t('parents_visibility')}}</h2>
-              <img class="absolute right-0" src="/images/png/2-card-blue.png" alt="as">
+              <h2 class="text-3xl font-bold mt-5 text-right">{{ t('parents_visibility') }}</h2>
+              <img class="absolute right-0" src="/images/webp/2-card-blue.webp" alt="parents-bg" />
+
               <div v-if="isExpanded(1) || !isLargeScreen" class="flex flex-col lg:flex-row">
-                <img v-if="isExpanded(1) || !isLargeScreen" class="h-[280px]  md:-ml-[70px]" src="/images/png/communication_parents.png" alt="as">
+
+                <img
+                    v-if="isExpanded(1) || !isLargeScreen"
+                    class="h-[280px] md:-ml-[70px]"
+                    src="/images/webp/communication_parents.webp"
+                    alt="parents-img"
+                />
+
                 <div class="md:mt-[140px]">
                   <p class="text-md mt-4 font-extrabold">
-                    {{t('landing_page_paragraph_18')}}
+                    {{ t('landing_page_paragraph_18') }}
                   </p>
                   <p class="text-xs mt-4">
-                    {{t('landing_page_paragraph_19')}}
+                    {{ t('landing_page_paragraph_19') }}
                   </p>
                 </div>
 
@@ -80,31 +86,34 @@
         <!-- Card 2 -->
         <div
             :class="[
-            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500',
+            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500 cursor-pointer',
             getCardSize(2),
             'bg-gradient-to-br from-[#FF9D00] to-[#EEBB6A] text-black'
           ]"
+            @mouseenter="expandCard(2)"
         >
-          <button
-              v-if="isLargeScreen && expandedCard !== 2"
-              class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow"
-              @click.stop="expandCard(2)"
-          >↗</button>
           <Transition name="fade" mode="out-in">
             <div key="card-2">
-              <h2 class="text-3xl font-bold mt-5 ">{{t('e_library')}}</h2>
-              <img class="absolute opacity-30" src="/images/png/3-card-orange.png" alt="as">
+              <h2 class="text-3xl font-bold mt-5">{{ t('e_library') }}</h2>
+              <img class="absolute opacity-30" src="/images/webp/3-card-orange.webp" alt="lib-bg" />
 
               <div v-if="isExpanded(2) || !isLargeScreen" class="flex flex-col lg:flex-row z-10">
+
                 <div class="md:mt-[100px]">
                   <p class="text-md mt-4 font-bold">
-                    {{t('landing_page_paragraph_16')}}
+                    {{ t('landing_page_paragraph_16') }}
                   </p>
                   <p class="text-xs mt-4">
-                    {{t('landing_page_paragraph_17')}}
+                    {{ t('landing_page_paragraph_17') }}
                   </p>
                 </div>
-                <img v-if="isExpanded(2) || !isLargeScreen" class="h-[280px] -mr-9" src="/images/png/e-library.png" alt="as">
+
+                <img
+                    v-if="isExpanded(2) || !isLargeScreen"
+                    class="h-[280px] -mr-9"
+                    src="/images/webp/e-library.webp"
+                    alt="library-img"
+                />
               </div>
             </div>
           </Transition>
@@ -113,27 +122,30 @@
         <!-- Card 3 -->
         <div
             :class="[
-            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500',
+            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500 cursor-pointer',
             getCardSize(3),
             'bg-gradient-to-br from-[#00B8E7] to-[#006781] text-white'
           ]"
+            @mouseenter="expandCard(3)"
         >
-          <button
-              v-if="isLargeScreen && expandedCard !== 3"
-              class="absolute top-2 left-2 z-10 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow"
-              @click.stop="expandCard(3)"
-          >↗</button>
           <Transition name="fade" mode="out-in">
             <div key="card-3">
-              <h2 class="text-3xl font-bold mt-5 text-right">{{t('integration_app')}}</h2>
-              <img class="absolute right-0 opacity-40" src="/images/png/4-card-blue.png" alt="as">
+              <h2 class="text-3xl font-bold mt-5 text-right">{{ t('integration_app') }}</h2>
+              <img class="absolute right-0 opacity-40" src="/images/webp/4-card-blue.webp" alt="apps-bg" />
+
               <div v-if="isExpanded(3) || !isLargeScreen" class="flex flex-col lg:flex-row">
-                <img v-if="isExpanded(3) || !isLargeScreen" class="h-[280px] pr-[20px]" src="/images/png/apps_img.png" alt="as">
+
+                <img
+                    v-if="isExpanded(3) || !isLargeScreen"
+                    class="h-[280px] pr-[20px]"
+                    src="/images/webp/apps_img.webp"
+                    alt="apps-img"
+                />
+
                 <div class="md:mt-[140px]">
                   <p class="text-md mt-4 font-extrabold">
-                    {{t('landing_page_paragraph_20')}}
+                    {{ t('landing_page_paragraph_20') }}
                   </p>
-
                 </div>
 
               </div>
@@ -147,8 +159,8 @@
 
 <script setup lang="ts">
 import { globalTranslate as t } from 'assets/js/language'
-
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+
 const expandedCard = ref(0)
 const isLargeScreen = ref(false)
 

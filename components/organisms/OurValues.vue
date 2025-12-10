@@ -69,7 +69,7 @@
               <h3 class="text-xl font-bold text-[#1E1E1E] mb-2">
                 {{ t("safety") }}
               </h3>
-              <p class="text-gray-500 text-sm leading-6 " style="font-weight: 700";>
+              <p class="text-gray-500 text-sm leading-6 " style="font-weight: 700">
                 {{ t("landing_page_paragraph_266") }}
               </p>
             </div>

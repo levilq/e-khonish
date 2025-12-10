@@ -95,7 +95,7 @@ onUnmounted(() => {
             class="absolute mt-[100px] ml-2 w-10 h-10 rounded-full border border-white flex items-center justify-center z-10">
           <img src="/images/svg/arrow.svg" class="w-4 h-4" alt="arrow"/>
         </div>
-        <img src="/images/png/platform-preview.png" alt="Platform" class="object-cover w-full h-full"/>
+        <img src="/images/webp/platform-preview.webp" alt="Platform" class="object-cover w-full h-full"/>
       </div>
 
       <!-- Innovation -->
@@ -121,7 +121,7 @@ onUnmounted(() => {
       </div>
 
       <div class="w-[150px] h-[150px] rounded-full overflow-hidden hidden md:block">
-        <img src="/images/png/girl.png" alt="girl" class="object-cover w-full h-full"/>
+        <img src="/images/webp/girl.webp" alt="girl" class="object-cover w-full h-full"/>
       </div>
 
       <!-- Video Overlay -->
@@ -156,13 +156,13 @@ onUnmounted(() => {
              }">
           <Transition name="fade" mode="out-in">
             <template v-if="currentImageIndex === 0">
-              <img src="/images/svg/slider-1.svg" class="object-cover w-full h-full" alt="slide-1"/>
+              <img src="/images/webp/slider-1.webp" class="object-cover w-full h-full" alt="slide-1"/>
             </template>
             <template v-else-if="currentImageIndex === 1">
-              <img src="/images/svg/slider-2.svg" class="object-cover w-full h-full" alt="slide-2"/>
+              <img src="/images/webp/slider-2.webp" class="object-cover w-full h-full" alt="slide-2"/>
             </template>
             <template v-else>
-              <img src="/images/svg/slider-3.svg" class="object-cover w-full h-full" alt="slide-3"/>
+              <img src="/images/webp/slider-3.webp" class="object-cover w-full h-full" alt="slide-3"/>
             </template>
           </Transition>
           <div

@@ -32,7 +32,7 @@
 
       <!-- Girl Card -->
       <div class="relative bg-[url('/images/svg/girl-box.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[250px] p-[9px] flex items-end justify-center mx-auto mt-[80px] md:mt-0">
-        <img src="/images/png/girl_book.png" class="relative bottom-6 md:bottom-3 w-[375px]" alt="girlBook" />
+        <img src="/images/webp/girl_book.webp" class="relative bottom-6 md:bottom-3 w-[375px]" alt="girlBook" />
       </div>
 
       <!-- Teachers -->

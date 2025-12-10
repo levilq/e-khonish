@@ -89,15 +89,15 @@ import {globalTranslate as t} from "assets/js/language.js";
 
     <section id="features">
       <OrganismsPurposeSection />
-      <OrganismsPlatformFeatures />
+      <LazyOrganismsPlatformFeatures />
     </section>
 
     <section id="capabilities">
-      <OrganismsPlatforCapabilities />
+      <LazyOrganismsPlatforCapabilities />
     </section>
 
     <section id="about">
-      <OrganismsAbout />
+      <LazyOrganismsAbout />
       <OrganismsAvailabilityStats />
       <OrganismsOurValues />
       <OrganismsTestimonialsSlider />

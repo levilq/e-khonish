@@ -12,12 +12,12 @@
       <!-- Left image -->
       <div class="">
         <img
-          src="/images/png/laptop.png"
+          src="/images/webp/laptop.webp"
           alt="Laptop"
           class="h-[456px] object-cover hidden md:flex ml-[80px]"
         />
         <img
-          src="/images/png/contacts-mobile.png"
+          src="/images/webp/contacts-mobile.webp"
           alt="Mobile"
           class="w-full flex justify-center object-cover md:hidden"
         />

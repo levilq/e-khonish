@@ -7,7 +7,7 @@
     <div class="flex flex-wrap justify-center gap-6 sm:gap-10">
       <!-- Item 1 -->
       <div class="flex flex-col items-center text-center w-full sm:w-[280px]">
-        <img src="/images/png/tjk-gerb.png" alt="Hukumat" class="w-[80px] h-[80px] object-contain mb-4" />
+        <img src="/images/webp/tjk-gerb.webp" alt="Hukumat" class="w-[80px] h-[80px] object-contain mb-4" />
         <p class="text-md text-[#004F7C] font-black leading-snug px-4">
           {{ t('khatlon_authorities') }}
         </p>
@@ -15,7 +15,7 @@
 
       <!-- Item 2 -->
       <div class="flex flex-col items-center text-center w-full sm:w-[180px]">
-        <img src="/images/png/tjk-gerb.png" alt="Education" class="w-[80px] h-[80px] object-contain mb-4" />
+        <img src="/images/webp/tjk-gerb.webp" alt="Education" class="w-[80px] h-[80px] object-contain mb-4" />
         <p class="text-md text-[#004F7C] font-black leading-snug">
           {{ t('regional_public_formation') }}
         </p>
@@ -23,7 +23,7 @@
 
       <!-- Item 3 -->
       <div class="flex flex-col items-center text-center w-full sm:w-[180px]">
-        <img src="/images/png/aict.png" alt="Agency" class="w-[80px] h-[80px] object-contain mb-4" />
+        <img src="/images/webp/aict.webp" alt="Agency" class="w-[80px] h-[80px] object-contain mb-4" />
         <p class="text-md text-[#004F7C] font-black leading-snug">
           {{ t('agency_of_education') }}
         </p>
@@ -31,7 +31,7 @@
 
       <!-- Item 4 -->
       <div class="flex flex-col items-center text-center w-full sm:w-[180px]">
-        <img src="/images/png/jurat.png" alt="Jurat" class="w-[120px] h-[80px] object-contain mb-4" />
+        <img src="/images/webp/jurat.webp" alt="Jurat" class="w-[120px] h-[80px] object-contain mb-4" />
         <p class="text-md text-[#004F7C] font-black leading-snug">
           {{ t('jurat') }}
         </p>

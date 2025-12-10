@@ -4,11 +4,6 @@ export default defineNuxtConfig({
 
     ssr: true,
 
-    nitro: {
-        prerender: {
-            routes: ['/sitemap.xml', '/api/sitemap.xml', '/', '/en/', '/tj/']
-        }
-    },
 
     modules: [
         '@nuxtjs/tailwindcss',

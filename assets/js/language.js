@@ -1,7 +1,4 @@
 import { reactive } from 'vue'
-import { LanguageApi } from '@/api/LanguagesApi'
-
-const { setLanguageByProfileAPI } = LanguageApi()
 
 export const state = reactive({
   words: {},
@@ -45,8 +42,7 @@ export const actions = {
     }
   },
 
-  async changeLanguage(languageCode, profile_id) {
-    if (profile_id) await setLanguageByProfileAPI(profile_id, languageCode)
+  async changeLanguage(languageCode) {
     await this.GET_LANGUAGE_WORDS(languageCode)
   }
 }

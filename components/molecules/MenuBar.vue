@@ -23,6 +23,7 @@ const toggleMenu = () => {
     <div
         v-if="isOpen"
         class="fixed inset-0 bg-white z-50 flex flex-col justify-between items-center px-6 py-6"
+        style="height: 400px"
     >
       <div class="w-full flex justify-between items-center mb-6">
         <img src="/images/webp/logo.webp" alt="eKhonish logo" class="h-10" />
@@ -42,7 +43,7 @@ const toggleMenu = () => {
         <a href="#" @click="toggleMenu">{{ t('contacts') }}</a>
       </div>
 
-      <div class="flex relative items-center gap-7 mt-10 bottom-[100px]">
+      <div class="flex items-center gap-7 mt-10 bottom-[100px]">
         <MoleculesLanguageSwitcher />
         <AtomsButtonsPrimary>{{ t('login') }}</AtomsButtonsPrimary>
       </div>

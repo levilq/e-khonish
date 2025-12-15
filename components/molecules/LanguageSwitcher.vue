@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 import { actions, state } from "assets/js/language"
+import TJ from '@/assets/images/flags/tj.svg'
+import RU from '@/assets/images/flags/ru.svg'
+import GB from '@/assets/images/flags/gb.svg'
 
 const open = ref(false)
 const hydrated = ref(false)
 const currentLang = ref<string>('lang_32')
 
 const languages = {
-  lang_32: { code: 'lang_32', label: 'Тоҷикӣ', flag: '/flags/tj.svg' },
-  lang_33: { code: 'lang_33', label: 'Рус', flag: '/flags/ru.svg' },
-  english: { code: 'english', label: 'Eng', flag: '/flags/gb.svg' }
+  lang_32: { code: 'lang_32', label: 'Тоҷикӣ', flag: TJ },
+  lang_33: { code: 'lang_33', label: 'Рус', flag: RU },
+  english: { code: 'english', label: 'Eng', flag: GB }
 } as const
 
 const detectLang = (): string => {
@@ -58,9 +61,8 @@ const loadLanguageWords = async (code: string) => {
 onMounted(async () => {
   const detected = detectLang()
   currentLang.value = detected
-  await loadLanguageWords(detected)
-
   hydrated.value = true
+  await loadLanguageWords(detected)
 })
 </script>
 

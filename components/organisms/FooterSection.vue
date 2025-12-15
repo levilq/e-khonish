@@ -1,18 +1,15 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { actions, state } from "@/assets/js/language.js";
+import TJ from '@/assets/images/flags/tj.svg'
+import RU from '@/assets/images/flags/ru.svg'
+import GB from '@/assets/images/flags/gb.svg'
 
 const showModal = ref(false);
 
 function translate(key: string) {
   return actions.globalTranslate(key);
 }
-
-const flags = {
-  tj: "/flags/tj.svg",
-  ru: "/flags/ru.svg",
-  en: "/flags/gb.svg",
-};
 
 const labels = {
   tj: "Тоҷикӣ",
@@ -21,9 +18,9 @@ const labels = {
 };
 
 const languageOptions = computed(() => [
-  { code: "tj", flag: flags.tj, label: labels.tj },
-  { code: "ru", flag: flags.ru, label: labels.ru },
-  { code: "en", flag: flags.en, label: labels.en },
+  { code: "tj", flag: TJ, label: labels.tj },
+  { code: "ru", flag: RU, label: labels.ru },
+  { code: "en", flag: GB, label: labels.en },
 ]);
 
 const switchLanguage = (code: string) => {

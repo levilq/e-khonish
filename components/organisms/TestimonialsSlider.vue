@@ -79,31 +79,31 @@ const testimonials = [
   {
     name: "karimov_siyovush",
     position: "biology_teacher",
-    avatar: new URL("@/assets/images/karimov.png", import.meta.url).href,
+    avatar: new URL("@/assets/images/karimov.webp", import.meta.url).href,
     quote: "landing_page_paragraph_29",
   },
   {
     name: "sharipov_saidmurod",
     position: "mathematics_teacher",
-    avatar: new URL("@/assets/images/sharipov.png", import.meta.url).href,
+    avatar: new URL("@/assets/images/sharipov.webp", import.meta.url).href,
     quote: "landing_page_paragraph_30",
   },
   {
     name: "yusupova_ashurmokh",
     position: "primary_school_teacher",
-    avatar: new URL("@/assets/images/yusupova.png", import.meta.url).href,
+    avatar: new URL("@/assets/images/yusupova.webp", import.meta.url).href,
     quote: "landing_page_paragraph_31",
   },
   {
     name: "darveshova_zulhija",
     position: "school_director",
-    avatar: new URL("@/assets/images/yorov.png", import.meta.url).href,
+    avatar: new URL("@/assets/images/yorov.webp", import.meta.url).href,
     quote: "landing_page_paragraph_32",
   },
   {
     name: "abiev_suhrob",
     position: "geography_teacher",
-    avatar: new URL("@/assets/images/mijgona.png", import.meta.url).href,
+    avatar: new URL("@/assets/images/mijgona.webp", import.meta.url).href,
     quote: "landing_page_paragraph_33",
   },
 ];

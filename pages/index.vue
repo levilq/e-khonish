@@ -3,7 +3,7 @@ definePageMeta({
   layout: "default",
 });
 import {globalTranslate as t} from "assets/js/language.js";
-
+const baseURL = useRuntimeConfig().public.baseURL
 </script>
 
 <template>
@@ -72,7 +72,7 @@ import {globalTranslate as t} from "assets/js/language.js";
               alt="curve"
               class="relative left-[380px] bottom-16 w-[180px] mt-4 hidden md:flex"
             />
-            <nuxt-link to="https://emaorif.com/authentication">
+            <nuxt-link :to="`${baseURL}/authentication`">
             <button
               class="hover:bg-[#00466a] cursor-pointer mx-auto md:mx-0 md:mt-0 relative md:bottom-[170px] bg-[#005B88] text-white px-6 py-2 rounded-xl text-sm font-bold flex items-center gap-2 shadow-md"
             >

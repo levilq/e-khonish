@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { globalTranslate as translateFn } from 'assets/js/language'
-
-const translate = (...args: any[]) => translateFn(...args)
+import { globalTranslate as translate } from 'assets/js/language'
 </script>
 
 <template>

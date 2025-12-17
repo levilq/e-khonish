@@ -122,7 +122,7 @@ onUnmounted(() => {
           <div class="arrow-btn open-btn">
             <img src="/images/svg/arrow.svg" alt="arrow" />
           </div>
-          <img fetchpriority="high" src="/images/webp/platform-preview.webp" alt="Platform" />
+          <img fetchpriority="low" src="/images/webp/platform-preview.webp" alt="Platform" />
         </div>
 
         <div class="innovation-square" :class="{ 'fade-out': showVideo }">
@@ -150,7 +150,7 @@ onUnmounted(() => {
 
           >
             <button class="close-video" @click="closeVideo">✕</button>
-            <video controls muted playsinline>
+            <video controls muted playsinline preload="none">
               <source src="/videos/about.mp4" type="video/mp4" />
             </video>
           </div>
@@ -202,7 +202,7 @@ onUnmounted(() => {
           <div class="arrow-btn open-btn">
             <img src="/images/svg/arrow.svg" alt="arrow" />
           </div>
-          <img fetchpriority="high" src="/images/webp/platform-preview.webp" alt="Platform" />
+          <img fetchpriority="low" src="/images/webp/platform-preview.webp" alt="Platform" />
         </div>
 
         <div class="orange-square-mobile" :class="{ 'fade-out': showTransformationMobile }"></div>
@@ -217,7 +217,7 @@ onUnmounted(() => {
         <Transition name="video-expand">
           <div v-if="showVideoMobile" class="video-overlay-mobile">
             <button class="close-video" @click="closeVideoMobile">✕</button>
-            <video controls muted playsinline>
+            <video controls muted playsinline preload="none">
               <source src="/videos/about.mp4" type="video/mp4" />
             </video>
           </div>

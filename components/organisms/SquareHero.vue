@@ -1,112 +1,466 @@
+<script setup lang="ts">
+import { globalTranslate as translate } from 'assets/js/language'
+</script>
+
 <template>
-  <section class="flex flex-col gap-y-6 relative mt-10 px-4">
-    <!-- Top Row -->
-    <div class="pt-12 flex flex-col md:flex-row justify-between items-center">
-      <h2 class="text-center text-3xl sm:text-4xl md:text-4xl font-bold text-[#1E1E1E] md:text-left mb-6 md:mb-0">
-        {{ t('for_who') }} <br />
-        <span class="text-[#0077A3]">{{ t('platform') }}?</span>
+  <section class="for-who-section">
+    <div class="top-row">
+      <h2 class="title">
+        {{ translate('for_who') }} <br />
+        <span>{{ translate('platform') }}?</span>
       </h2>
-      <img
-          src="/images/svg/swirly-arrow.svg"
-          alt="arrow"
-          class="hidden md:block absolute top-[-100px] right-[50px] w-[250px]"
-      />
+      <img src="/images/svg/swirly-arrow.svg" alt="arrow" class="arrow-img" />
     </div>
 
-    <!-- Top Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:mt-[170px]">
-      <!-- Schools -->
-      <div class="relative bg-[url('/images/svg/schools.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[250px] p-6 mx-auto">
-        <div class="absolute -top-4 left-3 z-30">
-          <div class="bg-white uppercase text-[#FFA41B] font-bold text-[18px] sm:text-[20px] px-6 py-2 rounded-full shadow-xl">
-            {{ t('schools') }}
-          </div>
-
-        </div>
-        <img src="/images/svg/school-icon.svg" class="absolute top-4 right-4 w-[100px] h-[100px] opacity-60" alt="school icon" />
-        <div class="text-[#1E1E1E] text-[14px] font-bold leading-[1.5] mt-6 max-w-[290px] md:max-w-[300px] absolute">
-          <p>{{ t('landing_page_paragraph_1') }}</p>
-          <p class="mt-2">{{ t('landing_page_paragraph_2') }}</p>
+    <div class="top-cards">
+      <div class="card schools">
+        <div class="label label-orange">{{ translate('schools') }}</div>
+        <img src="/images/svg/school-icon.svg" class="icon-schools" alt="school icon" />
+        <div class="text-schools">
+          <p>{{ translate('landing_page_paragraph_1') }}</p>
+          <p class="mt">{{ translate('landing_page_paragraph_2') }}</p>
         </div>
       </div>
 
-      <!-- Girl Card -->
-      <div class="relative bg-[url('/images/svg/girl-box.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[250px] p-[9px] flex items-end justify-center mx-auto mt-[80px] md:mt-0">
-        <img src="/images/webp/girl_book.webp" class="relative bottom-6 md:bottom-3 w-[375px]" alt="girlBook" />
+      <div class="card girl">
+        <img src="/images/webp/girl_book.webp" class="girl-img" alt="girlBook" />
       </div>
 
-      <!-- Teachers -->
-      <div class="relative bg-[url('/images/svg/instructors.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[250px] p-6 mx-auto">
-        <div class="absolute -top-4 right-3 z-30">
-          <div class="bg-white uppercase text-[#085b80] font-bold text-[14px] sm:text-[20px] px-6 sm:px-9 py-2 rounded-full shadow-xl">
-            {{ t('teachers') }}
-          </div>
-        </div>
-        <img src="/images/svg/teacher-icon.svg" class="absolute top-4  w-[100px] h-[100px] opacity-60" alt="teacher icon" />
-        <div class="text-white text-[14px]  font-bold leading-[1.5] mt-7 max-w-[290px] md:max-w-[310px] absolute">
-          <p>{{ t('landing_page_paragraph_3') }}</p>
-          <p class="mt-2">{{ t('landing_page_paragraph_4') }}</p>
+      <div class="card teachers">
+        <div class="label label-blue">{{ translate('teachers') }}</div>
+        <img src="/images/svg/teacher-icon.svg" class="icon-teachers" alt="teacher icon" />
+        <div class="text-teachers">
+          <p>{{ translate('landing_page_paragraph_3') }}</p>
+          <p class="mt">{{ translate('landing_page_paragraph_4') }}</p>
         </div>
       </div>
     </div>
 
-    <!-- Bottom Row -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 md:gap-4 relative bottom-7 md:bottom-0">
-      <!-- Parents (Desktop) -->
-      <div class="relative bg-[url('/images/svg/parents-box.svg')] bg-no-repeat bg-contain w-full max-w-[552px] h-[156px] p-6 hidden md:flex mx-auto">
-        <div class="absolute -top-4 right-10 z-30">
-          <div class="bg-white uppercase text-[#00B8E7] font-bold text-[20px] px-5 py-2 rounded-full shadow-xl">
-            {{ t('parents') }}
-          </div>
-        </div>
-        <img src="/images/svg/parents-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="parents icon" />
-        <div class="text-white text-[14px]  font-semibold leading-[1.5] mt-4 max-w-[450px] absolute">
-          <p>{{ t('landing_page_paragraph_5') }}</p>
+    <div class="bottom-row">
+      <div class="card parents desktop">
+        <div class="label label-cyan">{{ translate('parents') }}</div>
+        <img src="/images/svg/parents-icon.svg" class="icon-parents" alt="parents icon" />
+        <div class="text-parents">
+          <p>{{ translate('landing_page_paragraph_5') }}</p>
         </div>
       </div>
 
-      <!-- Parents (Mobile) -->
-      <div class="relative bg-[url('/images/svg/parents-sm.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[156px] p-6 flex md:hidden mx-auto">
-        <div class="absolute -top-4 right-[12px] z-30">
-          <div class="bg-white uppercase text-[#00B8E7] font-bold text-[12px] px-7 py-3 rounded-full shadow-xl">
-            {{ t('parents') }}
-          </div>
-        </div>
-        <img src="/images/svg/parents-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="parents icon" />
-        <div class="text-white text-[12px] font-bold leading-[1.5] mt-3 max-w-[290px] absolute">
-          <p>{{ t('landing_page_paragraph_5') }}</p>
+      <div class="card parents mobile">
+        <div class="label label-cyan small">{{ translate('parents') }}</div>
+        <img src="/images/svg/parents-icon.svg" class="icon-parents-mobile" alt="parents icon" />
+        <div class="text-parents-mobile">
+          <p>{{ translate('landing_page_paragraph_5') }}</p>
         </div>
       </div>
 
-      <!-- Government (Desktop) -->
-      <div class="relative bg-[url('/images/svg/gos.svg')] bg-no-repeat bg-contain w-full max-w-[552px] h-[156px] p-6 hidden md:flex mx-auto">
-        <div class="absolute bottom-1 right-3 z-30">
-          <div class="bg-white uppercase text-black font-bold text-[20px] px-6 py-2 rounded-full shadow-xl">
-            {{ t('government_institutions') }}
-          </div>
-        </div>
-        <img src="/images/svg/gos-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="gos icon" />
-        <div class="text-black text-[14px]  font-bold leading-[1.5] max-w-[504px] absolute top-7">
-          <p>{{ t('landing_page_paragraph_6') }}</p>
+      <div class="card government desktop">
+        <div class="label label-black">{{ translate('government_institutions') }}</div>
+        <img src="/images/svg/gos-icon.svg" class="icon-government" alt="gos icon" />
+        <div class="text-government">
+          <p>{{ translate('landing_page_paragraph_6') }}</p>
         </div>
       </div>
 
-      <!-- Government (Mobile) -->
-      <div class="relative bg-[url('/images/svg/gos-sm.svg')] bg-no-repeat bg-contain w-full max-w-[375px] h-[156px] p-6 flex md:hidden mx-auto">
-        <div class="absolute bottom-4 right-[5px] z-30">
-          <div class="bg-white uppercase text-black font-bold text-[12px] px-6 py-2 rounded-full shadow-xl">
-            {{ t('government_institutions') }}
-          </div>
-        </div>
-        <img src="/images/svg/gos-icon.svg" class="absolute top-4 w-[100px] h-[100px] opacity-60" alt="gos icon" />
-        <div class="text-black text-[12px] font-bold leading-[1.5]  max-w-[300px] absolute">
-          <p>{{ t('landing_page_paragraph_6') }}</p>
+      <div class="card government mobile">
+        <div class="label label-black small">{{ translate('government_institutions') }}</div>
+        <img src="/images/svg/gos-icon.svg" class="icon-government-mobile" alt="gos icon" />
+        <div class="text-government-mobile">
+          <p>{{ translate('landing_page_paragraph_6') }}</p>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup>
-import {globalTranslate as t} from "assets/js/language.js";
-</script>
+<style scoped>
+.for-who-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding: 0;
+  background: transparent;
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.top-row {
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6rem;
+}
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 1.5rem;
+}
+.title span {
+  color: #0077A3;
+}
+.arrow-img {
+  display: none;
+  position: absolute;
+  top: -100px;
+  right: 50px;
+  width: 250px;
+}
+
+.top-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  max-width: 375px;
+  height: 250px;
+  padding: 1.5rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.schools {
+  background-image: url('/images/svg/schools.svg');
+}
+
+.girl {
+  background-image: url('/images/svg/girl-box.svg');
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: visible;
+  position: relative;
+  margin-top: 5rem;
+  z-index: 2;
+}
+
+.girl-img {
+  position: absolute;
+  bottom: 6px;
+  width: 90%;
+  max-width: 370px;
+  height: auto;
+  object-fit: contain;
+  z-index: 3;
+}
+
+.teachers {
+  background-image: url('/images/svg/instructors.svg');
+}
+
+.parents.desktop {
+  background-image: url('/images/svg/parents-box.svg');
+  max-width: 552px;
+  height: 156px;
+  display: none;
+}
+.parents.mobile {
+  background-image: url('/images/svg/parents-sm.svg');
+  max-width: 375px;
+  height: 156px;
+  display: flex;
+}
+.government.desktop {
+  background-image: url('/images/svg/gos.svg');
+  max-width: 552px;
+  height: 156px;
+  display: none;
+}
+.government.mobile {
+  background-image: url('/images/svg/gos-sm.svg');
+  max-width: 375px;
+  height: 156px;
+  display: flex;
+}
+
+.label {
+  position: absolute;
+  background: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  z-index: 5;
+}
+.label-orange {
+  color: #FFA41B;
+  top: -0.10rem;
+  left: 0.75rem;
+}
+.label-blue {
+  color: #085b80;
+  top: -0.10rem;
+  right: 0.75rem;
+}
+.label-cyan {
+  color: #00B8E7;
+  top: -1rem;
+  right: 2.5rem;
+}
+.label-black {
+  color: #000;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  text-transform: uppercase;
+}
+.label.small {
+  font-size: 12px;
+  padding: 0.75rem 1.5rem;
+}
+
+.icon-schools,
+.icon-teachers,
+.icon-parents,
+.icon-parents-mobile,
+.icon-government,
+.icon-government-mobile {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  opacity: 0.6;
+}
+
+.icon-schools {
+  top: 1.2rem;
+  right: 1.2rem;
+}
+
+.icon-teachers {
+  top: 4rem;
+  right: 1.2rem;
+}
+
+.icon-parents {
+  top: 3rem;
+  right: 1rem;
+}
+
+.icon-parents-mobile {
+  top: 1rem;
+  right: 1rem;
+}
+
+.icon-government {
+  top: 12px;
+  right: 1rem;
+}
+
+.icon-government-mobile {
+  top: 1rem;
+  right: 1rem;
+}
+
+.text-schools {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  color: #1E1E1E;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 310px;
+}
+.text-schools .mt {
+  margin-top: 0.5rem;
+}
+
+.text-teachers {
+  position: absolute;
+  margin-top: 30px;
+  left: 1.2rem;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 310px;
+}
+.text-teachers .mt {
+  margin-top: 0.5rem;
+}
+
+.text-parents {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  color: white;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 460px;
+}
+.text-parents-mobile {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.text-government {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  color: #1E1E1E;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 480px;
+}
+.text-government-mobile {
+  position: absolute;
+  top: 1.2rem;
+  left: 1rem;
+  color: #1E1E1E;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.bottom-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  position: relative;
+  bottom: 1rem;
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+  .for-who-section {
+    padding: 0 1rem;
+  }
+
+  .top-row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .title {
+    text-align: left;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+
+  .arrow-img {
+    display: block;
+  }
+
+  .top-cards {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 6rem;
+  }
+
+  .girl {
+    margin-top: 0;
+  }
+
+  .parents.desktop,
+  .government.desktop {
+    display: flex;
+  }
+
+  .parents.mobile,
+  .government.mobile {
+    display: none;
+  }
+
+  .bottom-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .top-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 767px) {
+  .for-who-section {
+    padding: 0;
+  }
+
+  .top-row {
+    padding-top: 2rem;
+    margin-top: 3rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .top-cards {
+    gap: 1rem;
+  }
+
+  .card {
+    max-width: 100%;
+    height: 230px;
+  }
+
+  .card.schools {
+    z-index: 1;
+  }
+
+  .girl {
+    margin-top: 8rem;
+    z-index: 2;
+    overflow: visible;
+  }
+
+  .girl-img {
+    z-index: 3;
+  }
+
+  .card.teachers {
+    margin-top: 3rem;
+    z-index: 1;
+  }
+
+  .label {
+    font-size: 14px;
+    padding: 0.4rem 1.2rem;
+  }
+
+  .label.small {
+    font-size: 11px;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .text-schools,
+  .text-teachers {
+    font-size: 13px;
+    max-width: 90%;
+  }
+
+  .text-parents-mobile,
+  .text-government-mobile {
+    font-size: 11px;
+    max-width: 85%;
+  }
+}
+</style>

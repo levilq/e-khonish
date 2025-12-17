@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import {ref, onMounted, onUnmounted} from 'vue'
-import {globalTranslate as t} from "assets/js/language";
+import { ref, onMounted, onUnmounted } from 'vue'
+import { globalTranslate as translate } from 'assets/js/language'
 
 const showVideo = ref(false)
 const showImage = ref(false)
 const showTransformation = ref(false)
 const windowWidth = ref(1024)
 const currentImageIndex = ref(0)
+
+
+const showVideoMobile = ref(false)
+const showImageMobile = ref(false)
+const showTransformationMobile = ref(false)
+const currentImageIndexMobile = ref(0)
+
 let interval: NodeJS.Timeout
+let intervalMobile: NodeJS.Timeout
 
 function startSlider() {
   interval = setInterval(() => {
@@ -17,6 +25,16 @@ function startSlider() {
 
 function stopSlider() {
   clearInterval(interval)
+}
+
+function startSliderMobile() {
+  intervalMobile = setInterval(() => {
+    currentImageIndexMobile.value = (currentImageIndexMobile.value + 1) % 3
+  }, 4000)
+}
+
+function stopSliderMobile() {
+  clearInterval(intervalMobile)
 }
 
 function playVideo() {
@@ -41,223 +59,717 @@ function toggleTransformation() {
   showTransformation.value = !showTransformation.value
 }
 
-const handleResize = () => {
-  if (process.client) {
-    windowWidth.value = window.innerWidth
-  }
+
+function playVideoMobile() {
+  showVideoMobile.value = true
 }
+
+function closeVideoMobile() {
+  showVideoMobile.value = false
+}
+
+function expandImageMobile() {
+  showImageMobile.value = true
+  startSliderMobile()
+}
+
+function closeImageMobile() {
+  showImageMobile.value = false
+  stopSliderMobile()
+}
+
+function toggleTransformationMobile() {
+  showTransformationMobile.value = !showTransformationMobile.value
+}
+
+const handleResize = () => {
+  if (process.client) windowWidth.value = window.innerWidth
+}
+
 onMounted(() => {
   if (process.client) {
     windowWidth.value = window.innerWidth
     window.addEventListener('resize', handleResize)
   }
 })
+
 onUnmounted(() => {
   if (process.client) {
     window.removeEventListener('resize', handleResize)
     stopSlider()
+    stopSliderMobile()
   }
 })
 </script>
 
 <template>
-  <div class="relative mt-8 md:mt-0 lg:order-2 mx-auto w-fit">
-    <div class="grid grid-cols-2 md:grid-cols-3 grid-rows-3 gap-0">
-      <!-- Play Button -->
-      <div :class="{'opacity-0 pointer-events-none delay-500': showImage,
-                    'opacity-100 pointer-events-auto delay-0': !showImage}"
-           class="transition-opacity duration-1000 ease-in-out w-[150px] h-[150px] bg-gradient-to-br from-[#FFA41B] to-[#B8E986] rounded-tr-[100px] flex items-center justify-center cursor-pointer z-10"
-           @click="playVideo">
-        <img src="/images/svg/play.svg" alt="Play icon" class="w-[40px] h-[40px]"/>
-      </div>
+  <div class="main-container">
+    <div class="animated-wrapper desktop-only">
+      <div class="animated-grid">
 
-      <div :class="{'opacity-0 pointer-events-none delay-500': showVideo,
-                    'opacity-100 pointer-events-auto delay-0': !showVideo}"
-          class="transition-opacity duration-1000 ease-in-out w-[150px] h-[150px] bg-[#004F7C] rounded-br-[100px]"></div>
-
-      <!-- Digitalization -->
-      <div :class="{'opacity-0 pointer-events-none delay-500': showVideo,
-                    'opacity-100 pointer-events-auto delay-0': !showVideo}"
-           class="transition-opacity duration-1000 ease-in-out capitalize w-[150px] h-[150px] bg-[#B9F250] rounded-tl-[100px] hidden md:flex flex-col items-center justify-center p-2 text-sm font-bold text-[#003049]">
-        <img src="/images/svg/flower.svg" alt="Цифровизация" class="w-[70px] h-[70px] mb-2"/>
-        {{ t('digitalization') }}
-      </div>
-
-      <!-- Image with arrow -->
-      <div :class="[
-                    (showVideo || showTransformation)
-                      ? 'opacity-0 pointer-events-none delay-500'
-                      : 'opacity-100 pointer-events-auto delay-0'
-                    ]"
-           class="transition-opacity duration-1000 ease-in-out w-[300px] h-[150px] col-span-2 md:col-span-2 rounded-tl-[100px] rounded-br-[100px] overflow-hidden cursor-pointer relative"
-           @click="expandImage">
-        <div
-            class="absolute mt-[100px] ml-2 w-10 h-10 rounded-full border border-white flex items-center justify-center z-10">
-          <img src="/images/svg/arrow.svg" class="w-4 h-4" alt="arrow"/>
+        <div class="play-button" :class="{ 'fade-out': showVideo || showImage }" @click="playVideo">
+          <img src="/images/svg/play.svg" alt="Play icon" class="play-icon" />
         </div>
-        <img src="/images/webp/platform-preview.webp" alt="Platform" class="object-cover w-full h-full"/>
-      </div>
 
-      <!-- Innovation -->
-      <div :class="{'opacity-0 pointer-events-none delay-500': showVideo,
-                    'opacity-100 pointer-events-auto delay-0': !showVideo}"
-           class="transition-opacity duration-1000 ease-in-out capitalize w-[150px] h-[150px] bg-gradient-to-br from-[#00CFFF] to-[#006080] rounded-bl-[100px] hidden md:flex flex-col items-center justify-center p-2 text-white text-sm font-bold">
-        <img src="/images/svg/lightbulb.svg" alt="Инновации" class="w-[70px] h-[70px] mb-2"/>
-        {{ t('innovations') }}
-      </div>
+        <div class="blue-square" :class="{ 'fade-out': showVideo }"></div>
 
-      <div class="w-[150px] h-[150px] bg-gradient-to-br from-[#B8E986] to-[#FFA41B] rounded-bl-[100px]"></div>
-
-      <!-- Transformation Block (Clickable) -->
-      <div :class="{'opacity-0 pointer-events-none delay-500': showTransformation,
-                    'opacity-100 pointer-events-auto delay-0': !showTransformation}"
-          class="transition-opacity duration-1000 ease-in-out w-[150px] h-[150px] bg-gradient-to-br from-[#C8F26D] to-[#FFA41B] rounded-tr-[80px] rounded-bl-[80px] relative flex items-center justify-center text-white text-sm font-bold cursor-pointer"
-          @click="toggleTransformation">
-        <span class="text-center capitalize">{{ t('transformation') }}</span>
-        <div
-            class="absolute bottom-5 right-5 w-10 h-10 rounded-full border border-white flex items-center justify-center">
-          <img src="/images/svg/arrow.svg" class="w-4 h-4" alt="arrow"/>
+        <div class="green-square" :class="{ 'fade-out': showVideo }">
+          <img src="/images/svg/flower.svg" class="square-icon" />
+          {{ translate('digitalization') }}
         </div>
-      </div>
 
-      <div class="w-[150px] h-[150px] rounded-full overflow-hidden hidden md:block">
-        <img src="/images/webp/girl.webp" alt="girl" class="object-cover w-full h-full"/>
-      </div>
-
-      <!-- Video Overlay -->
-      <Transition name="video-expand">
-        <div v-if="showVideo"
-             class="absolute z-50 rounded-[40px] p-4 flex flex-col items-end justify-center shadow-xl"
-             :style="{
-              width: windowWidth >= 640 ? '450px' : '300px',
-              height: windowWidth >= 640 ? '300px' : '300px',
-              top: '0',
-              left: '0',
-              backgroundImage: 'linear-gradient(to bottom right, #FFA41B, #B8E986)'
-             }">
-          <button class="text-[#006080] text-xl font-bold absolute top-3 left-4 cursor-pointer" @click="closeVideo">✕
-          </button>
-          <video controls class=" w-full h-[200px] md:h-full md:p-5" muted playsinline>
-            <source src="/videos/about.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-          </video>
+        <div class="image-square" :class="{ 'fade-out': showVideo || showTransformation }" @click="expandImage">
+          <div class="arrow-btn open-btn">
+            <img src="/images/svg/arrow.svg" alt="arrow" />
+          </div>
+          <img src="/images/webp/platform-preview.webp" alt="Platform" />
         </div>
-      </Transition>
 
-      <!-- Image Slider Overlay -->
-      <Transition name="image-expand">
-        <div v-if="showImage"
-             class="absolute z-40 rounded-tl-[70px] rounded-br-[70px] overflow-hidden shadow-xl bg-gradient-to-br from-[#00CFFF] to-[#006080]"
-             :style="{
-              width: windowWidth >= 640 ? '300px' : '300px',
-              height: windowWidth >= 640 ? '300px' : '300px',
-              top: '0',
-              left: '0'
-             }">
-          <Transition name="fade" mode="out-in">
-            <template v-if="currentImageIndex === 0">
-              <img src="/images/webp/slider-1.webp" class="object-cover w-full h-full" alt="slide-1"/>
-            </template>
-            <template v-else-if="currentImageIndex === 1">
-              <img src="/images/webp/slider-2.webp" class="object-cover w-full h-full" alt="slide-2"/>
-            </template>
-            <template v-else>
-              <img src="/images/webp/slider-3.webp" class="object-cover w-full h-full" alt="slide-3"/>
-            </template>
-          </Transition>
-          <div
-              class="absolute bottom-3 left-2 z-10 w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer"
-              @click="closeImage">
-            <img src="/images/svg/arrow.svg" class="w-4 h-4 rotate-45" alt="arrow"/>
+        <div class="innovation-square" :class="{ 'fade-out': showVideo }">
+          <img src="/images/svg/lightbulb.svg" class="square-icon" />
+          {{ translate('innovations') }}
+        </div>
+
+        <div class="orange-square"></div>
+
+        <div class="transformation-square" :class="{ 'fade-out': showTransformation }" @click="toggleTransformation">
+          <span>{{ translate('transformation') }}</span>
+          <div class="arrow-btn bottom-right">
+            <img src="/images/svg/arrow.svg" />
           </div>
         </div>
-      </Transition>
 
-      <!-- Transformation Overlay -->
-      <Transition name="slide-in">
-        <div v-if="showTransformation"
-             class="absolute z-50 bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-br from-[#C8F26D] to-[#FFA41B] rounded-[40px] shadow-xl p-6 flex flex-col justify-between">
-          <p class="text-sm text-[#004F7C] font-semibold leading-relaxed ">
-            {{ t('transformation_paragraph_1') }}
-          </p>
+        <div class="circle-img">
+          <img src="/images/webp/girl.webp" alt="girl" />
+        </div>
+
+        <Transition name="video-expand">
           <div
-              class="self-end w-10 h-10 rounded-full border border-white flex-none items-center justify-center cursor-pointer"
-              @click="toggleTransformation">
-            <img src="/images/svg/arrow.svg" class="w-4 h-4 rotate-45 mt-3 ml-3" alt="arrow"/>
+              v-if="showVideo"
+              class="video-overlay"
+
+          >
+            <button class="close-video" @click="closeVideo">✕</button>
+            <video controls muted playsinline>
+              <source src="/videos/about.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </Transition>
+
+        <Transition name="image-expand">
+          <div v-if="showImage" class="image-overlay">
+            <Transition name="fade" mode="out-in">
+              <template v-if="currentImageIndex === 0">
+                <img src="/images/webp/slider-1.webp" />
+              </template>
+              <template v-else-if="currentImageIndex === 1">
+                <img src="/images/webp/slider-2.webp" />
+              </template>
+              <template v-else>
+                <img src="/images/webp/slider-3.webp" />
+              </template>
+            </Transition>
+            <div class="arrow-btn close same-pos" @click="closeImage">
+              <img src="/images/svg/arrow.svg" class="rotate" />
+            </div>
+          </div>
+        </Transition>
+
+        <Transition name="slide-in">
+          <div v-if="showTransformation" class="transformation-overlay">
+            <p class="mt-6" style="font-size: 16px">
+              {{ translate('transformation_paragraph_1') }}
+            </p>
+            <div class="arrow-btn close bottom" @click="toggleTransformation">
+              <img src="/images/svg/arrow.svg" class="rotate" />
+            </div>
+          </div>
+        </Transition>
+
+      </div>
+    </div>
+
+    <div class="animated-wrapper-mobile mobile-only">
+      <div class="animated-grid-mobile">
+
+        <div class="play-button-mobile" :class="{ 'fade-out': showVideoMobile || showImageMobile }" @click="playVideoMobile">
+          <img src="/images/svg/play.svg" alt="Play icon" class="play-icon" />
+        </div>
+
+        <div class="blue-square-mobile" :class="{ 'fade-out': showVideoMobile || showImageMobile }"></div>
+
+        <div class="image-square-mobile" :class="{ 'fade-out': showVideoMobile || showImageMobile || showTransformationMobile }" @click="expandImageMobile">
+          <div class="arrow-btn open-btn">
+            <img src="/images/svg/arrow.svg" alt="arrow" />
+          </div>
+          <img src="/images/webp/platform-preview.webp" alt="Platform" />
+        </div>
+
+        <div class="orange-square-mobile" :class="{ 'fade-out': showTransformationMobile }"></div>
+
+        <div class="transformation-square-mobile" :class="{ 'fade-out': showTransformationMobile }" @click="toggleTransformationMobile">
+          <span>{{ translate('transformation') }}</span>
+          <div class="arrow-btn bottom-right">
+            <img src="/images/svg/arrow.svg" />
           </div>
         </div>
-      </Transition>
+
+        <Transition name="video-expand">
+          <div v-if="showVideoMobile" class="video-overlay-mobile">
+            <button class="close-video" @click="closeVideoMobile">✕</button>
+            <video controls muted playsinline>
+              <source src="/videos/about.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </Transition>
+
+        <Transition name="image-expand">
+          <div v-if="showImageMobile" class="image-overlay-mobile">
+            <Transition name="fade" mode="out-in">
+              <template v-if="currentImageIndexMobile === 0">
+                <img src="/images/svg/slider-1.svg" />
+              </template>
+              <template v-else-if="currentImageIndexMobile === 1">
+                <img src="/images/svg/slider-2.svg" />
+              </template>
+              <template v-else>
+                <img src="/images/svg/slider-3.svg" />
+              </template>
+            </Transition>
+            <div class="arrow-btn close same-pos" @click="closeImageMobile">
+              <img src="/images/svg/arrow.svg" class="rotate" />
+            </div>
+          </div>
+        </Transition>
+
+        <Transition name="slide-in">
+          <div v-if="showTransformationMobile" class="transformation-overlay-mobile">
+            <p class="mt-6" style="font-size: 11px">
+              {{ translate('transformation_paragraph_1') }}
+            </p>
+            <div class="arrow-btn close bottom" @click="toggleTransformationMobile">
+              <img src="/images/svg/arrow.svg" class="rotate" />
+            </div>
+          </div>
+        </Transition>
+
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.main-container {
+  position: relative;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+.animated-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 480px;
+  height: 480px;
+  max-width: 100%;
+}
+
+.animated-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  grid-template-rows: repeat(3, 160px);
+  gap: 0;
+  justify-content: center;
+}
+
+
+.circle-img {
+  display: block !important;
+}
+
+
+.play-button,
+.blue-square,
+.green-square,
+.image-square,
+.innovation-square,
+.orange-square,
+.transformation-square,
+.circle-img {
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s;
+}
+
+.play-button {
+  background: linear-gradient(to bottom right, #ffa41b, #b8e986);
+  border-top-right-radius: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.play-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.blue-square {
+  background: #004f7c;
+  border-bottom-right-radius: 90px;
+}
+
+.green-square {
+  background: #b9f250;
+  border-top-left-radius: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.square-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.image-square {
+  grid-column: span 2;
+  border-top-left-radius: 90px;
+  border-bottom-right-radius: 90px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.image-square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.innovation-square {
+  background: linear-gradient(to bottom right, #00cfff, #006080);
+  border-bottom-left-radius: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.orange-square {
+  background: linear-gradient(to bottom right, #b8e986, #ffa41b);
+  border-bottom-left-radius: 90px;
+}
+
+.transformation-square {
+  background: linear-gradient(to bottom right, #c8f26d, #ffa41b);
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  color: white;
+}
+
+.circle-img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.circle-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 440px; /* spans all 3 columns */
+  height: 280px; /* spans top 2 rows */
+  padding: 20px;
+  border-radius: 30px;
+  background: linear-gradient(to bottom right, #ffa41b, #b8e986);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  z-index: 60;
+}
+
+.video-overlay video {
+  width: 420px;
+  margin-top: 10px;
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.close-video {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  z-index: 10;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 320px;
+  border-top-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  overflow: hidden;
+  z-index: 55;
+  background: linear-gradient(to bottom right, #00cfff, #006080);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.transformation-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 270px; /* spans 2 columns */
+  height: 270px; /* spans 2 rows */
+  border-radius: 30px;
+  padding: 24px;
+  background: linear-gradient(to bottom right, #c8f26d, #ffa41b);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  color: #004f7c;
+  z-index: 50;
+}
+
+.animated-wrapper-mobile {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@media (max-width: 767px) {
+  .animated-wrapper-mobile {
+    display: flex;
+  }
+}
+
+.animated-grid-mobile {
+  display: grid;
+  grid-template-columns: repeat(2, 208px);
+  grid-template-rows: repeat(3, 208px);
+  gap: 0;
+  max-width: 416px;
+  margin: 0 auto;
+}
+
+.play-button-mobile,
+.blue-square-mobile,
+.image-square-mobile,
+.orange-square-mobile,
+.transformation-square-mobile {
+  width: 208px;
+  height: 208px;
+  transition: opacity 1s;
+}
+
+
+.play-button-mobile {
+  background: linear-gradient(to bottom right, #ffa41b, #b8e986);
+  border-top-right-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.play-button-mobile .play-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.blue-square-mobile {
+  background: #004f7c;
+  border-bottom-right-radius: 80px;
+}
+
+
+.image-square-mobile {
+  grid-column: span 2;
+  width: 416px;
+  border-top-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.image-square-mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.orange-square-mobile {
+  background: linear-gradient(to bottom right, #b8e986, #ffa41b);
+  border-bottom-left-radius: 80px;
+}
+
+.transformation-square-mobile {
+  background: linear-gradient(to bottom right, #c8f26d, #ffa41b);
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+.video-overlay-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 416px;
+  height: 316px;
+  padding: 20px;
+  border-radius: 30px;
+  background: linear-gradient(to bottom right, #ffa41b, #b8e986);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-overlay-mobile video {
+  width: 100%;
+  max-height: 100%;
+  border-radius: 18px;
+}
+
+
+.image-overlay-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 416px;
+  height: 416px;
+  border-top-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  overflow: hidden;
+  z-index: 55;
+  background: linear-gradient(to bottom right, #00cfff, #006080);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.image-overlay-mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.transformation-overlay-mobile {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 416px;
+  height: 416px;
+  border-radius: 30px;
+  padding: 24px;
+  background: linear-gradient(to bottom right, #c8f26d, #ffa41b);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  color: #004f7c;
+  z-index: 50;
+}
+
+.transformation-overlay-mobile p {
+  font-size: 11px !important;
+  margin-top: 0.5rem;
+}
+
+
+.arrow-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+}
+
+.arrow-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.open-btn {
+  bottom: 12px;
+  left: 12px;
+}
+
+.bottom-right {
+  bottom: 18px;
+  right: 18px;
+}
+
+.same-pos {
+  bottom: 12px;
+  left: 12px;
+}
+
+.bottom {
+  bottom: 18px;
+  right: 18px;
+}
+
+.rotate {
+  transform: rotate(45deg);
+}
+
 .video-expand-enter-active,
 .video-expand-leave-active {
-  transition: all 0.7s ease-in-out;
-  transform-origin: top left;
+  transition: all 0.8s ease-in-out;
 }
 
 .video-expand-enter-from,
 .video-expand-leave-to {
-  opacity: 0;
   transform: scale(0);
-}
-
-.video-expand-enter-to,
-.video-expand-leave-from {
-  opacity: 1;
-  transform: scale(1);
+  opacity: 0;
 }
 
 .image-expand-enter-active,
 .image-expand-leave-active {
-  transition: all 0.6s ease-in-out;
-  transform-origin: bottom left;
+  transition: 0.6s ease-in-out;
 }
 
 .image-expand-enter-from,
 .image-expand-leave-to {
   opacity: 0;
-  transform: scale(0.5);
+  transform: scale(0.1);
 }
 
-.image-expand-enter-to,
-.image-expand-leave-from {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.6s ease-in-out;
-}
-
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter-to, .fade-leave-from {
-  opacity: 1;
-}
-
-/* Slide-in for transformation block */
 .slide-in-enter-active,
 .slide-in-leave-active {
-  transition: all 0.5s ease-in-out;
-  transform-origin: bottom right;
+  transition: 0.5s ease-in-out;
 }
 
 .slide-in-enter-from,
 .slide-in-leave-to {
-  opacity: 0;
   transform: scale(0);
+  opacity: 0;
 }
 
-.slide-in-enter-to,
-.slide-in-leave-from {
-  opacity: 1;
-  transform: scale(1);
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-out {
+  opacity: 0.3;
 }
 
 
+@media (max-width: 767px) {
+  .animated-grid-mobile {
+    grid-template-columns: repeat(2, 45vw);
+    grid-template-rows: repeat(3, 45vw);
+    max-width: 90vw;
+  }
+
+  .play-button-mobile,
+  .blue-square-mobile,
+  .orange-square-mobile,
+  .transformation-square-mobile {
+    width: 45vw;
+    height: 45vw;
+  }
+
+  .image-square-mobile {
+    width: 90vw;
+    height: 45vw;
+  }
+
+  .video-overlay-mobile {
+    width: 83vw;
+    height: 82vw;
+    padding: 15px;
+  }
+
+  .image-overlay-mobile {
+    top: 0;
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .transformation-overlay-mobile {
+    width: 79vw;
+    height: 78vw;
+  }
+}
 </style>

@@ -1,171 +1,18 @@
-<template>
-  <div class="max-w-[1128px] mx-auto p-4">
-    <h2 class="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E1E1E] md:text-left mb-6 md:mb-0">
-      {{ t('possibilities') }} <br />
-      <span class="text-[#0077A3]">{{ t('platforms') }}?</span>
-    </h2>
-
-    <div class="space-y-4 mt-10">
-      <!-- Row 1 -->
-      <div class="flex flex-col lg:flex-row gap-4 transition-all duration-500">
-        <!-- Card 0 -->
-        <div
-            :class="[
-            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500 cursor-pointer',
-            getCardSize(0),
-            'bg-gradient-to-tr from-[#005A83] to-[#3F6171] text-white'
-          ]"
-            @mouseenter="expandCard(0)"
-        >
-          <Transition name="fade" mode="out-in">
-            <div key="card-0">
-              <h2 class="text-3xl font-bold mt-5">{{ t('e_gradebook') }}</h2>
-              <img class="absolute" src="/images/webp/2-card-blue.webp" alt="gradebook-bg" />
-
-              <div v-if="isExpanded(0) || !isLargeScreen" class="flex flex-col lg:flex-row">
-                <div class="md:mt-[90px]">
-                  <p class="text-md mt-4 font-bold">
-                    {{ t('landing_page_paragraph_14') }}
-                  </p>
-                  <p class="text-xs mt-2">
-                    {{ t('landing_page_paragraph_15') }}
-                  </p>
-                </div>
-
-                <img
-                    v-if="isExpanded(0) || !isLargeScreen"
-                    class="h-[280px] -mr-9"
-                    src="/images/webp/electronic-gradebook.webp"
-                    alt="gradebook-img"
-                />
-              </div>
-            </div>
-          </Transition>
-        </div>
-
-        <!-- Card 1 -->
-        <div
-            :class="[
-            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500 cursor-pointer',
-            getCardSize(1),
-            'bg-gradient-to-br from-[#B9F250] to-[#D3F691] text-black'
-          ]"
-            @mouseenter="expandCard(1)"
-        >
-          <Transition name="fade" mode="out-in">
-            <div key="card-1">
-              <h2 class="text-3xl font-bold mt-5 text-right">{{ t('parents_visibility') }}</h2>
-              <img class="absolute right-0" src="/images/webp/2-card-blue.webp" alt="parents-bg" />
-
-              <div v-if="isExpanded(1) || !isLargeScreen" class="flex flex-col lg:flex-row">
-
-                <img
-                    v-if="isExpanded(1) || !isLargeScreen"
-                    class="h-[280px] md:-ml-[70px]"
-                    src="/images/webp/communication_parents.webp"
-                    alt="parents-img"
-                />
-
-                <div class="md:mt-[140px]">
-                  <p class="text-md mt-4 font-extrabold">
-                    {{ t('landing_page_paragraph_18') }}
-                  </p>
-                  <p class="text-xs mt-4">
-                    {{ t('landing_page_paragraph_19') }}
-                  </p>
-                </div>
-
-              </div>
-            </div>
-          </Transition>
-        </div>
-      </div>
-
-      <!-- Row 2 -->
-      <div class="flex flex-col lg:flex-row gap-4 transition-all duration-500">
-        <!-- Card 2 -->
-        <div
-            :class="[
-            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500 cursor-pointer',
-            getCardSize(2),
-            'bg-gradient-to-br from-[#FF9D00] to-[#EEBB6A] text-black'
-          ]"
-            @mouseenter="expandCard(2)"
-        >
-          <Transition name="fade" mode="out-in">
-            <div key="card-2">
-              <h2 class="text-3xl font-bold mt-5">{{ t('e_library') }}</h2>
-              <img class="absolute opacity-30" src="/images/webp/3-card-orange.webp" alt="lib-bg" />
-
-              <div v-if="isExpanded(2) || !isLargeScreen" class="flex flex-col lg:flex-row z-10">
-
-                <div class="md:mt-[100px]">
-                  <p class="text-md mt-4 font-bold">
-                    {{ t('landing_page_paragraph_16') }}
-                  </p>
-                  <p class="text-xs mt-4">
-                    {{ t('landing_page_paragraph_17') }}
-                  </p>
-                </div>
-
-                <img
-                    v-if="isExpanded(2) || !isLargeScreen"
-                    class="h-[280px] -mr-9"
-                    src="/images/webp/e-library.webp"
-                    alt="library-img"
-                />
-              </div>
-            </div>
-          </Transition>
-        </div>
-
-        <!-- Card 3 -->
-        <div
-            :class="[
-            'relative rounded-[20px] shadow-md overflow-hidden p-6 flex flex-col justify-between transition-all duration-500 cursor-pointer',
-            getCardSize(3),
-            'bg-gradient-to-br from-[#00B8E7] to-[#006781] text-white'
-          ]"
-            @mouseenter="expandCard(3)"
-        >
-          <Transition name="fade" mode="out-in">
-            <div key="card-3">
-              <h2 class="text-3xl font-bold mt-5 text-right">{{ t('integration_app') }}</h2>
-              <img class="absolute right-0 opacity-40" src="/images/webp/4-card-blue.webp" alt="apps-bg" />
-
-              <div v-if="isExpanded(3) || !isLargeScreen" class="flex flex-col lg:flex-row">
-
-                <img
-                    v-if="isExpanded(3) || !isLargeScreen"
-                    class="h-[280px] pr-[20px]"
-                    src="/images/webp/apps_img.webp"
-                    alt="apps-img"
-                />
-
-                <div class="md:mt-[140px]">
-                  <p class="text-md mt-4 font-extrabold">
-                    {{ t('landing_page_paragraph_20') }}
-                  </p>
-                </div>
-
-              </div>
-            </div>
-          </Transition>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { globalTranslate as t } from 'assets/js/language'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { globalTranslate as translate } from 'assets/js/language'
 
 const expandedCard = ref(0)
 const isLargeScreen = ref(false)
 
+// Expand card on hover
 const expandCard = (index: number) => {
   expandedCard.value = index
+}
+
+// Reset to default (card 0 expanded)
+const collapseCards = () => {
+  expandedCard.value = 0
 }
 
 const isExpanded = (index: number) => expandedCard.value === index
@@ -177,9 +24,9 @@ const getCardSize = (index: number) => {
       (isTopRow && expandedCard.value <= 1) ||
       (isBottomRow && expandedCard.value >= 2)
 
-  if (!isLargeScreen.value) return 'w-full h-auto'
-  if (isExpanded(index)) return 'w-[744px] h-[381px]'
-  return isCurrentRow ? 'w-[552px] h-[381px]' : 'w-[552px] h-[220px]'
+  if (!isLargeScreen.value) return 'card-full'
+  if (isExpanded(index)) return 'card-expanded'
+  return isCurrentRow ? 'card-medium' : 'card-small'
 }
 
 const updateScreen = () => {
@@ -196,13 +43,419 @@ onBeforeUnmount(() => {
 })
 </script>
 
+<template>
+  <div class="possibilities-section">
+    <div class="possibilities-container">
+      <h2 class="title">
+        {{ translate('possibilities') }} <br />
+        <span class="highlight">{{ translate('platforms') }}?</span>
+      </h2>
+
+      <div class="cards-wrapper">
+        <!-- TOP ROW -->
+        <div class="cards-row top-row">
+
+          <!-- CARD 0 -->
+          <div
+              :class="['card', 'card-blue', getCardSize(0)]"
+              @mouseenter="isLargeScreen && expandCard(0)"
+              @mouseleave="isLargeScreen && collapseCards()"
+          >
+            <Transition name="fade" mode="out-in">
+              <div key="card-0" class="card-inner">
+                <h2 class="card-title">{{ translate('e_gradebook') }}</h2>
+                <img class="card-bg" src="/images/webp/2-card-blue.webp" alt="bg" />
+
+                <div v-if="isExpanded(0) || !isLargeScreen" class="card-content">
+                  <div class="card-text">
+                    <p class="desc-strong">{{ translate('landing_page_paragraph_14') }}</p>
+                    <p class="desc-small">{{ translate('landing_page_paragraph_15') }}</p>
+                  </div>
+                  <img class="card-img" src="/images/webp/electronic-gradebook.webp" alt="" />
+                </div>
+              </div>
+            </Transition>
+          </div>
+
+          <!-- CARD 1 -->
+          <div
+              :class="['card', 'card-green', getCardSize(1)]"
+              @mouseenter="isLargeScreen && expandCard(1)"
+              @mouseleave="isLargeScreen && collapseCards()"
+          >
+            <Transition name="fade" mode="out-in">
+              <div key="card-1" class="card-inner">
+                <h2 class="card-title text-right">{{ translate('parents_visibility') }}</h2>
+                <img class="card-bg right" src="/images/webp/2-card-blue.webp" alt="bg" />
+
+                <div v-if="isExpanded(1) || !isLargeScreen" class="card-content">
+                  <img class="card-img-left" src="/images/webp/communication_parents.webp" alt="" />
+                  <div class="card-text">
+                    <p class="desc-strong">{{ translate('landing_page_paragraph_18') }}</p>
+                    <p class="desc-small">{{ translate('landing_page_paragraph_19') }}</p>
+                  </div>
+                </div>
+              </div>
+            </Transition>
+          </div>
+
+        </div>
+
+        <!-- BOTTOM ROW -->
+        <div class="cards-row bottom-row">
+
+          <!-- CARD 2 -->
+          <div
+              :class="['card', 'card-orange', getCardSize(2)]"
+              @mouseenter="isLargeScreen && expandCard(2)"
+              @mouseleave="isLargeScreen && collapseCards()"
+          >
+            <Transition name="fade" mode="out-in">
+              <div key="card-2" class="card-inner">
+                <h2 class="card-title">{{ translate('e_library') }}</h2>
+                <img class="card-bg" src="/images/webp/3-card-orange.webp" alt="bg" />
+
+                <div v-if="isExpanded(2) || !isLargeScreen" class="card-content">
+                  <div class="card-text">
+                    <p class="desc-strong">{{ translate('landing_page_paragraph_16') }}</p>
+                    <p class="desc-small">{{ translate('landing_page_paragraph_17') }}</p>
+                  </div>
+                  <img class="card-img" src="/images/webp/e-library.webp" alt="" />
+                </div>
+              </div>
+            </Transition>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+              :class="['card', 'card-cyan', getCardSize(3)]"
+              @mouseenter="isLargeScreen && expandCard(3)"
+              @mouseleave="isLargeScreen && collapseCards()"
+          >
+            <Transition name="fade" mode="out-in">
+              <div key="card-3" class="card-inner">
+                <h2 class="card-title text-right">{{ translate('integration_app') }}</h2>
+                <img class="card-bg right" src="/images/webp/4-card-blue.webp" alt="bg" />
+
+                <div v-if="isExpanded(3) || !isLargeScreen" class="card-content">
+                  <img class="card-img-left" src="/images/webp/apps_img.webp" alt="" />
+                  <div class="card-text">
+                    <p class="desc-strong">{{ translate('landing_page_paragraph_20') }}</p>
+                  </div>
+                </div>
+              </div>
+            </Transition>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
 <style scoped>
+.possibilities-section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.possibilities-container {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: #0077A3;
+}
+
+.cards-wrapper {
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.cards-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.5s ease;
+  width: 100%;
+}
+
+.cards-row.bottom-row {
+  margin-top: 1rem;
+}
+
+.card {
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-inner {
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-blue {
+  background: linear-gradient(to top right, #005A83, #3F6171);
+}
+.card-green {
+  background: linear-gradient(to bottom right, #B9F250, #D3F691);
+  color: #000;
+}
+.card-orange {
+  background: linear-gradient(to bottom right, #FF9D00, #EEBB6A);
+  color: #000;
+}
+.card-cyan {
+  background: linear-gradient(to bottom right, #00B8E7, #006781);
+}
+
+.card-full {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+  word-wrap: break-word;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.25;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.card-bg.right {
+  right: 0;
+  left: auto;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.card-text {
+  margin-top: 1rem;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.desc-strong {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  word-wrap: break-word;
+}
+
+.desc-small {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.card-img,
+.card-img-left {
+  max-height: 220px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 1rem auto 0;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .possibilities-container {
+    padding: 0 1rem;
+  }
+
+  .title {
+    text-align: left;
+    font-size: 2.5rem;
+  }
+
+  .card-inner {
+    padding: 1.75rem;
+  }
+
+  .card-title {
+    font-size: 1.75rem;
+  }
+
+  .desc-strong {
+    font-size: 1rem;
+  }
+
+  .desc-small {
+    font-size: 0.85rem;
+  }
+
+  .card-img,
+  .card-img-left {
+    max-height: 250px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .possibilities-container {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .cards-row {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .card-expanded {
+    width: 744px;
+    height: 381px;
+  }
+
+  .card-medium {
+    width: 552px;
+    height: 381px;
+  }
+
+  .card-small {
+    width: 552px;
+    height: 220px;
+  }
+
+  .card-inner {
+    padding: 1.5rem;
+  }
+
+  .card-content {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 0;
+  }
+
+  .card-img {
+    margin-right: -9px;
+    margin-left: 0;
+    margin-top: 0;
+    max-height: 280px;
+  }
+
+  .card-img-left {
+    margin-left: -70px;
+    margin-right: 0;
+    margin-top: 0;
+    max-height: 280px;
+  }
+}
+
+/* Mobile specific */
+@media (max-width: 767px) {
+  .possibilities-section {
+    overflow-x: hidden;
+  }
+
+  .possibilities-container {
+    padding: 0;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .cards-wrapper {
+    margin-top: 1.5rem;
+  }
+
+  .card {
+    min-height: 280px;
+    border-radius: 16px;
+    margin: 0;
+  }
+
+  .card-inner {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .desc-strong {
+    font-size: 0.85rem;
+  }
+
+  .desc-small {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .card-img,
+  .card-img-left {
+    max-height: 160px;
+    max-width: 95%;
+  }
+
+  .card-text {
+    margin-top: 0.5rem;
+  }
 }
 </style>

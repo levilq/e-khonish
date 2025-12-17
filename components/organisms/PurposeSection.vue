@@ -1,25 +1,98 @@
+<script setup lang="ts">
+import { globalTranslate as translate } from 'assets/js/language'
+</script>
+
 <template>
-  <section class="relative px-4 md:py-12 text-center flex flex-col items-center">
-    <!-- Green Arrow -->
+  <section class="why-ekhonish-section">
     <img
         src="/images/svg/arrow-green.svg"
         alt="arrow"
-        class="hidden md:block absolute -top-4 left-[220px] w-[105px] lg:w-[108px]"
+        class="arrow-img"
     />
 
-    <!-- Heading -->
-    <h2 class="text-[24px] md:text-[28px] lg:text-[48px] font-bold text-[#005A83] mt-16 ">
-      {{t('why')}} <span class="text-[#005A83] font-extrabold" style="font-family: 'Montserrat', sans-serif;">E-KHONISH?</span>s
+    <h2 class="title">
+      {{ translate('why') }}
+      <span class="highlight">E-KHONISH ?</span>
     </h2>
 
-    <!-- Description Box -->
-    <div class="mt-6 px-4 py-4  border-2 border-[#005A83] rounded-xl font-bold max-w-[920px]  shadow-sm text-[14px] md:text-[16px] leading-relaxed text-[#1E1E1E]">
-      {{t('landing_page_paragraph_7')}}
+
+    <div class="description-box">
+      {{ translate('landing_page_paragraph_7') }}
     </div>
   </section>
 </template>
 
-<script setup>
-import { globalTranslate as t } from 'assets/js/language'
+<style scoped>
+.why-ekhonish-section {
+  position: relative;
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-</script>
+.arrow-img {
+  display: none;
+  position: absolute;
+  top: -1rem;
+  left: 220px;
+  width: 105px;
+}
+
+@media (min-width: 768px) {
+  .arrow-img {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .arrow-img {
+    width: 108px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #005A83;
+  margin-top: 4rem;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+
+.highlight {
+  font-weight: 800;
+  color: #005A83;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.description-box {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid #005A83;
+  border-radius: 12px;
+  font-weight: 700;
+  max-width: 920px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1E1E1E;
+}
+
+@media (min-width: 768px) {
+  .description-box {
+    font-size: 16px;
+  }
+}
+</style>

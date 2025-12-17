@@ -1,129 +1,153 @@
+<script setup lang="ts">
+import { reactive } from 'vue'
+import { globalTranslate as translate } from 'assets/js/language'
+
+const submitRequest = async () => true
+const isSubmitting = false
+const error = ''
+const success = false
+const resetForm = () => {}
+const validatePhoneNumber = () => true
+const applyPhoneMask = () => {}
+const preventLongInput = () => {}
+
+const formData = reactive({
+  full_name: '',
+  school_name: '',
+  email: '',
+  phone: ''
+})
+
+const errors = reactive({
+  full_name: '',
+  school_name: '',
+  email: '',
+  phone: ''
+})
+
+const validateForm = () => {
+  let isValid = true
+  Object.keys(errors).forEach(k => (errors[k as keyof typeof errors] = ''))
+
+  if (!formData.full_name.trim()) {
+    errors.full_name = translate('field_required')
+    isValid = false
+  }
+  if (!formData.school_name.trim()) {
+    errors.school_name = translate('field_required')
+    isValid = false
+  }
+  if (!formData.email.trim()) {
+    errors.email = translate('field_required')
+    isValid = false
+  } else {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!re.test(formData.email)) {
+      errors.email = translate('invalid_email')
+      isValid = false
+    }
+  }
+  if (!formData.phone.trim()) {
+    errors.phone = translate('field_required')
+    isValid = false
+  } else if (!validatePhoneNumber(formData.phone)) {
+    errors.phone = translate('invalid_phone')
+    isValid = false
+  }
+  return isValid
+}
+
+const handleSubmit = async (e: Event) => {
+  e.preventDefault()
+  if (!validateForm()) return
+  const res = await submitRequest(formData)
+  if (res) {
+    Object.keys(formData).forEach(k => (formData[k as keyof typeof formData] = ''))
+    setTimeout(() => resetForm(), 3000)
+  }
+}
+</script>
+
 <template>
-  <section class="px-4">
-    <div class="flex py-12 px-10">
-      <h2
-        class="text-3xl lg:text-5xl mb-8 text-center leading-snug font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#005A83] to-[#FF9D00]"
-        style="font-family: 'Montserrat', sans-serif"
-      >
-        {{ t("start_digitalizing_your_school_today") }}
+  <section class="contact-section">
+    <div class="headline-wrap">
+      <h2 class="headline">
+        {{ translate('start_digitalizing_your_school_today') }}
       </h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[45px] items-start">
-      <!-- Left image -->
-      <div class="">
-        <img
-          src="/images/webp/laptop.webp"
-          alt="Laptop"
-          class="h-[456px] object-cover hidden md:flex ml-[80px]"
-        />
-        <img
-          src="/images/webp/contacts-mobile.webp"
-          alt="Mobile"
-          class="w-full flex justify-center object-cover md:hidden"
-        />
+
+    <div class="contact-container">
+      <div class="image-col">
+        <img src="/images/webp/laptop.webp" alt="Laptop" class="image-desktop" />
+        <img src="/images/webp/contacts-mobile.webp" alt="Mobile" class="image-mobile" />
       </div>
 
-      <!-- Right form -->
-      <div class="w-full">
-        <div
-          v-if="error"
-          class="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg"
-        >
-          {{ error }}
-        </div>
+      <div class="form-col">
+        <div v-if="error" class="alert alert-error">{{ error }}</div>
+        <div v-if="success" class="alert alert-success">{{ translate('success_message') }}</div>
 
-        <div
-          v-if="success"
-          class="mb-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg"
-        >
-          {{ t("success_message") }}
-        </div>
-
-        <form @submit="handleSubmit" class="space-y-4 text-[#005f87]">
-          <div>
-            <label class="font-bold ml-2">{{ t("label_name") }}</label>
+        <form class="form" @submit="handleSubmit">
+          <div class="field">
+            <label class="label">{{ translate('label_name') }}</label>
             <input
-              v-model="formData.full_name"
-              type="text"
-              :placeholder="t('placeholder_name')"
-              :class="[
-                'w-full px-4 py-3 rounded-3xl border-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077A3]',
-                errors.full_name ? 'border-red-500' : 'border-[#005f87]',
-              ]"
+                v-model="formData.full_name"
+                type="text"
+                :placeholder="translate('placeholder_name')"
+                class="input"
+                :class="{ 'input-error': errors.full_name }"
             />
-            <div v-if="errors.full_name" class="text-red-500 text-sm mt-1 ml-2">
-              {{ errors.full_name }}
-            </div>
+            <div v-if="errors.full_name" class="error-text">{{ errors.full_name }}</div>
           </div>
 
-          <div>
-            <label class="font-bold ml-2">{{ t("label_school") }}</label>
+          <div class="field">
+            <label class="label">{{ translate('label_school') }}</label>
             <input
-              v-model="formData.school_name"
-              type="text"
-              :placeholder="t('placeholder_school')"
-              :class="[
-                'w-full px-4 py-3 rounded-3xl border-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077A3]',
-                errors.school_name ? 'border-red-500' : 'border-[#005f87]',
-              ]"
+                v-model="formData.school_name"
+                type="text"
+                :placeholder="translate('placeholder_school')"
+                class="input"
+                :class="{ 'input-error': errors.school_name }"
             />
-            <div
-              v-if="errors.school_name"
-              class="text-red-500 text-sm mt-1 ml-2"
-            >
-              {{ errors.school_name }}
-            </div>
+            <div v-if="errors.school_name" class="error-text">{{ errors.school_name }}</div>
           </div>
 
-          <div>
-            <label class="font-bold ml-2">{{ t("label_email") }}</label>
+          <div class="field">
+            <label class="label">{{ translate('label_email') }}</label>
             <input
-              v-model="formData.email"
-              type="email"
-              placeholder="domain@domain.com"
-              :class="[
-                'w-full px-4 py-3 rounded-3xl border-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077A3]',
-                errors.email ? 'border-red-500' : 'border-[#005f87]',
-              ]"
+                v-model="formData.email"
+                type="email"
+                placeholder="domain@domain.com"
+                class="input"
+                :class="{ 'input-error': errors.email }"
             />
-            <div v-if="errors.email" class="text-red-500 text-sm mt-1 ml-2">
-              {{ errors.email }}
-            </div>
+            <div v-if="errors.email" class="error-text">{{ errors.email }}</div>
           </div>
 
-          <div>
-            <label class="font-bold ml-2">{{ t("label_phone") }}</label>
+          <div class="field">
+            <label class="label">{{ translate('label_phone') }}</label>
             <input
-              v-model="formData.phone"
-              @input="applyPhoneMask"
-              @keydown="preventLongInput"
-              @paste="preventLongInput"
-              maxlength="13"
-              type="tel"
-              :placeholder="t('placeholder_phone')"
-              :class="[
-                'w-full px-4 py-3 rounded-3xl border-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077A3]',
-                errors.phone ? 'border-red-500' : 'border-[#005f87]',
-              ]"
+                v-model="formData.phone"
+                type="tel"
+                maxlength="13"
+                :placeholder="translate('placeholder_phone')"
+                @input="applyPhoneMask"
+                @keydown="preventLongInput"
+                @paste="preventLongInput"
+                class="input"
+                :class="{ 'input-error': errors.phone }"
             />
-            <div v-if="errors.phone" class="text-red-500 text-sm mt-1 ml-2">
-              {{ errors.phone }}
-            </div>
+            <div v-if="errors.phone" class="error-text">{{ errors.phone }}</div>
           </div>
 
-          <div class="flex justify-end">
+          <div class="actions">
             <button
-              type="submit"
-              :disabled="isSubmitting"
-              :class="[
-                'bg-[#005A83] text-white font-semibold py-3 px-6 rounded-xl transition w-1/2',
-                isSubmitting
-                  ? 'opacity-50 cursor-not-allowed'
-                  : 'hover:bg-[#00466a] cursor-pointer',
-              ]"
+                type="submit"
+                class="btn"
+                :disabled="isSubmitting"
+                :class="{ 'btn-disabled': isSubmitting }"
             >
-              <span v-if="isSubmitting">{{ t("submitting") }}</span>
-              <span v-else>{{ t("submit") }} →</span>
+              <span v-if="isSubmitting">{{ translate('submitting') }}</span>
+              <span v-else>{{ translate('submit') }} →</span>
             </button>
           </div>
         </form>
@@ -132,85 +156,275 @@
   </section>
 </template>
 
-<script setup>
-import { globalTranslate as t } from 'assets/js/language'
+<style scoped>
+.contact-section {
+  padding: 4rem 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-const { submitRequest, isSubmitting, error, success, resetForm } =
-  useLandingRequest();
-const { validatePhoneNumber, applyPhoneMask, preventLongInput } =
-  usePhoneMask();
+.headline-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  text-align: center;
+  padding: 0 1rem;
+}
 
-const formData = reactive({
-  full_name: "",
-  school_name: "",
-  email: "",
-  phone: "",
-});
+.headline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 32px;
+  background: linear-gradient(90deg, #005A83 0%, #FF9D00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-const errors = reactive({
-  full_name: "",
-  school_name: "",
-  email: "",
-  phone: "",
-});
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
 
-const validateForm = () => {
-  let isValid = true;
+.image-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
-  Object.keys(errors).forEach((key) => {
-    errors[key] = "";
-  });
+.image-desktop {
+  display: none;
+  height: 440px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.12));
+}
 
-  if (!formData.full_name.trim()) {
-    errors.full_name = t("field_required");
-    isValid = false;
+.image-mobile {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.form-col {
+  width: 100%;
+}
+
+.form {
+  padding: 0;
+  width: 100%;
+}
+
+.field {
+  margin-bottom: 1.125rem;
+}
+
+.label {
+  display: block;
+  font-weight: 700;
+  color: #005f87;
+  margin: 0 0 6px 10px;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 28px;
+  border: 2px solid #005f87;
+  outline: none;
+  font-size: 15px;
+  transition: box-shadow .2s, border-color .2s;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #9aa4af;
+}
+
+.input:focus {
+  border-color: #0077A3;
+  box-shadow: 0 0 0 3px rgba(0, 119, 163, 0.2);
+}
+
+.input-error {
+  border-color: #ef4444 !important;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.alert {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 1px solid;
+}
+
+.alert-error {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+}
+
+.alert-success {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  background: #005A83;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, opacity .2s, transform .1s;
+  width: 100%;
+  max-width: 320px;
+}
+
+.btn:hover {
+  background: #00466a;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .contact-section {
+    padding: 5rem 0;
   }
 
-  if (!formData.school_name.trim()) {
-    errors.school_name = t("field_required");
-    isValid = false;
+  .contact-container {
+    padding: 0 1rem;
   }
 
-  if (!formData.email.trim()) {
-    errors.email = t("field_required");
-    isValid = false;
-  } else {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      errors.email = t("invalid_email");
-      isValid = false;
-    }
+  .headline {
+    font-size: 44px;
   }
 
-  if (!formData.phone.trim()) {
-    errors.phone = t("field_required");
-    isValid = false;
-  } else if (!validatePhoneNumber(formData.phone)) {
-    errors.phone = t("invalid_phone");
-    isValid = false;
+  .form {
+    padding: 2rem;
   }
 
-  return isValid;
-};
+  .image-mobile {
+    max-width: 400px;
+  }
+}
 
-const handleSubmit = async (event) => {
-  event.preventDefault();
-
-  if (!validateForm()) {
-    return;
+/* Desktop */
+@media (min-width: 1024px) {
+  .headline {
+    font-size: 56px;
   }
 
-  const response = await submitRequest(formData);
-
-  if (response) {
-    Object.keys(formData).forEach((key) => {
-      formData[key] = "";
-    });
-
-    setTimeout(() => {
-      resetForm();
-    }, 3000);
+  .contact-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 0 1rem;
   }
-};
-</script>
 
+  .image-desktop {
+    display: block;
+  }
+
+  .image-mobile {
+    display: none;
+  }
+
+  .form {
+    padding: 2rem;
+  }
+}
+
+/* Mobile specific */
+@media (max-width: 767px) {
+  .contact-section {
+    padding: 3rem 0;
+    overflow-x: hidden;
+  }
+
+  .headline-wrap {
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .headline {
+    font-size: 1.75rem;
+  }
+
+  .contact-container {
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .image-col {
+    padding: 0;
+  }
+
+  .image-mobile {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .form-col {
+    padding: 0;
+  }
+
+  .form {
+    padding: 0;
+  }
+
+  .field {
+    margin-bottom: 1rem;
+  }
+
+  .label {
+    font-size: 0.95rem;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 11px 15px;
+  }
+
+  .btn {
+    padding: 11px 24px;
+    font-size: 15px;
+  }
+
+  .actions {
+    margin-top: 1.25rem;
+  }
+}
+</style>

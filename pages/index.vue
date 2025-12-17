@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { globalTranslate as translate } from 'assets/js/language'
+const baseURL = useRuntimeConfig().public.baseURL
 </script>
 
 <template>
@@ -42,7 +43,7 @@ import { globalTranslate as translate } from 'assets/js/language'
             </p>
 
 
-            <nuxt-link to="/dashboard" >
+            <nuxt-link :to="`${baseURL}/authentication`" >
               <button class="try-btn">
                 {{ translate('let_try') }}
                 <span class="arrow">→</span>
@@ -80,13 +81,6 @@ import { globalTranslate as translate } from 'assets/js/language'
 </template>
 
 <style scoped>
-html {
-  scroll-behavior: smooth;
-}
-section[id] {
-  scroll-margin-top: 80px;
-}
-
 .index-wrapper {
   width: 100%;
   margin-top: 3rem;
@@ -253,19 +247,6 @@ section[id] {
   }
 }
 
-.green-curve {
-  position: absolute;
-  left: 480px;
-  bottom: 10rem;
-  width: 180px;
-  display: none;
-}
-@media (min-width: 768px) {
-  .green-curve {
-    display: flex;
-  }
-}
-
 .try-btn {
   background: #005b88;
   color: white;
@@ -365,7 +346,6 @@ section[id] {
     padding: 8px 20px;
   }
 
-  /* Section spacing */
   section {
     padding: 0;
     margin-bottom: 2rem;
@@ -375,14 +355,12 @@ section[id] {
     margin-top: 2rem;
   }
 
-  /* Ensure all child sections are properly contained */
   .index-wrapper > * {
     max-width: 100%;
     overflow-x: hidden;
   }
 }
 
-/* Tablet adjustments */
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
     padding-left: 2rem;
@@ -403,14 +381,6 @@ section[id] {
 
   .description {
     font-size: 16px;
-  }
-}
-
-@media (min-width: 768px) {
-  .animated-wrapper {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 </style>

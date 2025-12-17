@@ -92,13 +92,13 @@ onUnmounted(() => window.removeEventListener('click', clickModal))
           <div class="block-policy txt-black">
             <div class="text-sm mt-4" style="padding: 0 40px 0 20px" v-if="state.selectLang === 'lang_33'">
 
-              <OrganismsPolicyLangRU/>
+              <LazyOrganismsPolicyLangRU/>
             </div>
             <div class="text-sm mt-4" style="padding: 0 40px 0 20px" v-else-if="state.selectLang === 'lang_32'">
-              <OrganismsPolicyLangTJ/>
+              <LazyOrganismsPolicyLangTJ/>
             </div>
             <div class="text-sm mt-4" style="padding: 0 40px 0 20px" v-else-if="state.selectLang === 'english'">
-              <OrganismsPolicyLangEN/>
+              <LazyOrganismsPolicyLangEN/>
             </div>
           </div>
         </div>

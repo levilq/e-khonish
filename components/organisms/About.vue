@@ -22,7 +22,7 @@ import { globalTranslate as translate } from 'assets/js/language'
 
       <div class="about-video">
         <div class="video-wrapper">
-          <video controls muted playsinline class="video-element">
+          <video controls muted playsinline preload="none" class="video-element">
             <source src="/videos/about.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>

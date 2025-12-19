@@ -47,6 +47,6 @@ export default defineNuxtConfig({
     ],
 
     experimental: {
-        payloadExtraction: false
-    },
+        entryImportMap: false
+    }
 })

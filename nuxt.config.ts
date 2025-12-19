@@ -4,9 +4,9 @@ export default defineNuxtConfig({
 
     ssr: true,
 
-    modules: [
-        '@nuxtjs/sitemap'
-    ],
+    // modules: [
+    //     '@nuxtjs/sitemap'
+    // ],
 
     app: {
         head: {

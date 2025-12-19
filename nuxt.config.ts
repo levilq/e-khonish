@@ -47,6 +47,7 @@ export default defineNuxtConfig({
     ],
 
     experimental: {
+        appManifest: false,
         entryImportMap: false
     }
 })

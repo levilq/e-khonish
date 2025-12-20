@@ -122,7 +122,7 @@ onUnmounted(() => {
           <div class="arrow-btn open-btn">
             <img src="/images/svg/arrow.svg" alt="arrow" />
           </div>
-          <img src="/images/webp/platform-preview.webp" alt="Platform" />
+          <img fetchpriority="low" src="/images/webp/platform-preview.webp" alt="Platform" />
         </div>
 
         <div class="innovation-square" :class="{ 'fade-out': showVideo }">
@@ -146,7 +146,7 @@ onUnmounted(() => {
         <Transition name="video-expand">
           <div v-if="showVideo" class="video-overlay">
             <button class="close-video" @click="closeVideo">✕</button>
-            <video controls muted playsinline>
+            <video controls muted playsinline preload="none">
               <source src="/videos/about.mp4" type="video/mp4" />
             </video>
           </div>
@@ -198,7 +198,7 @@ onUnmounted(() => {
           <div class="arrow-btn open-btn">
             <img src="/images/svg/arrow.svg" alt="arrow" />
           </div>
-          <img src="/images/webp/platform-preview.webp" alt="Platform" />
+          <img fetchpriority="low" src="/images/webp/platform-preview.webp" alt="Platform" />
         </div>
 
         <div class="orange-square-mobile" :class="{ 'fade-out': showTransformationMobile }"></div>
@@ -213,7 +213,7 @@ onUnmounted(() => {
         <Transition name="video-expand">
           <div v-if="showVideoMobile" class="video-overlay-mobile">
             <button class="close-video" @click="closeVideoMobile">✕</button>
-            <video controls muted playsinline>
+            <video controls muted playsinline preload="none">
               <source src="/videos/about.mp4" type="video/mp4" />
             </video>
           </div>
@@ -223,13 +223,13 @@ onUnmounted(() => {
           <div v-if="showImageMobile" class="image-overlay-mobile">
             <Transition name="fade" mode="out-in">
               <template v-if="currentImageIndexMobile === 0">
-                <img src="/images/svg/slider-1.svg" />
+                <img src="/images/webp/slider-1.webp" />
               </template>
               <template v-else-if="currentImageIndexMobile === 1">
-                <img src="/images/svg/slider-2.svg" />
+                <img src="/images/webp/slider-2.webp" />
               </template>
               <template v-else>
-                <img src="/images/svg/slider-3.svg" />
+                <img src="/images/webp/slider-3.webp" />
               </template>
             </Transition>
             <div class="arrow-btn close same-pos" @click="closeImageMobile">

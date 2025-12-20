@@ -9,7 +9,3 @@ const baseURL = useRuntimeConfig().public.baseURL
   </button>
   </nuxt-link>
 </template>
-
-<style scoped>
-
-</style>

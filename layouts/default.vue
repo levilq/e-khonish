@@ -30,10 +30,6 @@ import '@/assets/style/scss/fonts.sass'
   overflow-x: hidden;
 }
 
-.layout :deep(*) {
-  font-family: 'GTWalsheimPro', sans-serif !important;
-}
-
 .blur-circle {
   position: absolute;
   border-radius: 50%;

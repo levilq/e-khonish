@@ -82,13 +82,6 @@ const baseURL = useRuntimeConfig().public.baseURL
 </template>
 
 <style scoped>
-html {
-  scroll-behavior: smooth;
-}
-section[id] {
-  scroll-margin-top: 80px;
-}
-
 .index-wrapper {
   width: 100%;
   margin-top: 3rem;
@@ -268,19 +261,6 @@ section[id] {
   }
 }
 
-.green-curve {
-  position: absolute;
-  left: 480px;
-  bottom: 10rem;
-  width: 180px;
-  display: none;
-}
-@media (min-width: 768px) {
-  .green-curve {
-    display: flex;
-  }
-}
-
 .try-btn {
   background: #005b88;
   color: white;
@@ -385,7 +365,6 @@ section {
   padding: 0;
 }
 
-/* Tablet adjustments */
 @media (min-width: 768px) and (max-width: 1023px) {
   .title {
     font-size: 48px;

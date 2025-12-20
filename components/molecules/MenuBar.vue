@@ -31,7 +31,7 @@ watch(isOpen, (newValue) => {
         @click="toggleMenu"
         aria-label="Open menu"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" style="color: black; height: 40px; margin-right: 54px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <svg xmlns="http://www.w3.org/2000/svg" style="color: black; height: 40px; " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
@@ -42,7 +42,7 @@ watch(isOpen, (newValue) => {
           <div class="menu-top">
             <img src="/images/webp/logo.webp" alt="logo" class="logo" />
             <button class="close-btn" @click="toggleMenu" aria-label="Close menu">
-              <svg xmlns="http://www.w3.org/2000/svg" style="color: black; height: 35px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <svg xmlns="http://www.w3.org/2000/svg"  style="height:35px; color: black; flex: none; margin-right: 35px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -100,18 +100,24 @@ watch(isOpen, (newValue) => {
 }
 
 .menu-overlay {
+  /* Break out of parent container */
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 0 !important;
+  right: 0 !important;
   bottom: 0;
-  width: 100vw;
+  width: 100vw !important;
   height: 100vh;
+  max-width: none !important;
   background-color: #ffffff;
   z-index: 999;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  /* Force it to break out of any parent constraints */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  transform: none !important;
 }
 
 .menu-content {
@@ -121,6 +127,7 @@ watch(isOpen, (newValue) => {
   min-height: 100vh;
   padding: 1.5rem 1.25rem 2rem;
   width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -142,6 +149,16 @@ watch(isOpen, (newValue) => {
   border: none;
   cursor: pointer;
   padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+.close-btn svg {
+  width: 35px;
+  height: 35px;
 }
 
 .menu-center {
@@ -152,6 +169,7 @@ watch(isOpen, (newValue) => {
   justify-content: center;
   gap: 2rem;
   padding: 2rem 0;
+  margin-right: 35px;
 }
 
 .menu-links {

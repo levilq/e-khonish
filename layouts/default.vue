@@ -119,6 +119,8 @@ import '@/assets/style/scss/fonts.sass'
   z-index: 10;
   max-width: 1328px;
   margin: 0 auto;
+  /* Remove all padding - let child components handle it */
+  padding: 0;
 }
 
 .layout-header {
@@ -129,23 +131,21 @@ import '@/assets/style/scss/fonts.sass'
   width: 100%;
   max-width: 1328px;
   z-index: 100;
+  /* Header gets its own padding */
+  padding: 0 20px;
 }
 
-/* Tablet */
-@media (max-width: 1024px) and (min-width: 768px) {
-  .main-container {
-    padding: 0 24px;
-  }
-
+/* Tablet header padding */
+@media (min-width: 768px) and (max-width: 1023px) {
   .layout-header {
-    padding: 0 24px;
+    padding: 0 32px;
   }
 }
 
-/* Desktop */
-@media (min-width: 1025px) {
-  .main-container {
-    padding: 0;
+/* Desktop header padding */
+@media (min-width: 1024px) {
+  .layout-header {
+    padding: 0 16px;
   }
 }
 
@@ -163,7 +163,7 @@ import '@/assets/style/scss/fonts.sass'
     transform: none !important;
     max-width: 100% !important;
     width: 100% !important;
-    padding: 0 8px;
+    padding: 0 20px;
   }
 
   .main-container {

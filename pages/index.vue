@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { globalTranslate as translate } from 'assets/js/language'
 const baseURL = useRuntimeConfig().public.baseURL
+
 </script>
 
 <template>
@@ -90,7 +91,20 @@ const baseURL = useRuntimeConfig().public.baseURL
 .container {
   max-width: 1128px;
   margin: 0 auto;
-  padding: 0 1rem;
+  /* Responsive padding */
+  padding: 0 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
 }
 
 .grid-wrapper {
@@ -281,18 +295,13 @@ const baseURL = useRuntimeConfig().public.baseURL
   margin-top: 4rem;
 }
 
-/* ✅ MOBILE FIXES */
+/* Mobile optimizations */
 @media (max-width: 767px) {
   .index-wrapper {
     width: 100%;
     margin-top: 0;
     padding: 2rem 0;
     overflow-x: hidden;
-  }
-
-  .container {
-    padding: 0;
-    max-width: 100%;
   }
 
   .grid-wrapper {
@@ -346,27 +355,17 @@ const baseURL = useRuntimeConfig().public.baseURL
     padding: 8px 20px;
   }
 
-  section {
-    padding: 0;
-    margin-bottom: 2rem;
-  }
-
   .mt-section {
     margin-top: 2rem;
   }
+}
 
-  .index-wrapper > * {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+/* Remove section padding - components handle their own */
+section {
+  padding: 0;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .title {
     font-size: 48px;
   }

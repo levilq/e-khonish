@@ -157,13 +157,15 @@ onBeforeUnmount(() => {
 .possibilities-section {
   width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .possibilities-container {
   max-width: 1128px;
   margin: 0 auto;
-  padding: 0;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .title {
@@ -172,6 +174,7 @@ onBeforeUnmount(() => {
   font-weight: 700;
   color: #1E1E1E;
   margin-bottom: 1.5rem;
+  box-sizing: border-box;
 }
 
 .highlight {
@@ -181,6 +184,7 @@ onBeforeUnmount(() => {
 .cards-wrapper {
   margin-top: 2.5rem;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .cards-row {
@@ -189,6 +193,7 @@ onBeforeUnmount(() => {
   gap: 1rem;
   transition: all 0.5s ease;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .cards-row.bottom-row {
@@ -319,7 +324,7 @@ onBeforeUnmount(() => {
 /* Tablet */
 @media (min-width: 768px) {
   .possibilities-container {
-    padding: 0 1rem;
+    padding: 0 32px;
   }
 
   .title {
@@ -352,7 +357,7 @@ onBeforeUnmount(() => {
 /* Desktop */
 @media (min-width: 1024px) {
   .possibilities-container {
-    padding: 0 1rem;
+    padding: 0;
   }
 
   .title {
@@ -410,14 +415,9 @@ onBeforeUnmount(() => {
     overflow-x: hidden;
   }
 
-  .possibilities-container {
-    padding: 0;
-  }
-
   .title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    padding: 0 0.5rem;
   }
 
   .cards-wrapper {

@@ -46,7 +46,7 @@ import { globalTranslate as translate } from 'assets/js/language'
       </div>
 
       <div class="card parents mobile">
-        <div class="label label-cyan small">{{ translate('parents') }}</div>
+        <div class="label label-cyan">{{ translate('parents') }}</div>
         <img src="/images/svg/parents-icon.svg" class="icon-parents-mobile" alt="parents icon" />
         <div class="text-parents-mobile">
           <p>{{ translate('landing_page_paragraph_5') }}</p>
@@ -91,7 +91,27 @@ import { globalTranslate as translate } from 'assets/js/language'
   align-items: center;
   justify-content: space-between;
   margin-top: 6rem;
+  /* Mobile: 20px padding */
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
+/* Tablet: 32px padding */
+@media (min-width: 768px) {
+  .top-row {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Desktop: NO padding */
+@media (min-width: 1024px) {
+  .top-row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .title {
   text-align: center;
   font-size: 2rem;
@@ -114,6 +134,25 @@ import { globalTranslate as translate } from 'assets/js/language'
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  /* Mobile: 20px padding */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Tablet: 32px padding */
+@media (min-width: 768px) {
+  .top-cards {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Desktop: NO padding */
+@media (min-width: 1024px) {
+  .top-cards {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .card {
@@ -169,8 +208,8 @@ import { globalTranslate as translate } from 'assets/js/language'
 }
 .parents.mobile {
   background-image: url('/images/svg/parents-sm.svg');
-  max-width: 375px;
-  height: 156px;
+  max-width: 335px;
+  height: 140px;
   display: flex;
 }
 .government.desktop {
@@ -181,8 +220,8 @@ import { globalTranslate as translate } from 'assets/js/language'
 }
 .government.mobile {
   background-image: url('/images/svg/gos-sm.svg');
-  max-width: 375px;
-  height: 156px;
+  max-width: 335px;
+  height: 140px;
   display: flex;
 }
 
@@ -210,8 +249,8 @@ import { globalTranslate as translate } from 'assets/js/language'
 }
 .label-cyan {
   color: #00B8E7;
-  top: -1rem;
-  right: 2.5rem;
+  top: -0.35rem;
+  right: 1rem;
 }
 .label-black {
   color: #000;
@@ -252,8 +291,10 @@ import { globalTranslate as translate } from 'assets/js/language'
 }
 
 .icon-parents-mobile {
-  top: 1rem;
-  right: 1rem;
+  top: 2.5rem;
+  right: 0.75rem;
+  width: 70px;
+  height: 70px;
 }
 
 .icon-government {
@@ -262,8 +303,10 @@ import { globalTranslate as translate } from 'assets/js/language'
 }
 
 .icon-government-mobile {
-  top: 1rem;
-  right: 1rem;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 70px;
+  height: 70px;
 }
 
 .text-schools {
@@ -306,13 +349,13 @@ import { globalTranslate as translate } from 'assets/js/language'
 }
 .text-parents-mobile {
   position: absolute;
-  bottom: 1rem;
-  left: 1rem;
+  bottom: 0.75rem;
+  left: 0.75rem;
   color: white;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  line-height: 1.5;
-  max-width: 300px;
+  line-height: 1.4;
+  max-width: 270px;
 }
 
 .text-government {
@@ -327,13 +370,13 @@ import { globalTranslate as translate } from 'assets/js/language'
 }
 .text-government-mobile {
   position: absolute;
-  top: 1.2rem;
-  left: 1rem;
+  top: 0.75rem;
+  left: 0.75rem;
   color: #1E1E1E;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  line-height: 1.5;
-  max-width: 300px;
+  line-height: 1.4;
+  max-width: 290px;
 }
 
 .bottom-row {
@@ -342,14 +385,29 @@ import { globalTranslate as translate } from 'assets/js/language'
   gap: 1rem;
   position: relative;
   bottom: 1rem;
+  /* Mobile: 20px padding */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Tablet: 32px padding */
+@media (min-width: 768px) {
+  .bottom-row {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Desktop: NO padding */
+@media (min-width: 1024px) {
+  .bottom-row {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* Tablet and Desktop */
 @media (min-width: 768px) {
-  .for-who-section {
-    padding: 0 1rem;
-  }
-
   .top-row {
     flex-direction: row;
     align-items: center;
@@ -399,10 +457,6 @@ import { globalTranslate as translate } from 'assets/js/language'
 
 /* Mobile specific adjustments */
 @media (max-width: 767px) {
-  .for-who-section {
-    padding: 0;
-  }
-
   .top-row {
     padding-top: 2rem;
     margin-top: 3rem;
@@ -447,20 +501,14 @@ import { globalTranslate as translate } from 'assets/js/language'
   }
 
   .label.small {
-    font-size: 11px;
-    padding: 0.5rem 1.2rem;
+    font-size: 10px;
+    padding: 0.5rem 1rem;
   }
 
   .text-schools,
   .text-teachers {
     font-size: 13px;
     max-width: 90%;
-  }
-
-  .text-parents-mobile,
-  .text-government-mobile {
-    font-size: 11px;
-    max-width: 85%;
   }
 }
 </style>

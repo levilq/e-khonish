@@ -168,7 +168,22 @@ const handleSubmit = async (e: Event) => {
   justify-content: center;
   margin-bottom: 3rem;
   text-align: center;
-  padding: 0 1rem;
+  /* Mobile: 20px padding */
+  padding: 0 20px;
+}
+
+/* Tablet: 32px padding */
+@media (min-width: 768px) {
+  .headline-wrap {
+    padding: 0 32px;
+  }
+}
+
+/* Desktop: NO padding */
+@media (min-width: 1024px) {
+  .headline-wrap {
+    padding: 0;
+  }
 }
 
 .headline {
@@ -190,6 +205,23 @@ const handleSubmit = async (e: Event) => {
   gap: 3rem;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
+  /* Mobile: 20px padding */
+  padding: 0 20px;
+}
+
+/* Tablet: 32px padding */
+@media (min-width: 768px) {
+  .contact-container {
+    padding: 0 32px;
+  }
+}
+
+/* Desktop: NO padding */
+@media (min-width: 1024px) {
+  .contact-container {
+    padding: 0;
+  }
 }
 
 .image-col {
@@ -325,10 +357,6 @@ const handleSubmit = async (e: Event) => {
     padding: 5rem 0;
   }
 
-  .contact-container {
-    padding: 0 1rem;
-  }
-
   .headline {
     font-size: 44px;
   }
@@ -351,7 +379,6 @@ const handleSubmit = async (e: Event) => {
   .contact-container {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    padding: 0 1rem;
   }
 
   .image-desktop {
@@ -376,7 +403,6 @@ const handleSubmit = async (e: Event) => {
 
   .headline-wrap {
     margin-bottom: 2rem;
-    padding: 0 0.5rem;
   }
 
   .headline {
@@ -385,24 +411,6 @@ const handleSubmit = async (e: Event) => {
 
   .contact-container {
     gap: 2rem;
-    padding: 0;
-  }
-
-  .image-col {
-    padding: 0;
-  }
-
-  .image-mobile {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .form-col {
-    padding: 0;
-  }
-
-  .form {
-    padding: 0;
   }
 
   .field {

@@ -55,18 +55,32 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-
 .header-wrapper {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1128px;
+  max-width: 1328px;
   z-index: 100;
-  padding: 0 1rem;
+  box-sizing: border-box;
+  /* Mobile: 20px padding */
+  padding: 0 0;
 }
 
+/* Tablet: 32px padding */
+@media (min-width: 768px) {
+  .header-wrapper {
+    padding: 0 32px;
+  }
+}
+
+/* Desktop: 16px padding */
+@media (min-width: 1024px) {
+  .header-wrapper {
+    padding: 0 16px;
+  }
+}
 
 .header {
   width: 100%;
@@ -77,14 +91,29 @@ onUnmounted(() => {
   padding: 0 1.5rem;
   margin: 0 auto;
   border-radius: 20px;
-
+  box-sizing: border-box;
+  /* Always have background on mobile to prevent content showing through */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Enhanced background when scrolled */
 .header--scrolled {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(25px);
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* On desktop, start with transparent background */
+@media (min-width: 768px) {
+  .header {
+    background: transparent;
+  }
+
+  .header--scrolled {
+    background: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .header__logo img {
@@ -92,7 +121,6 @@ onUnmounted(() => {
   width: auto;
   display: block;
 }
-
 
 .mobile-only {
   display: block;
@@ -103,7 +131,6 @@ onUnmounted(() => {
     display: none !important;
   }
 }
-
 
 .desktop-only {
   display: none !important;
@@ -138,6 +165,7 @@ onUnmounted(() => {
   font-size: 0.9rem;
   transition: background 0.3s ease;
 }
+
 .btn-primary:hover {
   background-color: #00aed6;
 }

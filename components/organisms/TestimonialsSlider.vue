@@ -107,7 +107,6 @@ const testimonials = [
 </template>
 
 <style scoped>
-
 .testimonials-section {
   padding: 4rem 0;
   width: 100%;
@@ -118,6 +117,23 @@ const testimonials = [
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
+  /* Mobile: 20px padding */
+  padding: 0 20px;
+}
+
+/* Tablet: 32px padding */
+@media (min-width: 768px) {
+  .testimonials-container {
+    padding: 0 32px;
+  }
+}
+
+/* Desktop: NO padding */
+@media (min-width: 1024px) {
+  .testimonials-container {
+    padding: 0;
+  }
 }
 
 .testimonials-wrapper {
@@ -299,10 +315,6 @@ const testimonials = [
     padding: 5rem 0;
   }
 
-  .testimonials-container {
-    padding: 0 1rem;
-  }
-
   .testimonials-wrapper {
     gap: 3rem;
   }
@@ -357,10 +369,6 @@ const testimonials = [
     padding: 6rem 0;
   }
 
-  .testimonials-container {
-    padding: 0 1rem;
-  }
-
   .testimonials-wrapper {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -377,21 +385,14 @@ const testimonials = [
     padding: 3rem 0;
   }
 
-  .testimonials-container {
-    padding: 0;
-
-  }
-
   .section-title {
     text-align: center;
     font-size: 1.5rem;
-    padding: 0 0.5rem;
   }
 
   .section-desc {
     text-align: center;
     margin: 0 auto;
-    padding: 0 0.5rem;
     font-size: 0.85rem;
   }
 

@@ -63,12 +63,26 @@ import { globalTranslate as translate } from 'assets/js/language'
 </template>
 
 <style scoped>
-
 .features-section {
-  padding: 5rem 2rem;
+  padding: 5rem 20px;
   background: transparent;
+  max-width: 1128px;
+  margin: 0 auto;
 }
 
+/* Tablet: 32px padding */
+@media (min-width: 768px) {
+  .features-section {
+    padding: 5rem 32px;
+  }
+}
+
+/* Desktop: NO padding */
+@media (min-width: 1024px) {
+  .features-section {
+    padding: 5rem 0;
+  }
+}
 
 .features-grid {
   display: grid;

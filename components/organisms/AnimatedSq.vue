@@ -144,11 +144,7 @@ onUnmounted(() => {
         </div>
 
         <Transition name="video-expand">
-          <div
-              v-if="showVideo"
-              class="video-overlay"
-
-          >
+          <div v-if="showVideo" class="video-overlay">
             <button class="close-video" @click="closeVideo">✕</button>
             <video controls muted playsinline>
               <source src="/videos/about.mp4" type="video/mp4" />
@@ -263,17 +259,19 @@ onUnmounted(() => {
   position: relative;
   margin: 2rem auto;
   width: 100%;
+  padding: 0 20px;
 }
 
 @media (min-width: 768px) {
   .main-container {
     max-width: 480px;
+    padding: 0 32px;
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 1024px) {
   .main-container {
-    max-width: 100%;
+    padding: 0;
   }
 }
 
@@ -424,8 +422,8 @@ onUnmounted(() => {
   position: absolute;
   top: 0;
   left: 0;
-  width: 440px; /* spans all 3 columns */
-  height: 280px; /* spans top 2 rows */
+  width: 440px;
+  height: 280px;
   padding: 20px;
   border-radius: 30px;
   background: linear-gradient(to bottom right, #ffa41b, #b8e986);
@@ -442,7 +440,7 @@ onUnmounted(() => {
 
 .close-video {
   position: absolute;
-  top: 8px;
+  top: 20px;
   left: 16px;
   background: transparent;
   font-size: 20px;
@@ -450,6 +448,7 @@ onUnmounted(() => {
   border: none;
   color: white;
   z-index: 10;
+
 }
 
 .image-overlay {
@@ -476,8 +475,8 @@ onUnmounted(() => {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 270px; /* spans 2 columns */
-  height: 270px; /* spans 2 rows */
+  width: 270px;
+  height: 270px;
   border-radius: 30px;
   padding: 24px;
   background: linear-gradient(to bottom right, #c8f26d, #ffa41b);
@@ -488,7 +487,7 @@ onUnmounted(() => {
 
 .animated-wrapper-mobile {
   position: relative;
-  margin: 0 auto;
+  margin-top: 25px;
   width: 100%;
   max-width: 100%;
   display: none;
@@ -585,22 +584,24 @@ onUnmounted(() => {
   position: absolute;
   top: 0;
   left: 0;
-  width: 416px;
-  height: 316px;
+  width: 316px;
+  height: 312px;
   padding: 20px;
   border-radius: 30px;
   background: linear-gradient(to bottom right, #ffa41b, #b8e986);
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
   z-index: 60;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .video-overlay-mobile video {
   width: 100%;
   max-height: 100%;
   border-radius: 18px;
+  margin-top: 60px;
 }
 
 
@@ -629,10 +630,9 @@ onUnmounted(() => {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 416px;
-  height: 416px;
+  width: 350px;
+  height: 350px;
   border-radius: 30px;
-  padding: 24px;
   background: linear-gradient(to bottom right, #c8f26d, #ffa41b);
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
   color: #004f7c;
@@ -640,8 +640,9 @@ onUnmounted(() => {
 }
 
 .transformation-overlay-mobile p {
-  font-size: 11px !important;
-  margin-top: 0.5rem;
+  font-size: 17px !important;
+  margin-top: 3rem;
+  padding: 0 20px;
 }
 
 
@@ -735,6 +736,7 @@ onUnmounted(() => {
 }
 
 
+
 @media (max-width: 767px) {
   .animated-grid-mobile {
     grid-template-columns: repeat(2, 45vw);
@@ -755,11 +757,7 @@ onUnmounted(() => {
     height: 45vw;
   }
 
-  .video-overlay-mobile {
-    width: 83vw;
-    height: 82vw;
-    padding: 15px;
-  }
+
 
   .image-overlay-mobile {
     top: 0;
@@ -767,9 +765,6 @@ onUnmounted(() => {
     height: 90vw;
   }
 
-  .transformation-overlay-mobile {
-    width: 79vw;
-    height: 78vw;
-  }
+
 }
 </style>

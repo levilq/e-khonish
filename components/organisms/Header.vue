@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 import {globalTranslate as translate} from 'assets/js/language'
-import { useRoute } from "vue-router";
 
 const baseURL = useRuntimeConfig().public.baseURL
-const route = useRoute();
 
 const showModalVisible = ref(false);
 

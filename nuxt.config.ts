@@ -1,15 +1,12 @@
-const path = require('path');
 export default defineNuxtConfig({
     compatibilityDate: '2025-05-15',
     devtools: {enabled: true},
 
     ssr: true,
 
-
-    modules: [
-        '@nuxtjs/sitemap',
-        '@pinia/nuxt'
-    ],
+    // modules: [
+    //     '@nuxtjs/sitemap'
+    // ],
 
     app: {
         head: {
@@ -46,16 +43,11 @@ export default defineNuxtConfig({
     },
 
     css: [
-        '@/assets/css/fonts.css'
+        '@/assets/style/scss/main.scss'
     ],
 
     experimental: {
-        payloadExtraction: false
-    },
-
-    nitro: {
-        // output: {
-        //     publicDir: path.join(__dirname, '@/output.')
-        // }
+        appManifest: false,
+        entryImportMap: false
     }
 })

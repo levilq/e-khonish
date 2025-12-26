@@ -213,7 +213,7 @@ onUnmounted(() => {
         <Transition name="video-expand">
           <div v-if="showVideoMobile" class="video-overlay-mobile">
             <button class="close-video" @click="closeVideoMobile">✕</button>
-            <video controls muted playsinline>
+            <video style="margin-top: 80px" controls muted playsinline>
               <source src="/videos/about.mp4" type="video/mp4" />
             </video>
           </div>
@@ -240,7 +240,7 @@ onUnmounted(() => {
 
         <Transition name="slide-in">
           <div v-if="showTransformationMobile" class="transformation-overlay-mobile">
-            <p class="mt-6" style="font-size: 11px">
+            <p class="mt-6" >
               {{ translate('transformation_paragraph_1') }}
             </p>
             <div class="arrow-btn close bottom" @click="toggleTransformationMobile">
@@ -448,7 +448,6 @@ onUnmounted(() => {
   border: none;
   color: white;
   z-index: 10;
-
 }
 
 .image-overlay {
@@ -493,7 +492,6 @@ onUnmounted(() => {
   display: none;
   justify-content: center;
   align-items: center;
-
 }
 
 @media (max-width: 767px) {
@@ -584,7 +582,7 @@ onUnmounted(() => {
   position: absolute;
   top: 0;
   left: 0;
-  width: 316px;
+  width: 416px;
   height: 312px;
   padding: 20px;
   border-radius: 30px;
@@ -601,7 +599,7 @@ onUnmounted(() => {
   width: 100%;
   max-height: 100%;
   border-radius: 18px;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 
@@ -630,9 +628,10 @@ onUnmounted(() => {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 350px;
-  height: 350px;
+  width: 416px;
+  height: 416px;
   border-radius: 30px;
+  padding: 24px;
   background: linear-gradient(to bottom right, #c8f26d, #ffa41b);
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
   color: #004f7c;
@@ -640,9 +639,8 @@ onUnmounted(() => {
 }
 
 .transformation-overlay-mobile p {
-  font-size: 17px !important;
-  margin-top: 3rem;
-  padding: 0 20px;
+  font-size: 11px !important;
+  margin-top: 0.5rem;
 }
 
 
@@ -736,7 +734,6 @@ onUnmounted(() => {
 }
 
 
-
 @media (max-width: 767px) {
   .animated-grid-mobile {
     grid-template-columns: repeat(2, 45vw);
@@ -758,13 +755,37 @@ onUnmounted(() => {
   }
 
 
+  .video-overlay-mobile {
+    width: 90vw;
+    height: 90vw;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .video-overlay-mobile video {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    max-height: calc(100% - 5px);
+  }
 
   .image-overlay-mobile {
     top: 0;
     width: 90vw;
     height: 90vw;
+    box-sizing: border-box;
   }
 
+  .transformation-overlay-mobile {
+    width: 90vw;
+    height: 90vw;
+    box-sizing: border-box;
+  }
 
+  .transformation-overlay-mobile p {
+    font-size: 18px !important;
+    margin-top: 1rem;
+    padding: 0 12px;
+  }
 }
 </style>

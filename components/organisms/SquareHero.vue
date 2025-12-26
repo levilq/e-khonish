@@ -78,10 +78,26 @@ import { globalTranslate as translate } from 'assets/js/language'
   flex-direction: column;
   gap: 2rem;
   position: relative;
-  padding: 0;
   background: transparent;
   max-width: 1128px;
   margin: 0 auto;
+  box-sizing: border-box;
+  /* Mobile: 20px padding on section */
+  padding: 0 20px;
+}
+
+/* Tablet: 32px padding */
+@media (min-width: 768px) {
+  .for-who-section {
+    padding: 0 32px;
+  }
+}
+
+/* Desktop: NO padding */
+@media (min-width: 1024px) {
+  .for-who-section {
+    padding: 0;
+  }
 }
 
 .top-row {
@@ -91,25 +107,6 @@ import { globalTranslate as translate } from 'assets/js/language'
   align-items: center;
   justify-content: space-between;
   margin-top: 6rem;
-  /* Mobile: 20px padding */
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Tablet: 32px padding */
-@media (min-width: 768px) {
-  .top-row {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-/* Desktop: NO padding */
-@media (min-width: 1024px) {
-  .top-row {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 .title {
@@ -134,25 +131,6 @@ import { globalTranslate as translate } from 'assets/js/language'
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  /* Mobile: 20px padding */
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Tablet: 32px padding */
-@media (min-width: 768px) {
-  .top-cards {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-/* Desktop: NO padding */
-@media (min-width: 1024px) {
-  .top-cards {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 .card {
@@ -161,7 +139,7 @@ import { globalTranslate as translate } from 'assets/js/language'
   background-size: cover;
   background-position: center;
   width: 100%;
-  max-width: 375px;
+  max-width: 100%;
   height: 250px;
   padding: 1.5rem;
   margin: 0 auto;
@@ -208,7 +186,7 @@ import { globalTranslate as translate } from 'assets/js/language'
 }
 .parents.mobile {
   background-image: url('/images/svg/parents-sm.svg');
-  max-width: 335px;
+  max-width: 100%;
   height: 140px;
   display: flex;
 }
@@ -220,7 +198,7 @@ import { globalTranslate as translate } from 'assets/js/language'
 }
 .government.mobile {
   background-image: url('/images/svg/gos-sm.svg');
-  max-width: 335px;
+  max-width: 100%;
   height: 140px;
   display: flex;
 }
@@ -356,6 +334,7 @@ import { globalTranslate as translate } from 'assets/js/language'
   font-weight: 500;
   line-height: 1.4;
   max-width: 270px;
+  padding: 0 10px;
 }
 
 .text-government {
@@ -377,6 +356,7 @@ import { globalTranslate as translate } from 'assets/js/language'
   font-weight: 600;
   line-height: 1.4;
   max-width: 290px;
+  padding: 0 10px;
 }
 
 .bottom-row {
@@ -385,25 +365,6 @@ import { globalTranslate as translate } from 'assets/js/language'
   gap: 1rem;
   position: relative;
   bottom: 1rem;
-  /* Mobile: 20px padding */
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Tablet: 32px padding */
-@media (min-width: 768px) {
-  .bottom-row {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-/* Desktop: NO padding */
-@media (min-width: 1024px) {
-  .bottom-row {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 /* Tablet and Desktop */
@@ -426,6 +387,10 @@ import { globalTranslate as translate } from 'assets/js/language'
   .top-cards {
     grid-template-columns: repeat(2, 1fr);
     margin-top: 6rem;
+  }
+
+  .card {
+    max-width: 375px;
   }
 
   .girl {
@@ -472,7 +437,6 @@ import { globalTranslate as translate } from 'assets/js/language'
   }
 
   .card {
-    max-width: 100%;
     height: 230px;
   }
 

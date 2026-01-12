@@ -2,7 +2,7 @@ export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event)
 
-    const response = await $fetch('https://admin.khonish.ru/api/support/landing-requests', {
+    const response = await $fetch('https://back.ekhonish.tj/api/support/landing-requests', {
       method: 'POST',
       body,
       headers: {

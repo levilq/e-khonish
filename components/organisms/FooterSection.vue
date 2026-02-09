@@ -48,13 +48,13 @@ onUnmounted(() => window.removeEventListener('click', clickModal))
       </div>
 
       <div class="footer-social">
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-          <img src="/images/svg/facebook.svg" alt="facebook" />
-        </a>
+<!--        <a href="https://facebook.com" target="_blank" aria-label="Facebook">-->
+<!--          <img src="/images/svg/facebook.svg" alt="facebook" />-->
+<!--        </a>-->
         <a href="https://www.instagram.com/ekhonish?igsh=MTE0cGg1NnU4aTg4cQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
           <img src="/images/svg/instagram.svg" alt="instagram" />
         </a>
-        <a href="https://t.me" target="_blank" aria-label="Telegram">
+        <a href="https://t.me/ekhonish" target="_blank" aria-label="Telegram">
           <img src="/images/svg/telegram.svg" alt="telegram" />
         </a>
       </div>

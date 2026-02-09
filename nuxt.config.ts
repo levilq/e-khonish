@@ -37,8 +37,8 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            baseURL: process.env.BASE_URL || '/',
-            baseURL_API: process.env.BASE_URL_API + '/api'
+            baseURL: process.env.BASE_URL || 'https://emaorif.com',
+            baseURL_API: (process.env.BASE_URL_API || 'https://back.emaorif.com') + '/api'
         }
     },
 

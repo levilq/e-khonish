@@ -223,13 +223,13 @@ onUnmounted(() => {
           <div v-if="showImageMobile" class="image-overlay-mobile">
             <Transition name="fade" mode="out-in">
               <template v-if="currentImageIndexMobile === 0">
-                <img src="/images/svg/slider-1.svg" />
+                <img src="/images/webp/slider-1.webp" />
               </template>
               <template v-else-if="currentImageIndexMobile === 1">
-                <img src="/images/svg/slider-2.svg" />
+                <img src="/images/webp/slider-2.webp" />
               </template>
               <template v-else>
-                <img src="/images/svg/slider-3.svg" />
+                <img src="/images/webp/slider-3.webp" />
               </template>
             </Transition>
             <div class="arrow-btn close same-pos" @click="closeImageMobile">

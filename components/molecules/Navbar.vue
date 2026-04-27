@@ -20,7 +20,6 @@ import {globalTranslate as translate} from 'assets/js/language'
   font-size: 1rem;
   font-weight: 700;
   color: #000;
-  text-transform: capitalize;
 }
 
 .nav-link {

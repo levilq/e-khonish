@@ -180,7 +180,6 @@ watch(isOpen, (newValue) => {
   font-size: 1.1rem;
   font-weight: 700;
   color: #000;
-  text-transform: capitalize;
 }
 
 .menu-links a {
